@@ -264,7 +264,7 @@
 <div id="reservationModal" class="fixed inset-0 z-[110] hidden items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 transition-opacity duration-300">
     <div class="bg-surface p-8 md:p-12 rounded-2xl shadow-2xl max-w-lg w-[90%] max-h-[90vh] overflow-y-auto transform scale-95 transition-transform duration-300">
         <div class="flex justify-between items-start mb-6">
-            <h2 class="font-headline text-3xl text-primary italic">Réserver une table</h2>
+            <h2 class="font-headline text-3xl text-primary italic">Reserver une table</h2>
             <button onclick="closeReservation()" class="text-on-surface-variant hover:text-primary transition-colors">
                 <span class="material-symbols-outlined">close</span>
             </button>
@@ -295,11 +295,11 @@
                 </select>
             </div>
             <div>
-                <label class="block font-body text-sm font-medium text-on-surface-variant mb-1">Téléphone / E-mail</label>
+                <label class="block font-body text-sm font-medium text-on-surface-variant mb-1">Telephone / E-mail</label>
                 <input type="text" id="resContact" required class="w-full rounded-lg border border-outline-variant/50 focus:border-primary focus:ring-primary bg-surface-container-low px-4 py-2.5" placeholder="Pour vous contacter si besoin">
             </div>
             <div class="pt-4">
-                <button type="submit" class="w-full bg-primary text-on-primary px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">Confirmer la réservation</button>
+                <button type="submit" class="w-full bg-primary text-on-primary px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">Confirmer la reservation</button>
             </div>
         </form>
     </div>
@@ -310,102 +310,68 @@
         const dateInput = document.getElementById('resDate');
         const timeInput = document.getElementById('resTime');
         if(!dateInput.value || !timeInput.value) return true;
-        
         const date = new Date(dateInput.value + 'T00:00:00');
-        const day = date.getDay(); 
-        const time = timeInput.value; 
-        
+        const day = date.getDay();
+        const time = timeInput.value;
         let isValid = false;
-        let message = "Nous sommes fermés à cette heure.";
-        
+        let message = "Nous sommes fermes a cette heure.";
         if(day === 1) {
             if((time >= "09:30" && time <= "12:00") || (time >= "16:00" && time <= "18:00")) isValid = true;
-            else message = "Le lundi, nous sommes ouverts de 09h30 à 12h00 et de 16h00 à 18h00.";
+            else message = "Le lundi, nous sommes ouverts de 09h30 a 12h00 et de 16h00 a 18h00.";
         } else if(day === 2) {
             if(time >= "08:30" && time <= "18:00") isValid = true;
-            else message = "Le mardi, nous sommes ouverts de 08h30 à 18h00.";
+            else message = "Le mardi, nous sommes ouverts de 08h30 a 18h00.";
         } else if(day === 3) {
             if(time >= "09:00" && time <= "18:00") isValid = true;
-            else message = "Le mercredi, nous sommes ouverts de 09h00 à 18h00.";
+            else message = "Le mercredi, nous sommes ouverts de 09h00 a 18h00.";
         } else if(day === 4) {
             if(time >= "08:30" && time <= "18:00") isValid = true;
-            else message = "Le jeudi, nous sommes ouverts de 08h30 à 18h00.";
+            else message = "Le jeudi, nous sommes ouverts de 08h30 a 18h00.";
         } else if(day === 5) {
             if(time >= "08:30" && time <= "18:00") isValid = true;
-            else message = "Le vendredi, nous sommes ouverts de 08h30 à 18h00.";
+            else message = "Le vendredi, nous sommes ouverts de 08h30 a 18h00.";
         } else if(day === 6) {
             if(time >= "10:00" && time <= "18:00") isValid = true;
-            else message = "Le samedi, nous sommes ouverts de 10h00 à 18h00.";
+            else message = "Le samedi, nous sommes ouverts de 10h00 a 18h00.";
         } else if(day === 0) {
             if(time >= "10:00" && time <= "15:00") isValid = true;
-            else message = "Le dimanche, nous sommes ouverts de 10h00 à 15h00.";
+            else message = "Le dimanche, nous sommes ouverts de 10h00 a 15h00.";
         }
-        
-        if(!isValid) {
-            timeInput.setCustomValidity(message);
-            timeInput.reportValidity();
-        } else {
-            timeInput.setCustomValidity("");
-        }
+        if(!isValid) { timeInput.setCustomValidity(message); timeInput.reportValidity(); }
+        else { timeInput.setCustomValidity(""); }
         return isValid;
     }
-
     function handleReservation(event) {
         event.preventDefault();
         if (!validateReservationTime()) return;
-        
-        const name = document.getElementById('resName').value;
-        const date = document.getElementById('resDate').value;
-        const time = document.getElementById('resTime').value;
-        const guests = document.getElementById('resGuests').value;
-        const contact = document.getElementById('resContact').value;
-        
-        const subject = encodeURIComponent("Réservation Brume Coffee - " + name);
-        const body = encodeURIComponent(
-            "Bonjour Olga,
-
-" +
-            "Je souhaite réserver une table chez Brume Coffee.
-
-" +
-            "Nom : " + name + "
-" +
-            "Date : " + date + "
-" +
-            "Heure : " + time + "
-" +
-            "Nombre de personnes : " + guests + "
-" +
-            "Contact : " + contact + "
-
-" +
-            "Merci beaucoup !
-" +
-            "À très vite chez Brume."
-        );
-        
+        var name = document.getElementById('resName').value;
+        var date = document.getElementById('resDate').value;
+        var time = document.getElementById('resTime').value;
+        var guests = document.getElementById('resGuests').value;
+        var contact = document.getElementById('resContact').value;
+        var subject = encodeURIComponent("Reservation Brume Coffee - " + name);
+        var nl = "\n";
+        var body = encodeURIComponent("Bonjour Olga," + nl + nl + "Je souhaite reserver une table chez Brume Coffee." + nl + nl + "Nom : " + name + nl + "Date : " + date + nl + "Heure : " + time + nl + "Nombre de personnes : " + guests + nl + "Contact : " + contact + nl + nl + "Merci beaucoup !" + nl + "A tres vite chez Brume.");
         window.location.href = "mailto:reservation@brume-coffee.fr?subject=" + subject + "&body=" + body;
-        
+        alert("Votre reservation a bien ete envoyee ! Nous vous attendons le " + date + " a " + time + ". A tres vite chez Brume !");
         closeReservation();
         document.getElementById('reservationForm').reset();
     }
-
     function showReservation(event) {
         if(event) event.preventDefault();
         const modal = document.getElementById('reservationModal');
         modal.classList.remove('hidden');
         modal.classList.add('flex');
-        setTimeout(() => {
+        setTimeout(function() {
             modal.classList.remove('opacity-0');
             modal.querySelector('div').classList.remove('scale-95');
         }, 10);
     }
-    
     function closeReservation() {
         const modal = document.getElementById('reservationModal');
         modal.classList.add('opacity-0');
         modal.querySelector('div').classList.add('scale-95');
-        setTimeout(() => {
+        setTimeout(function() {
             modal.classList.add('hidden');
             modal.classList.remove('flex');
         }, 300);
