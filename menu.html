@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,700;1,6..72,400;1,6..72,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-bright": "#fcf9f3",
+                    "secondary-fixed-dim": "#ffb597",
+                    "inverse-surface": "#31312d",
+                    "on-primary-container": "#c7e0bb",
+                    "surface": "#fcf9f3",
+                    "error": "#ba1a1a",
+                    "primary": "#384c31",
+                    "on-secondary-fixed-variant": "#6f381e",
+                    "tertiary": "#524343",
+                    "on-surface": "#1c1c18",
+                    "surface-container-low": "#f6f3ed",
+                    "surface-container-high": "#ebe8e2",
+                    "on-secondary-fixed": "#360f00",
+                    "secondary": "#8b4e33",
+                    "primary-fixed-dim": "#b6cdaa",
+                    "inverse-on-surface": "#f3f0ea",
+                    "background": "#fcf9f3",
+                    "on-error-container": "#93000a",
+                    "error-container": "#ffdad6",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-container": "#6a5b5b",
+                    "on-tertiary-fixed-variant": "#524343",
+                    "tertiary-fixed": "#f3dedd",
+                    "on-error": "#ffffff",
+                    "on-background": "#1c1c18",
+                    "surface-container-highest": "#e5e2dc",
+                    "outline-variant": "#c4c8be",
+                    "on-primary-fixed-variant": "#384c31",
+                    "inverse-primary": "#b6cdaa",
+                    "surface-variant": "#e5e2dc",
+                    "on-secondary-container": "#783f25",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed": "#d1eac5",
+                    "surface-dim": "#dcdad4",
+                    "surface-tint": "#4f6447",
+                    "on-tertiary-fixed": "#241919",
+                    "primary-container": "#4f6447",
+                    "outline": "#747870",
+                    "on-surface-variant": "#444840",
+                    "on-tertiary": "#ffffff",
+                    "surface-container": "#f0eee8",
+                    "secondary-container": "#feae8c",
+                    "on-primary-fixed": "#0d2009",
+                    "on-primary": "#ffffff",
+                    "tertiary-fixed-dim": "#d6c2c1",
+                    "on-tertiary-container": "#e9d4d3",
+                    "secondary-fixed": "#ffdbcd"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Newsreader"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #fcf9f3; color: #1c1c18; -webkit-font-smoothing: antialiased; }
+        .font-serif { font-family: 'Newsreader', serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-[#fcf9f3]/80 backdrop-blur-xl transition-all duration-300">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-8 py-6">
+<div class="font-serif text-2xl font-bold italic text-[#384c31]">Brume</div>
+<div class="hidden md:flex space-x-10 items-center">
+<a class="font-serif text-lg tracking-tight Newsreader text-[#384c31] border-b border-[#384c31] pb-1 hover:text-[#384c31] transition-colors duration-300" href="menu.html">Menu</a>
+<a class="font-serif text-lg tracking-tight Newsreader text-[#4f6447] hover:text-[#384c31] transition-colors duration-300" href="histoire.html">Notre Histoire</a>
+<a class="font-serif text-lg tracking-tight Newsreader text-[#4f6447] hover:text-[#384c31] transition-colors duration-300" href="galerie.html">Galerie</a>
+<a class="font-serif text-lg tracking-tight Newsreader text-[#4f6447] hover:text-[#384c31] transition-colors duration-300" href="visiter.html">Nous Visiter</a>
+</div>
+<a href="#" onclick="showReservation(event)" class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-medium hover:opacity-90 transition-opacity" style="display:flex; justify-content:center; align-items:center;">Réserver</a>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto">
+<!-- Hero Section -->
+<header class="mb-24 text-center">
+<span class="inline-block px-4 py-1 mb-6 text-xs uppercase tracking-widest bg-secondary-container text-on-secondary-container rounded-full font-label font-semibold">Fait maison avec amour</span>
+<h1 class="font-serif text-6xl md:text-8xl tracking-tight leading-tight mb-8">La Carte du Rituel</h1>
+<p class="font-body text-lg text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
+                Chaque boisson est une promesse de douceur. Nos ingrédients sont choisis avec tendresse, nos laits sont préparés chaque matin, et nos mélanges sont l'expression de notre savoir-faire artisanal.
+            </p>
+</header>
+<!-- Bento Layout for Categories -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-10">
+<!-- Category: Les Classiques (Large Image + List) -->
+<section class="md:col-span-8 bg-surface-container-low rounded-[2rem] p-8 md:p-12 overflow-hidden flex flex-col md:flex-row gap-12">
+<div class="md:w-1/2">
+<h2 class="font-serif text-4xl mb-8 border-b border-outline-variant pb-4">Les Douceurs du Matin</h2>
+<div class="space-y-6">
+<div class="flex justify-between items-baseline group">
+<div>
+<h3 class="font-serif text-xl group-hover:text-primary transition-colors">ESPRESSO</h3>
+<p class="text-sm text-on-surface-variant font-light italic">Double shot d'origine unique</p>
+</div>
+<span class="text-lg font-medium">2.8€</span>
+</div>
+<div class="flex justify-between items-baseline group">
+<div>
+<h3 class="font-serif text-xl group-hover:text-primary transition-colors">ALLONGE</h3>
+<p class="text-sm text-on-surface-variant font-light italic">Café noir doux et long</p>
+</div>
+<span class="text-lg font-medium">3.5€</span>
+</div>
+<div class="flex justify-between items-baseline group">
+<div>
+<h3 class="font-serif text-xl group-hover:text-primary transition-colors">LATTES CAPPUCCINO</h3>
+<p class="text-sm text-on-surface-variant font-light italic">Lait soyeux, micro-mousse</p>
+</div>
+<span class="text-lg font-medium">5.5€</span>
+</div>
+<div class="flex justify-between items-baseline group">
+<div>
+<h3 class="font-serif text-xl group-hover:text-primary transition-colors">MOCHA</h3>
+<p class="text-sm text-on-surface-variant font-light italic">Espresso et chocolat artisanal</p>
+</div>
+<span class="text-lg font-medium">5.5€</span>
+</div>
+<div class="flex justify-between items-baseline group">
+<div>
+<h3 class="font-serif text-xl group-hover:text-primary transition-colors">CHOCO</h3>
+<p class="text-sm text-on-surface-variant font-light italic">Chocolat chaud onctueux</p>
+</div>
+<span class="text-lg font-medium">6€</span>
+</div>
+</div>
+</div>
+<div class="md:w-1/2 relative h-64 md:h-auto">
+<img alt="Café latte avec latte art" class="absolute inset-0 w-full h-full object-cover rounded-xl shadow-sm" data-alt="close-up of a perfectly poured cafe latte with intricate heart-shaped latte art in a ceramic mug on a wooden table with soft side lighting" src="assets/latte_art.jpg"/>
+</div>
+</section>
+<!-- Category: Les Signatures (Vertical Card) -->
+<section class="md:col-span-4 bg-secondary-container rounded-[2rem] p-10 flex flex-col justify-between">
+<div>
+<h2 class="font-serif text-4xl mb-10 text-on-secondary-container leading-tight">Nos Signatures <br/><span class="italic opacity-80">Maison</span></h2>
+<div class="space-y-8">
+<div class="group">
+<div class="flex justify-between items-baseline mb-1">
+<h3 class="font-serif text-2xl text-on-secondary-container">MATCHA</h3>
+<span class="font-bold text-on-secondary-container">6€</span>
+</div>
+<p class="text-sm text-on-secondary-container opacity-80 leading-relaxed italic">Cérémonial de Kyoto, préparé au fouet bambou</p>
+</div>
+<div class="group">
+<div class="flex justify-between items-baseline mb-1">
+<h3 class="font-serif text-2xl text-on-secondary-container">CHAI</h3>
+<span class="font-bold text-on-secondary-container">6€</span>
+</div>
+<p class="text-sm text-on-secondary-container opacity-80 leading-relaxed italic">Infusion d'épices fraîches et miel bio</p>
+</div>
+<div class="group">
+<div class="flex justify-between items-baseline mb-1">
+<h3 class="font-serif text-2xl text-on-secondary-container">CARAMEL ROSE MATCHA</h3>
+<span class="font-bold text-on-secondary-container">6.8€</span>
+</div>
+<p class="text-sm text-on-secondary-container opacity-80 leading-relaxed italic">Sirop de rose maison, caramel de fleur de sel</p>
+</div>
+</div>
+</div>
+<div class="mt-12 bg-white/30 backdrop-blur-md p-6 rounded-2xl border border-white/20">
+<div class="flex items-center space-x-3 mb-2">
+<span class="material-symbols-outlined text-[#8b4e33]">nature_people</span>
+<p class="text-xs font-bold tracking-widest text-[#8b4e33] uppercase">Pour les Petits</p>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-serif text-xl text-[#360f00]">BABYCCINO</span>
+<span class="text-lg font-bold text-[#360f00]">2€</span>
+</div>
+</div>
+</section>
+<!-- Category: Glacés (Horizontal Minimalist Card) -->
+<section class="md:col-span-6 bg-surface-container-high rounded-[2rem] p-10">
+<div class="flex items-center justify-between mb-12">
+<h2 class="font-serif text-4xl">Fraîcheur &amp; Glace</h2>
+<span class="material-symbols-outlined text-3xl text-primary" data-icon="ac_unit">ac_unit</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-8">
+<div class="flex justify-between items-center border-b border-outline-variant/30 pb-4">
+<span class="font-body text-lg">ICED LATTE</span>
+<span class="font-medium">6€</span>
+</div>
+<div class="flex justify-between items-center border-b border-outline-variant/30 pb-4">
+<span class="font-body text-lg">LATTE GLACÉ SPÉCIAL</span>
+<span class="font-medium">5.5€</span>
+</div>
+<div class="flex justify-between items-center border-b border-outline-variant/30 pb-4">
+<span class="font-body text-lg">ICED MATCHA</span>
+<span class="font-medium">6€</span>
+</div>
+<div class="flex justify-between items-center border-b border-outline-variant/30 pb-4">
+<span class="font-body text-lg">THÉ GLACÉ</span>
+<span class="font-medium">4.5€</span>
+</div>
+</div>
+</section>
+<!-- Customizations (Tall Card with texture focus) -->
+<section class="md:col-span-6 bg-primary text-on-primary rounded-[2rem] p-10 flex flex-col md:flex-row items-center gap-10">
+<div class="flex-1">
+<h2 class="font-serif text-3xl mb-8 border-b border-on-primary-container pb-4">Selon vos envies</h2>
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="font-body font-light opacity-80">LAIT VEGE / SIROP MAISON</span>
+<span class="font-bold">+0.5€</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body font-light opacity-80">EXTRA ESPRESSO SHOT</span>
+<span class="font-bold">+1€</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body font-light opacity-80">CHANTILLY MAISON</span>
+<span class="font-bold">+1€</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body font-light opacity-80">PROTEINE / COLLAGENE</span>
+<span class="font-bold">+2€</span>
+</div>
+</div>
+</div>
+<div class="w-full md:w-48 h-48 rounded-full overflow-hidden border-4 border-primary-fixed">
+<img alt="Vapeur s'élevant d'un café" class="w-full h-full object-cover" data-alt="atmospheric close-up of steam rising gracefully from a hot drink in soft morning sunlight with wooden textures in the background" src="assets/matcha_brewing.jpg"/>
+</div>
+</section>
+</div>
+<!-- Footer Note -->
+<div class="mt-24 text-center">
+<div class="h-[1px] w-24 bg-outline-variant mx-auto mb-8"></div>
+<p class="font-serif text-2xl italic text-on-surface-variant">Tous nos produits sont confectionnés avec passion, <br/>directement dans notre atelier Brume.</p>
+</div>
+
+<!-- Google Maps Section -->
+<div class="mt-16 text-center max-w-xl mx-auto bg-surface-container-low p-8 rounded-2xl border border-outline-variant/20 hover:shadow-md transition-shadow">
+    <span class="material-symbols-outlined text-secondary text-4xl mb-4" data-icon="location_on">location_on</span>
+    <h3 class="font-serif text-2xl text-primary mb-2">Notre doux refuge</h3>
+    <p class="font-body text-on-surface-variant mb-6">2 Rue Camille Pelletan, 92300 Levallois-Perret</p>
+    <a href="https://maps.app.goo.gl/DxdbmxsdsEMXXF6B8" target="_blank" class="inline-flex items-center gap-2 bg-secondary text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">
+        <span class="material-symbols-outlined">map</span>
+        Voir sur Google Maps
+    </a>
+</div>
+
+</main>
+<!-- Footer Component -->
+<footer class="bg-[#f6f3ed] w-full py-12 px-8">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+<div class="font-serif text-xl text-[#384c31]">Brume</div>
+<div class="flex space-x-8">
+<a class="font-sans text-sm tracking-wide Inter text-[#384c31] opacity-60 hover:opacity-100 underline decoration-[#feae8c]" href="https://www.instagram.com/brume.levallois/" target="_blank">Instagram</a>
+<a class="font-sans text-sm tracking-wide Inter text-[#384c31] opacity-60 hover:opacity-100 underline decoration-[#feae8c]" href="mailto:contact@brume-coffee.fr">Contact</a>
+<a class="font-sans text-sm tracking-wide Inter text-[#384c31] opacity-60 hover:opacity-100 underline decoration-[#feae8c]" href="#" onclick="showMentionsLegales(event)">Mentions Légales</a>
+</div>
+<div class="font-sans text-sm tracking-wide Inter text-[#384c31] opacity-60">© 2026 Brume</div>
+</div>
+</footer>
+
+<!-- Mentions Légales Modal -->
+<div id="mentionsModal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 transition-opacity duration-300">
+    <div class="bg-surface p-8 md:p-12 rounded-2xl shadow-2xl max-w-2xl w-[90%] max-h-[80vh] overflow-y-auto transform scale-95 transition-transform duration-300">
+        <div class="flex justify-between items-start mb-6">
+            <h2 class="font-headline text-3xl text-primary italic">Mentions Légales</h2>
+            <button onclick="closeMentions()" class="text-on-surface-variant hover:text-primary transition-colors">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        <div class="space-y-4 font-body text-on-surface-variant text-sm md:text-base leading-relaxed">
+            <p><strong>Éditeur du site :</strong> Brume Coffee</p>
+            <p><strong>Responsable :</strong> Olga</p>
+            <p><strong>Adresse :</strong> 2 Rue Camille Pelletan, 92300 Levallois-Perret</p>
+            <p><strong>Téléphone :</strong> 07 00 00 00 00 (Numéro Fictif)</p>
+            <p><strong>Hébergement :</strong> Vercel Inc., 340 S Lemon Ave #4133 Walnut, CA 91789, USA.</p>
+            <p>Conformément à la loi "Informatique et Libertés", vous disposez d'un droit d'accès, de rectification et d'opposition aux données personnelles vous concernant.</p>
+        </div>
+        <div class="mt-8 pt-6 border-t border-secondary-container text-right">
+            <button onclick="closeMentions()" class="bg-primary text-on-primary px-6 py-2 rounded-lg font-medium hover:opacity-90 transition-opacity">Fermer</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showMentionsLegales(event) {
+        if(event) event.preventDefault();
+        const modal = document.getElementById('mentionsModal');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        setTimeout(() => {
+            modal.classList.remove('opacity-0');
+            modal.querySelector('div').classList.remove('scale-95');
+        }, 10);
+    }
+    
+    function closeMentions() {
+        const modal = document.getElementById('mentionsModal');
+        modal.classList.add('opacity-0');
+        modal.querySelector('div').classList.add('scale-95');
+        setTimeout(() => {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }, 300);
+    }
+</script>
+
+
+<!-- Reservation Modal -->
+<div id="reservationModal" class="fixed inset-0 z-[110] hidden items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 transition-opacity duration-300">
+    <div class="bg-surface p-8 md:p-12 rounded-2xl shadow-2xl max-w-lg w-[90%] max-h-[90vh] overflow-y-auto transform scale-95 transition-transform duration-300">
+        <div class="flex justify-between items-start mb-6">
+            <h2 class="font-headline text-3xl text-primary italic">Réserver une table</h2>
+            <button onclick="closeReservation()" class="text-on-surface-variant hover:text-primary transition-colors">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        <form class="space-y-4" id="reservationForm" onsubmit="handleReservation(event)">
+            <div>
+                <label class="block font-body text-sm font-medium text-on-surface-variant mb-1">Nom complet</label>
+                <input type="text" id="resName" required class="w-full rounded-lg border border-outline-variant/50 focus:border-primary focus:ring-primary bg-surface-container-low px-4 py-2.5" placeholder="Votre nom">
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="block font-body text-sm font-medium text-on-surface-variant mb-1">Date</label>
+                    <input type="date" id="resDate" required onchange="validateReservationTime()" class="w-full rounded-lg border border-outline-variant/50 focus:border-primary focus:ring-primary bg-surface-container-low px-4 py-2.5">
+                </div>
+                <div>
+                    <label class="block font-body text-sm font-medium text-on-surface-variant mb-1">Heure exacte</label>
+                    <input type="time" id="resTime" required onchange="validateReservationTime()" class="w-full rounded-lg border border-outline-variant/50 focus:border-primary focus:ring-primary bg-surface-container-low px-4 py-2.5">
+                </div>
+            </div>
+            <div>
+                <label class="block font-body text-sm font-medium text-on-surface-variant mb-1">Nombre de personnes</label>
+                <select id="resGuests" required class="w-full rounded-lg border border-outline-variant/50 focus:border-primary focus:ring-primary bg-surface-container-low px-4 py-2.5">
+                    <option value="1">1 personne</option>
+                    <option value="2" selected>2 personnes</option>
+                    <option value="3">3 personnes</option>
+                    <option value="4">4 personnes</option>
+                    <option value="5+">5+ personnes</option>
+                </select>
+            </div>
+            <div>
+                <label class="block font-body text-sm font-medium text-on-surface-variant mb-1">Téléphone / E-mail</label>
+                <input type="text" id="resContact" required class="w-full rounded-lg border border-outline-variant/50 focus:border-primary focus:ring-primary bg-surface-container-low px-4 py-2.5" placeholder="Pour vous contacter si besoin">
+            </div>
+            <div class="pt-4">
+                <button type="submit" class="w-full bg-primary text-on-primary px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">Confirmer la réservation</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    function validateReservationTime() {
+        const dateInput = document.getElementById('resDate');
+        const timeInput = document.getElementById('resTime');
+        if(!dateInput.value || !timeInput.value) return true;
+        
+        const date = new Date(dateInput.value + 'T00:00:00');
+        const day = date.getDay(); 
+        const time = timeInput.value; 
+        
+        let isValid = false;
+        let message = "Nous sommes fermés à cette heure.";
+        
+        if(day === 1) {
+            if((time >= "09:30" && time <= "12:00") || (time >= "16:00" && time <= "18:00")) isValid = true;
+            else message = "Le lundi, nous sommes ouverts de 09h30 à 12h00 et de 16h00 à 18h00.";
+        } else if(day === 2) {
+            if(time >= "08:30" && time <= "18:00") isValid = true;
+            else message = "Le mardi, nous sommes ouverts de 08h30 à 18h00.";
+        } else if(day === 3) {
+            if(time >= "09:00" && time <= "18:00") isValid = true;
+            else message = "Le mercredi, nous sommes ouverts de 09h00 à 18h00.";
+        } else if(day === 4) {
+            if(time >= "08:30" && time <= "18:00") isValid = true;
+            else message = "Le jeudi, nous sommes ouverts de 08h30 à 18h00.";
+        } else if(day === 5) {
+            if(time >= "08:30" && time <= "18:00") isValid = true;
+            else message = "Le vendredi, nous sommes ouverts de 08h30 à 18h00.";
+        } else if(day === 6) {
+            if(time >= "10:00" && time <= "18:00") isValid = true;
+            else message = "Le samedi, nous sommes ouverts de 10h00 à 18h00.";
+        } else if(day === 0) {
+            if(time >= "10:00" && time <= "15:00") isValid = true;
+            else message = "Le dimanche, nous sommes ouverts de 10h00 à 15h00.";
+        }
+        
+        if(!isValid) {
+            timeInput.setCustomValidity(message);
+            timeInput.reportValidity();
+        } else {
+            timeInput.setCustomValidity("");
+        }
+        return isValid;
+    }
+
+    function handleReservation(event) {
+        event.preventDefault();
+        if (!validateReservationTime()) return;
+        
+        const name = document.getElementById('resName').value;
+        const date = document.getElementById('resDate').value;
+        const time = document.getElementById('resTime').value;
+        const guests = document.getElementById('resGuests').value;
+        const contact = document.getElementById('resContact').value;
+        
+        const subject = encodeURIComponent("Réservation Brume Coffee - " + name);
+        const body = encodeURIComponent(
+            "Bonjour Olga,
+
+" +
+            "Je souhaite réserver une table chez Brume Coffee.
+
+" +
+            "Nom : " + name + "
+" +
+            "Date : " + date + "
+" +
+            "Heure : " + time + "
+" +
+            "Nombre de personnes : " + guests + "
+" +
+            "Contact : " + contact + "
+
+" +
+            "Merci beaucoup !
+" +
+            "À très vite chez Brume."
+        );
+        
+        window.location.href = "mailto:reservation@brume-coffee.fr?subject=" + subject + "&body=" + body;
+        
+        closeReservation();
+        document.getElementById('reservationForm').reset();
+    }
+
+    function showReservation(event) {
+        if(event) event.preventDefault();
+        const modal = document.getElementById('reservationModal');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        setTimeout(() => {
+            modal.classList.remove('opacity-0');
+            modal.querySelector('div').classList.remove('scale-95');
+        }, 10);
+    }
+    
+    function closeReservation() {
+        const modal = document.getElementById('reservationModal');
+        modal.classList.add('opacity-0');
+        modal.querySelector('div').classList.add('scale-95');
+        setTimeout(() => {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }, 300);
+    }
+</script>
+
+</body></html>

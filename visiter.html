@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300..800;1,300..800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-bright": "#fcf9f3",
+                    "secondary-fixed-dim": "#ffb597",
+                    "inverse-surface": "#31312d",
+                    "on-primary-container": "#c7e0bb",
+                    "surface": "#fcf9f3",
+                    "error": "#ba1a1a",
+                    "primary": "#384c31",
+                    "on-secondary-fixed-variant": "#6f381e",
+                    "tertiary": "#524343",
+                    "on-surface": "#1c1c18",
+                    "surface-container-low": "#f6f3ed",
+                    "surface-container-high": "#ebe8e2",
+                    "on-secondary-fixed": "#360f00",
+                    "secondary": "#8b4e33",
+                    "primary-fixed-dim": "#b6cdaa",
+                    "inverse-on-surface": "#f3f0ea",
+                    "background": "#fcf9f3",
+                    "on-error-container": "#93000a",
+                    "error-container": "#ffdad6",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-container": "#6a5b5b",
+                    "on-tertiary-fixed-variant": "#524343",
+                    "tertiary-fixed": "#f3dedd",
+                    "on-error": "#ffffff",
+                    "on-background": "#1c1c18",
+                    "surface-container-highest": "#e5e2dc",
+                    "outline-variant": "#c4c8be",
+                    "on-primary-fixed-variant": "#384c31",
+                    "inverse-primary": "#b6cdaa",
+                    "surface-variant": "#e5e2dc",
+                    "on-secondary-container": "#783f25",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed": "#d1eac5",
+                    "surface-dim": "#dcdad4",
+                    "surface-tint": "#4f6447",
+                    "on-tertiary-fixed": "#241919",
+                    "primary-container": "#4f6447",
+                    "outline": "#747870",
+                    "on-surface-variant": "#444840",
+                    "on-tertiary": "#ffffff",
+                    "surface-container": "#f0eee8",
+                    "secondary-container": "#feae8c",
+                    "on-primary-fixed": "#0d2009",
+                    "on-primary": "#ffffff",
+                    "tertiary-fixed-dim": "#d6c2c1",
+                    "on-tertiary-container": "#e9d4d3",
+                    "secondary-fixed": "#ffdbcd"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Newsreader", "serif"],
+                    "body": ["Inter", "sans-serif"],
+                    "label": ["Inter", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .serif-italic { font-family: 'Newsreader'; font-style: italic; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#fcf9f3]/80 dark:bg-[#1c1c18]/80 backdrop-blur-xl transition-all duration-300">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-8 py-6">
+<span class="font-serif text-2xl font-bold italic text-[#384c31] dark:text-[#fcf9f3]">Brume</span>
+<div class="hidden md:flex space-x-12 items-center">
+<a class="font-serif text-lg tracking-tight Newsreader text-[#4f6447] dark:text-[#c4c8be] hover:text-[#384c31] dark:hover:text-[#feae8c] transition-colors duration-300" href="menu.html">Menu</a>
+<a class="font-serif text-lg tracking-tight Newsreader text-[#4f6447] dark:text-[#c4c8be] hover:text-[#384c31] dark:hover:text-[#feae8c] transition-colors duration-300" href="histoire.html">Notre Histoire</a>
+<a class="font-serif text-lg tracking-tight Newsreader text-[#4f6447] dark:text-[#c4c8be] hover:text-[#384c31] dark:hover:text-[#feae8c] transition-colors duration-300" href="galerie.html">Galerie</a>
+<a class="font-serif text-lg tracking-tight Newsreader text-[#384c31] dark:text-[#feae8c] border-b border-[#384c31] dark:border-[#feae8c] pb-1" href="visiter.html">Nous Visiter</a>
+</div>
+<a href="#" onclick="showReservation(event)" class="bg-primary text-on-primary px-8 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity" style="display:flex; justify-content:center; align-items:center;">
+                Réserver
+            </a>
+</div>
+</nav>
+<main class="pt-32">
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-8 py-16 md:py-24">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7 space-y-8">
+<h1 class="text-6xl md:text-8xl font-headline tracking-tighter leading-none text-primary">
+                        Votre havre de <br/>
+<span class="serif-italic">paix vous attend.</span>
+</h1>
+<p class="text-xl md:text-2xl text-on-surface-variant font-light max-w-2xl leading-relaxed">
+                        Situé au cœur d’un quartier paisible, Brume est votre refuge quotidien. Nous vous accueillons avec une réelle joie, dans un espace pensé pour vous offrir chaleur, écoute et sérénité.
+                    </p>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="rounded-xl overflow-hidden aspect-[4/5] shadow-sm transform translate-x-4 translate-y-4 bg-surface-container-low">
+<img class="w-full h-full object-cover opacity-90 mix-blend-multiply" data-alt="Interior of a warm cafe with wooden tables, soft morning light filtering through linen curtains, and steam rising from a cup" src="assets/visiter_hero.jpg"/>
+</div>
+<div class="absolute inset-0 border border-outline-variant/20 rounded-xl -z-10 translate-x-0 translate-y-0"></div>
+</div>
+</div>
+</section>
+<!-- Address & Details (Bento-inspired asymmetric layout) -->
+<section class="bg-surface-container-low py-24">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Address Card -->
+<div class="md:col-span-2 bg-surface-container-lowest p-12 rounded-xl flex flex-col justify-between min-h-[400px]">
+<div class="space-y-4">
+<span class="inline-block px-4 py-1 rounded-full bg-secondary-container text-on-secondary-container text-xs font-semibold tracking-widest uppercase">Lieu de vie</span>
+<h2 class="text-4xl font-headline text-primary">Laissez-vous guider jusqu'à nous.</h2>
+<p class="text-3xl font-headline italic py-6">2 Rue Camille Pelletan,<br/>92300 Levallois-Perret</p>
+</div>
+<div class="flex items-center space-x-4 pt-8">
+<button class="flex items-center space-x-2 text-primary hover:text-secondary transition-colors font-medium">
+<span class="material-symbols-outlined">directions</span>
+<span>Venir nous voir sur Google Maps</span>
+</button>
+</div>
+</div>
+<!-- Map/Visual Anchor -->
+<div class="md:col-span-1 bg-surface-container-highest rounded-xl overflow-hidden relative group">
+<div class="absolute inset-0 bg-primary/5 group-hover:bg-transparent transition-colors z-10"></div>
+<img class="w-full h-full object-cover" data-alt="Minimalist artistic map showing the neighborhood of Levallois-Perret with soft muted earth tones" data-location="Levallois-Perret" src="assets/two_cups.jpg"/>
+</div>
+</div>
+</div>
+</section>
+<!-- The Ritual (Atmosphere) -->
+<section class="max-w-7xl mx-auto px-8 py-24">
+<div class="flex flex-col md:flex-row gap-16 items-start">
+<div class="w-full md:w-1/3">
+<img class="w-full aspect-[3/4] object-cover rounded-xl rounded-br-none" data-alt="Close-up of a smiling host pouring tea into a ceramic cup, warm natural lighting, soft focus background" src="assets/latte_art.jpg"/>
+</div>
+<div class="w-full md:w-2/3 space-y-12">
+<div class="space-y-6 max-w-xl">
+<h3 class="text-4xl font-headline text-primary">Une rencontre sincère.</h3>
+<p class="text-lg text-on-surface-variant leading-relaxed">
+                             Chez Brume, nous croyons à la beauté de l'accueil. Notre espace est une extension de notre propre maison, un lieu où la lumière et le silence s'unissent pour vous offrir un instant de calme absolu.
+                        </p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-8">
+<div class="space-y-3">
+<span class="material-symbols-outlined text-secondary text-3xl">schedule</span>
+<h4 class="font-bold text-primary mb-2">Horaires de douceur</h4>
+<table class="text-sm text-on-surface-variant w-full">
+    <tr><td class="py-0.5 pr-4">Lundi</td><td class="text-left">09:30–12:00, 16:00–18:00</td></tr>
+    <tr><td class="py-0.5 pr-4">Mardi</td><td class="text-left">08:30–18:00</td></tr>
+    <tr><td class="py-0.5 pr-4">Mercredi</td><td class="text-left">09:00–18:00</td></tr>
+    <tr><td class="py-0.5 pr-4">Jeudi</td><td class="text-left">08:30–18:00</td></tr>
+    <tr><td class="py-0.5 pr-4">Vendredi</td><td class="text-left">08:30–18:00</td></tr>
+    <tr><td class="py-0.5 pr-4">Samedi</td><td class="text-left">10:00–18:00</td></tr>
+    <tr><td class="py-0.5 pr-4">Dimanche</td><td class="text-left">10:00–15:00</td></tr>
+</table>
+</div>
+<div class="space-y-3">
+<span class="material-symbols-outlined text-secondary text-3xl">chat_bubble</span>
+<h4 class="font-bold text-primary">Échangeons</h4>
+<p class="text-sm text-on-surface-variant">bonjour@brume.fr<br/>+33 1 00 00 00 00</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter / Invitation -->
+<section class="mb-24 px-8">
+<div class="max-w-7xl mx-auto bg-[#384c31] rounded-xl p-16 text-center text-on-primary relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-[#4f6447] rounded-full blur-3xl opacity-20 -mr-32 -mt-32"></div>
+<div class="relative z-10 space-y-8 max-w-2xl mx-auto">
+<h2 class="text-5xl font-headline leading-tight">Recevez nos petites nouvelles pleines de douceur.</h2>
+                <form onsubmit="handleNewsletter(event)" class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <input id="newsletterEmail" class="bg-white/10 border-white/20 text-white placeholder:text-white/50 rounded-lg px-6 py-4 w-full sm:w-80 focus:ring-secondary-container" placeholder="Votre email" type="email" required/>
+                    <button type="submit" class="bg-secondary-container text-on-secondary-container px-8 py-4 rounded-lg font-semibold hover:bg-secondary-fixed transition-colors">S'inscrire</button>
+                </form>
+
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 bg-[#f6f3ed] dark:bg-[#1c1c18] border-t border-outline-variant/10">
+<div class="flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0 max-w-7xl mx-auto">
+<div class="space-y-2 text-center md:text-left">
+<span class="font-serif text-xl text-[#384c31] dark:text-[#fcf9f3]">Brume</span>
+<p class="font-sans text-sm tracking-wide Inter text-[#384c31] dark:text-[#fcf9f3] opacity-60">© 2026 Brume</p>
+</div>
+<div class="flex space-x-8">
+<a class="font-sans text-sm tracking-wide Inter text-[#384c31] dark:text-[#fcf9f3] opacity-60 hover:opacity-100 underline decoration-[#feae8c] transition-all" href="https://www.instagram.com/brume.levallois/" target="_blank">Instagram</a>
+<a class="font-sans text-sm tracking-wide Inter text-[#384c31] dark:text-[#fcf9f3] opacity-60 hover:opacity-100 underline decoration-[#feae8c] transition-all" href="mailto:contact@brume-coffee.fr">Contact</a>
+<a class="font-sans text-sm tracking-wide Inter text-[#384c31] dark:text-[#fcf9f3] opacity-60 hover:opacity-100 underline decoration-[#feae8c] transition-all" href="#" onclick="showMentionsLegales(event)">Mentions Légales</a>
+</div>
+</div>
+</footer>
+
+<!-- Mentions Légales Modal -->
+<div id="mentionsModal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 transition-opacity duration-300">
+    <div class="bg-surface p-8 md:p-12 rounded-2xl shadow-2xl max-w-2xl w-[90%] max-h-[80vh] overflow-y-auto transform scale-95 transition-transform duration-300">
+        <div class="flex justify-between items-start mb-6">
+            <h2 class="font-headline text-3xl text-primary italic">Mentions Légales</h2>
+            <button onclick="closeMentions()" class="text-on-surface-variant hover:text-primary transition-colors">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        <div class="space-y-4 font-body text-on-surface-variant text-sm md:text-base leading-relaxed">
+            <p><strong>Éditeur du site :</strong> Brume Coffee</p>
+            <p><strong>Responsable :</strong> Olga</p>
+            <p><strong>Adresse :</strong> 2 Rue Camille Pelletan, 92300 Levallois-Perret</p>
+            <p><strong>Téléphone :</strong> 07 00 00 00 00 (Numéro Fictif)</p>
+            <p><strong>Hébergement :</strong> Vercel Inc., 340 S Lemon Ave #4133 Walnut, CA 91789, USA.</p>
+            <p>Conformément à la loi "Informatique et Libertés", vous disposez d'un droit d'accès, de rectification et d'opposition aux données personnelles vous concernant.</p>
+        </div>
+        <div class="mt-8 pt-6 border-t border-secondary-container text-right">
+            <button onclick="closeMentions()" class="bg-primary text-on-primary px-6 py-2 rounded-lg font-medium hover:opacity-90 transition-opacity">Fermer</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showMentionsLegales(event) {
+        if(event) event.preventDefault();
+        const modal = document.getElementById('mentionsModal');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        setTimeout(() => {
+            modal.classList.remove('opacity-0');
+            modal.querySelector('div').classList.remove('scale-95');
+        }, 10);
+    }
+    
+    function closeMentions() {
+        const modal = document.getElementById('mentionsModal');
+        modal.classList.add('opacity-0');
+        modal.querySelector('div').classList.add('scale-95');
+        setTimeout(() => {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }, 300);
+    }
+</script>
+
+
+<!-- Reservation Modal -->
+<div id="reservationModal" class="fixed inset-0 z-[110] hidden items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 transition-opacity duration-300">
+    <div class="bg-surface p-8 md:p-12 rounded-2xl shadow-2xl max-w-lg w-[90%] max-h-[90vh] overflow-y-auto transform scale-95 transition-transform duration-300">
+        <div class="flex justify-between items-start mb-6">
+            <h2 class="font-headline text-3xl text-primary italic">Réserver une table</h2>
+            <button onclick="closeReservation()" class="text-on-surface-variant hover:text-primary transition-colors">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        <form class="space-y-4" id="reservationForm" onsubmit="handleReservation(event)">
+            <div>
+                <label class="block font-body text-sm font-medium text-on-surface-variant mb-1">Nom complet</label>
+                <input type="text" id="resName" required class="w-full rounded-lg border border-outline-variant/50 focus:border-primary focus:ring-primary bg-surface-container-low px-4 py-2.5" placeholder="Votre nom">
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="block font-body text-sm font-medium text-on-surface-variant mb-1">Date</label>
+                    <input type="date" id="resDate" required onchange="validateReservationTime()" class="w-full rounded-lg border border-outline-variant/50 focus:border-primary focus:ring-primary bg-surface-container-low px-4 py-2.5">
+                </div>
+                <div>
+                    <label class="block font-body text-sm font-medium text-on-surface-variant mb-1">Heure exacte</label>
+                    <input type="time" id="resTime" required onchange="validateReservationTime()" class="w-full rounded-lg border border-outline-variant/50 focus:border-primary focus:ring-primary bg-surface-container-low px-4 py-2.5">
+                </div>
+            </div>
+            <div>
+                <label class="block font-body text-sm font-medium text-on-surface-variant mb-1">Nombre de personnes</label>
+                <select id="resGuests" required class="w-full rounded-lg border border-outline-variant/50 focus:border-primary focus:ring-primary bg-surface-container-low px-4 py-2.5">
+                    <option value="1">1 personne</option>
+                    <option value="2" selected>2 personnes</option>
+                    <option value="3">3 personnes</option>
+                    <option value="4">4 personnes</option>
+                    <option value="5+">5+ personnes</option>
+                </select>
+            </div>
+            <div>
+                <label class="block font-body text-sm font-medium text-on-surface-variant mb-1">Téléphone / E-mail</label>
+                <input type="text" id="resContact" required class="w-full rounded-lg border border-outline-variant/50 focus:border-primary focus:ring-primary bg-surface-container-low px-4 py-2.5" placeholder="Pour vous contacter si besoin">
+            </div>
+            <div class="pt-4">
+                <button type="submit" class="w-full bg-primary text-on-primary px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">Confirmer la réservation</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    function validateReservationTime() {
+        const dateInput = document.getElementById('resDate');
+        const timeInput = document.getElementById('resTime');
+        if(!dateInput.value || !timeInput.value) return true;
+        
+        const date = new Date(dateInput.value + 'T00:00:00');
+        const day = date.getDay(); 
+        const time = timeInput.value; 
+        
+        let isValid = false;
+        let message = "Nous sommes fermés à cette heure.";
+        
+        if(day === 1) {
+            if((time >= "09:30" && time <= "12:00") || (time >= "16:00" && time <= "18:00")) isValid = true;
+            else message = "Le lundi, nous sommes ouverts de 09h30 à 12h00 et de 16h00 à 18h00.";
+        } else if(day === 2) {
+            if(time >= "08:30" && time <= "18:00") isValid = true;
+            else message = "Le mardi, nous sommes ouverts de 08h30 à 18h00.";
+        } else if(day === 3) {
+            if(time >= "09:00" && time <= "18:00") isValid = true;
+            else message = "Le mercredi, nous sommes ouverts de 09h00 à 18h00.";
+        } else if(day === 4) {
+            if(time >= "08:30" && time <= "18:00") isValid = true;
+            else message = "Le jeudi, nous sommes ouverts de 08h30 à 18h00.";
+        } else if(day === 5) {
+            if(time >= "08:30" && time <= "18:00") isValid = true;
+            else message = "Le vendredi, nous sommes ouverts de 08h30 à 18h00.";
+        } else if(day === 6) {
+            if(time >= "10:00" && time <= "18:00") isValid = true;
+            else message = "Le samedi, nous sommes ouverts de 10h00 à 18h00.";
+        } else if(day === 0) {
+            if(time >= "10:00" && time <= "15:00") isValid = true;
+            else message = "Le dimanche, nous sommes ouverts de 10h00 à 15h00.";
+        }
+        
+        if(!isValid) {
+            timeInput.setCustomValidity(message);
+            timeInput.reportValidity();
+        } else {
+            timeInput.setCustomValidity("");
+        }
+        return isValid;
+    }
+
+    function handleReservation(event) {
+        event.preventDefault();
+        if (!validateReservationTime()) return;
+        
+        const name = document.getElementById('resName').value;
+        const date = document.getElementById('resDate').value;
+        const time = document.getElementById('resTime').value;
+        const guests = document.getElementById('resGuests').value;
+        const contact = document.getElementById('resContact').value;
+        
+        const subject = encodeURIComponent("Réservation Brume Coffee - " + name);
+        const body = encodeURIComponent(
+            "Bonjour Olga,
+
+" +
+            "Je souhaite réserver une table chez Brume Coffee.
+
+" +
+            "Nom : " + name + "
+" +
+            "Date : " + date + "
+" +
+            "Heure : " + time + "
+" +
+            "Nombre de personnes : " + guests + "
+" +
+            "Contact : " + contact + "
+
+" +
+            "Merci beaucoup !
+" +
+            "À très vite chez Brume."
+        );
+        
+        window.location.href = "mailto:reservation@brume-coffee.fr?subject=" + subject + "&body=" + body;
+        
+        closeReservation();
+        document.getElementById('reservationForm').reset();
+    }
+
+    function showReservation(event) {
+        if(event) event.preventDefault();
+        const modal = document.getElementById('reservationModal');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        setTimeout(() => {
+            modal.classList.remove('opacity-0');
+            modal.querySelector('div').classList.remove('scale-95');
+        }, 10);
+    }
+    
+    function closeReservation() {
+        const modal = document.getElementById('reservationModal');
+        modal.classList.add('opacity-0');
+        modal.querySelector('div').classList.add('scale-95');
+        setTimeout(() => {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }, 300);
+    }
+</script>
+
+</body></html>
