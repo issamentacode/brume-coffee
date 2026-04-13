@@ -514,13 +514,38 @@
             var time = document.getElementById('resTime').value;
             var guests = document.getElementById('resGuests').value;
             var contact = document.getElementById('resContact').value;
-            var subject = encodeURIComponent("Reservation Brume Coffee - " + name);
-            var nl = "\n";
-            var body = encodeURIComponent("Bonjour Olga," + nl + nl + "Je souhaite réserver une table chez Brume Coffee." + nl + nl + "Nom : " + name + nl + "Date : " + date + nl + "Heure : " + time + nl + "Nombre de personnes : " + guests + nl + "Contact : " + contact + nl + nl + "Merci beaucoup !" + nl + "À très vite chez Brume.");
-            window.location.href = "mailto:essaievendredi123@gmail.com?subject=" + subject + "&body=" + body;
-            alert("Votre réservation a bien été envoyée ! Nous vous attendons le " + date + " a " + time + ". À très vite chez Brume !");
-            closeReservation();
-            document.getElementById('reservationForm').reset();
+            var btn = event.target.querySelector('button[type="submit"]');
+            btn.disabled = true;
+            btn.textContent = 'Envoi en cours…';
+            fetch('https://formsubmit.co/ajax/essaievendredi123@gmail.com', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify({
+                    _subject: '🌿 Nouvelle réservation — Brume Coffee',
+                    Nom: name,
+                    Date: date,
+                    Heure: time,
+                    'Nombre de personnes': guests,
+                    Contact: contact
+                })
+            })
+            .then(function(res) { return res.json(); })
+            .then(function() {
+                closeReservation();
+                document.getElementById('reservationForm').reset();
+                var toast = document.createElement('div');
+                toast.textContent = '✅ Réservation envoyée ! Nous vous attendons le ' + date + ' à ' + time + '. À très vite chez Brume !';
+                toast.style.cssText = 'position:fixed;bottom:32px;left:50%;transform:translateX(-50%);background:#384c31;color:#fff;padding:16px 28px;border-radius:12px;font-size:15px;z-index:9999;box-shadow:0 8px 32px rgba(0,0,0,0.18);max-width:90vw;text-align:center;';
+                document.body.appendChild(toast);
+                setTimeout(function() { toast.remove(); }, 5000);
+            })
+            .catch(function() {
+                alert('Une erreur est survenue. Veuillez réessayer ou nous appeler au 07 75 86 76 47.');
+            })
+            .finally(function() {
+                btn.disabled = false;
+                btn.textContent = 'Confirmer la réservation';
+            });
         }
         function showReservation(event) {
             if (event) event.preventDefault();
