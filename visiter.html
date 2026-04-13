@@ -5,7 +5,6 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300..800;1,300..800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
       tailwind.config = {
@@ -83,6 +82,27 @@
         .serif-italic { font-family: 'Newsreader'; font-style: italic; }
         .no-scrollbar::-webkit-scrollbar { display: none; }
     </style>
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website"/>
+    <meta property="og:locale" content="fr_FR"/>
+    <meta property="og:site_name" content="Brume Coffee"/>
+    <meta property="og:title" content="Brume — Votre cocon de douceur et de slow living"/>
+    <meta property="og:description" content="Café de spécialité, matcha de cérémonie et pâtisseries artisanales à Levallois-Perret. Un refuge pensé pour savourer l'instant présent."/>
+    <meta property="og:image" content="assets/brume_photo_5.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+
+<style>
+.brume-reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.brume-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+</style>
 </head>
 <body class="bg-surface text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
 <!-- Mobile Menu Overlay -->
@@ -150,11 +170,12 @@
 <p class="text-3xl font-headline italic py-6">2 Rue Camille Pelletan,<br/>92300 Levallois-Perret</p>
 </div>
 <div class="flex items-center space-x-4 pt-8">
-<button class="flex items-center space-x-2 text-primary hover:text-secondary transition-colors font-medium">
+<a href="https://maps.app.goo.gl/DxdbmxsdsEMXXF6B8" target="_blank" class="flex items-center space-x-2 text-primary hover:text-secondary transition-colors font-medium">
 <span class="material-symbols-outlined">directions</span>
 <span>Venir nous voir sur Google Maps</span>
-</button>
+</a>
 </div>
+
 </div>
 <!-- Map/Visual Anchor -->
 <div class="md:col-span-1 bg-surface-container-highest rounded-xl overflow-hidden relative group">
@@ -194,8 +215,9 @@
 <div class="space-y-3">
 <span class="material-symbols-outlined text-secondary text-3xl">chat_bubble</span>
 <h4 class="font-bold text-primary">Échangeons</h4>
-<p class="text-sm text-on-surface-variant">bonjour@brume.fr<br/>+33 1 00 00 00 00</p>
+<p class="text-sm text-on-surface-variant"><a href="mailto:essaievendredi123@gmail.com" class="hover:text-primary transition-colors">essaievendredi123@gmail.com</a><br/><a href="tel:+33775867647" class="hover:text-primary transition-colors">07 75 86 76 47</a></p>
 </div>
+
 </div>
 </div>
 </div>
@@ -216,17 +238,54 @@
 </section>
 </main>
 <!-- Footer -->
-<footer class="w-full py-12 px-8 bg-[#f6f3ed] dark:bg-[#1c1c18] border-t border-outline-variant/10">
-<div class="flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0 max-w-7xl mx-auto">
-<div class="space-y-2 text-center md:text-left">
-<span class="font-serif text-xl text-[#384c31] dark:text-[#fcf9f3]">Brume</span>
-<p class="font-sans text-sm tracking-wide Inter text-[#384c31] dark:text-[#fcf9f3] opacity-60">© 2026 Brume</p>
-</div>
-<div class="flex space-x-8">
-<a class="font-sans text-sm tracking-wide Inter text-[#384c31] dark:text-[#fcf9f3] opacity-60 hover:opacity-100 underline decoration-[#feae8c] transition-all" href="https://www.instagram.com/brume.levallois/" target="_blank">Instagram</a>
-<a class="font-sans text-sm tracking-wide Inter text-[#384c31] dark:text-[#fcf9f3] opacity-60 hover:opacity-100 underline decoration-[#feae8c] transition-all" href="mailto:contact@brume-coffee.fr">Contact</a>
-<a class="font-sans text-sm tracking-wide Inter text-[#384c31] dark:text-[#fcf9f3] opacity-60 hover:opacity-100 underline decoration-[#feae8c] transition-all" href="#" onclick="showMentionsLegales(event)">Mentions Légales</a>
-</div>
+<footer class="bg-[#f6f3ed] w-full pt-16 pb-8 px-8 border-t border-[#384c31]/10">
+<div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <!-- Brand -->
+        <div class="md:col-span-1 space-y-4">
+            <span class="font-serif text-2xl italic text-[#384c31] font-bold">Brume</span>
+            <p class="text-sm text-[#384c31]/60 leading-relaxed">Un cocon de douceur et de slow living au coeur de Levallois-Perret.</p>
+            <a href="https://www.instagram.com/brume.levallois/" target="_blank" class="inline-flex items-center gap-2 text-[#384c31]/70 hover:text-[#384c31] transition-colors text-sm font-medium">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                @brume.levallois
+            </a>
+        </div>
+        <!-- Navigation -->
+        <div class="space-y-4">
+            <h4 class="font-serif text-[#384c31] font-semibold text-sm uppercase tracking-widest">Pages</h4>
+            <nav class="flex flex-col space-y-2">
+                <a href="index.html" class="text-sm text-[#384c31]/60 hover:text-[#384c31] transition-colors">Accueil</a>
+                <a href="menu.html" class="text-sm text-[#384c31]/60 hover:text-[#384c31] transition-colors">La Carte</a>
+                <a href="histoire.html" class="text-sm text-[#384c31]/60 hover:text-[#384c31] transition-colors">Notre Histoire</a>
+                <a href="galerie.html" class="text-sm text-[#384c31]/60 hover:text-[#384c31] transition-colors">Galerie</a>
+                <a href="visiter.html" class="text-sm text-[#384c31]/60 hover:text-[#384c31] transition-colors">Nous Visiter</a>
+            </nav>
+        </div>
+        <!-- Hours -->
+        <div class="space-y-4">
+            <h4 class="font-serif text-[#384c31] font-semibold text-sm uppercase tracking-widest">Horaires</h4>
+            <table class="text-sm text-[#384c31]/60 w-full">
+                <tr><td class="pr-4 py-0.5">Lundi</td><td class="text-right">09:30–12:00, 16:00–18:00</td></tr>
+                <tr><td class="pr-4 py-0.5">Mardi – Vendredi</td><td class="text-right">08:30–18:00</td></tr>
+                <tr><td class="pr-4 py-0.5">Samedi</td><td class="text-right">10:00–18:00</td></tr>
+                <tr><td class="pr-4 py-0.5">Dimanche</td><td class="text-right">10:00–15:00</td></tr>
+            </table>
+        </div>
+        <!-- Contact -->
+        <div class="space-y-4">
+            <h4 class="font-serif text-[#384c31] font-semibold text-sm uppercase tracking-widest">Contact</h4>
+            <div class="text-sm text-[#384c31]/60 space-y-2">
+                <p>2 Rue Camille Pelletan<br/>92300 Levallois-Perret</p>
+                <p><a href="tel:+33775867647" class="hover:text-[#384c31] transition-colors">07 75 86 76 47</a></p>
+                <p><a href="mailto:essaievendredi123@gmail.com" class="hover:text-[#384c31] transition-colors">essaievendredi123@gmail.com</a></p>
+            </div>
+        </div>
+    </div>
+    <!-- Bottom bar -->
+    <div class="border-t border-[#384c31]/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <span class="text-xs text-[#384c31]/40">&copy; 2026 Brume Coffee — Levallois-Perret</span>
+        <a href="#" onclick="showMentionsLegales(event)" class="text-xs text-[#384c31]/40 hover:text-[#384c31]/80 underline decoration-[#feae8c] transition-colors">Mentions Légales</a>
+    </div>
 </div>
 </footer>
 
@@ -243,7 +302,7 @@
             <p><strong>Éditeur du site :</strong> Brume Coffee</p>
             <p><strong>Responsable :</strong> Olga</p>
             <p><strong>Adresse :</strong> 2 Rue Camille Pelletan, 92300 Levallois-Perret</p>
-            <p><strong>Téléphone :</strong> 07 00 00 00 00 (Numéro Fictif)</p>
+            <p><strong>Téléphone :</strong> 07 75 86 76 47</p>
             <p><strong>Hébergement :</strong> Vercel Inc., 340 S Lemon Ave #4133 Walnut, CA 91789, USA.</p>
             <p>Conformément à la loi "Informatique et Libertés", vous disposez d'un droit d'accès, de rectification et d'opposition aux données personnelles vous concernant.</p>
         </div>
@@ -281,7 +340,7 @@
 <div id="reservationModal" class="fixed inset-0 z-[110] hidden items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 transition-opacity duration-300">
     <div class="bg-surface p-8 md:p-12 rounded-2xl shadow-2xl max-w-lg w-[90%] max-h-[90vh] overflow-y-auto transform scale-95 transition-transform duration-300">
         <div class="flex justify-between items-start mb-6">
-            <h2 class="font-headline text-3xl text-primary italic">Reserver une table</h2>
+            <h2 class="font-headline text-3xl text-primary italic">Réserver une table</h2>
             <button onclick="closeReservation()" class="text-on-surface-variant hover:text-primary transition-colors">
                 <span class="material-symbols-outlined">close</span>
             </button>
@@ -312,11 +371,11 @@
                 </select>
             </div>
             <div>
-                <label class="block font-body text-sm font-medium text-on-surface-variant mb-1">Telephone / E-mail</label>
+                <label class="block font-body text-sm font-medium text-on-surface-variant mb-1">Téléphone / E-mail</label>
                 <input type="text" id="resContact" required class="w-full rounded-lg border border-outline-variant/50 focus:border-primary focus:ring-primary bg-surface-container-low px-4 py-2.5" placeholder="Pour vous contacter si besoin">
             </div>
             <div class="pt-4">
-                <button type="submit" class="w-full bg-primary text-on-primary px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">Confirmer la reservation</button>
+                <button type="submit" class="w-full bg-primary text-on-primary px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">Confirmer la réservation</button>
             </div>
         </form>
     </div>
@@ -331,28 +390,28 @@
         const day = date.getDay();
         const time = timeInput.value;
         let isValid = false;
-        let message = "Nous sommes fermes a cette heure.";
+        let message = "Nous sommes fermés à cette heure.";
         if(day === 1) {
             if((time >= "09:30" && time <= "12:00") || (time >= "16:00" && time <= "18:00")) isValid = true;
-            else message = "Le lundi, nous sommes ouverts de 09h30 a 12h00 et de 16h00 a 18h00.";
+            else message = "Le lundi, nous sommes ouverts de 09h30 à 12h00 et de 16h00 à 18h00.";
         } else if(day === 2) {
             if(time >= "08:30" && time <= "18:00") isValid = true;
-            else message = "Le mardi, nous sommes ouverts de 08h30 a 18h00.";
+            else message = "Le mardi, nous sommes ouverts de 08h30 à 18h00.";
         } else if(day === 3) {
             if(time >= "09:00" && time <= "18:00") isValid = true;
-            else message = "Le mercredi, nous sommes ouverts de 09h00 a 18h00.";
+            else message = "Le mercredi, nous sommes ouverts de 09h00 à 18h00.";
         } else if(day === 4) {
             if(time >= "08:30" && time <= "18:00") isValid = true;
-            else message = "Le jeudi, nous sommes ouverts de 08h30 a 18h00.";
+            else message = "Le jeudi, nous sommes ouverts de 08h30 à 18h00.";
         } else if(day === 5) {
             if(time >= "08:30" && time <= "18:00") isValid = true;
-            else message = "Le vendredi, nous sommes ouverts de 08h30 a 18h00.";
+            else message = "Le vendredi, nous sommes ouverts de 08h30 à 18h00.";
         } else if(day === 6) {
             if(time >= "10:00" && time <= "18:00") isValid = true;
-            else message = "Le samedi, nous sommes ouverts de 10h00 a 18h00.";
+            else message = "Le samedi, nous sommes ouverts de 10h00 à 18h00.";
         } else if(day === 0) {
             if(time >= "10:00" && time <= "15:00") isValid = true;
-            else message = "Le dimanche, nous sommes ouverts de 10h00 a 15h00.";
+            else message = "Le dimanche, nous sommes ouverts de 10h00 à 15h00.";
         }
         if(!isValid) { timeInput.setCustomValidity(message); timeInput.reportValidity(); }
         else { timeInput.setCustomValidity(""); }
@@ -368,9 +427,9 @@
         var contact = document.getElementById('resContact').value;
         var subject = encodeURIComponent("Reservation Brume Coffee - " + name);
         var nl = "\n";
-        var body = encodeURIComponent("Bonjour Olga," + nl + nl + "Je souhaite reserver une table chez Brume Coffee." + nl + nl + "Nom : " + name + nl + "Date : " + date + nl + "Heure : " + time + nl + "Nombre de personnes : " + guests + nl + "Contact : " + contact + nl + nl + "Merci beaucoup !" + nl + "A tres vite chez Brume.");
-        window.location.href = "mailto:reservation@brume-coffee.fr?subject=" + subject + "&body=" + body;
-        alert("Votre reservation a bien ete envoyee ! Nous vous attendons le " + date + " a " + time + ". A tres vite chez Brume !");
+        var body = encodeURIComponent("Bonjour Olga," + nl + nl + "Je souhaite réserver une table chez Brume Coffee." + nl + nl + "Nom : " + name + nl + "Date : " + date + nl + "Heure : " + time + nl + "Nombre de personnes : " + guests + nl + "Contact : " + contact + nl + nl + "Merci beaucoup !" + nl + "À très vite chez Brume.");
+        window.location.href = "mailto:essaievendredi123@gmail.com?subject=" + subject + "&body=" + body;
+        alert("Votre réservation a bien été envoyée ! Nous vous attendons le " + date + " a " + time + ". À très vite chez Brume !");
         closeReservation();
         document.getElementById('reservationForm').reset();
     }
@@ -412,4 +471,21 @@
     }
 </script>
 
+
+<script>
+/* Scroll Reveal Animation */
+(function(){
+    const observer = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+            if(entry.isIntersecting){
+                entry.target.classList.add('brume-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+    document.querySelectorAll('.brume-reveal').forEach(function(el){
+        observer.observe(el);
+    });
+})();
+</script>
 </body></html>
