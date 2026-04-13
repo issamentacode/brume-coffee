@@ -1,1031 +1,1316 @@
 <!DOCTYPE html>
 
-<html class="light" lang="fr"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "surface-bright": "#fcf9f3",
-                    "secondary-fixed-dim": "#ffb597",
-                    "inverse-surface": "#31312d",
-                    "on-primary-container": "#c7e0bb",
-                    "surface": "#fcf9f3",
-                    "error": "#ba1a1a",
-                    "primary": "#384c31",
-                    "on-secondary-fixed-variant": "#6f381e",
-                    "tertiary": "#524343",
-                    "on-surface": "#1c1c18",
-                    "surface-container-low": "#f6f3ed",
-                    "surface-container-high": "#ebe8e2",
-                    "on-secondary-fixed": "#360f00",
-                    "secondary": "#8b4e33",
-                    "primary-fixed-dim": "#b6cdaa",
-                    "inverse-on-surface": "#f3f0ea",
-                    "background": "#fcf9f3",
-                    "on-error-container": "#93000a",
-                    "error-container": "#ffdad6",
-                    "surface-container-lowest": "#ffffff",
-                    "tertiary-container": "#6a5b5b",
-                    "on-tertiary-fixed-variant": "#524343",
-                    "tertiary-fixed": "#f3dedd",
-                    "on-error": "#ffffff",
-                    "on-background": "#1c1c18",
-                    "surface-container-highest": "#e5e2dc",
-                    "outline-variant": "#c4c8be",
-                    "on-primary-fixed-variant": "#384c31",
-                    "inverse-primary": "#b6cdaa",
-                    "surface-variant": "#e5e2dc",
-                    "on-secondary-container": "#783f25",
-                    "on-secondary": "#ffffff",
-                    "primary-fixed": "#d1eac5",
-                    "surface-dim": "#dcdad4",
-                    "surface-tint": "#4f6447",
-                    "on-tertiary-fixed": "#241919",
-                    "primary-container": "#4f6447",
-                    "outline": "#747870",
-                    "on-surface-variant": "#444840",
-                    "on-tertiary": "#ffffff",
-                    "surface-container": "#f0eee8",
-                    "secondary-container": "#feae8c",
-                    "on-primary-fixed": "#0d2009",
-                    "on-primary": "#ffffff",
-                    "tertiary-fixed-dim": "#d6c2c1",
-                    "on-tertiary-container": "#e9d4d3",
-                    "secondary-fixed": "#ffdbcd"
+<html class="light" lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#fcf9f3",
+                        "secondary-fixed-dim": "#ffb597",
+                        "inverse-surface": "#31312d",
+                        "on-primary-container": "#c7e0bb",
+                        "surface": "#fcf9f3",
+                        "error": "#ba1a1a",
+                        "primary": "#384c31",
+                        "on-secondary-fixed-variant": "#6f381e",
+                        "tertiary": "#524343",
+                        "on-surface": "#1c1c18",
+                        "surface-container-low": "#f6f3ed",
+                        "surface-container-high": "#ebe8e2",
+                        "on-secondary-fixed": "#360f00",
+                        "secondary": "#8b4e33",
+                        "primary-fixed-dim": "#b6cdaa",
+                        "inverse-on-surface": "#f3f0ea",
+                        "background": "#fcf9f3",
+                        "on-error-container": "#93000a",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#6a5b5b",
+                        "on-tertiary-fixed-variant": "#524343",
+                        "tertiary-fixed": "#f3dedd",
+                        "on-error": "#ffffff",
+                        "on-background": "#1c1c18",
+                        "surface-container-highest": "#e5e2dc",
+                        "outline-variant": "#c4c8be",
+                        "on-primary-fixed-variant": "#384c31",
+                        "inverse-primary": "#b6cdaa",
+                        "surface-variant": "#e5e2dc",
+                        "on-secondary-container": "#783f25",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#d1eac5",
+                        "surface-dim": "#dcdad4",
+                        "surface-tint": "#4f6447",
+                        "on-tertiary-fixed": "#241919",
+                        "primary-container": "#4f6447",
+                        "outline": "#747870",
+                        "on-surface-variant": "#444840",
+                        "on-tertiary": "#ffffff",
+                        "surface-container": "#f0eee8",
+                        "secondary-container": "#feae8c",
+                        "on-primary-fixed": "#0d2009",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#d6c2c1",
+                        "on-tertiary-container": "#e9d4d3",
+                        "secondary-fixed": "#ffdbcd"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Newsreader", "serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                },
             },
-            "borderRadius": {
-                    "DEFAULT": "0.25rem",
-                    "lg": "0.5rem",
-                    "xl": "0.75rem",
-                    "full": "9999px"
-            },
-            "fontFamily": {
-                    "headline": ["Newsreader", "serif"],
-                    "body": ["Inter", "sans-serif"],
-                    "label": ["Inter", "sans-serif"]
-            }
-          },
-        },
-      }
+        }
     </script>
-<style>
-        body { background-color: #fcf9f3; color: #1c1c18; }
-        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
-        .glass-nav { backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); }
-        .newsreader { font-family: 'Newsreader', serif; }
-        .inter { font-family: 'Inter', sans-serif; }
+    <style>
+        body {
+            background-color: #fcf9f3;
+            color: #1c1c18;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-nav {
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+
+        .newsreader {
+            font-family: 'Newsreader', serif;
+        }
+
+        .inter {
+            font-family: 'Inter', sans-serif;
+        }
     </style>
 
-<style>
-/* Photo Stack - Apple Messages style */
-.photo-stack-container {
-    position: relative;
-    width: 280px;
-    height: 320px;
-    cursor: pointer;
-    margin: 0 auto;
-    perspective: 800px;
-}
-.photo-stack-container .stack-card {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 1rem;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-    border: 3px solid #fcf9f3;
-}
-.photo-stack-container .stack-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.photo-stack-container .stack-card:nth-child(1) { z-index: 5; transform: rotate(-2deg) translateY(0px); }
-.photo-stack-container .stack-card:nth-child(2) { z-index: 4; transform: rotate(3deg) translateY(8px) translateX(8px); }
-.photo-stack-container .stack-card:nth-child(3) { z-index: 3; transform: rotate(-4deg) translateY(16px) translateX(-6px); }
-.photo-stack-container .stack-card:nth-child(4) { z-index: 2; transform: rotate(2deg) translateY(24px) translateX(4px); }
-.photo-stack-container:hover .stack-card:nth-child(1) { transform: rotate(-6deg) translateY(-8px) scale(1.03); }
-.photo-stack-container:hover .stack-card:nth-child(2) { transform: rotate(6deg) translateY(12px) translateX(16px); }
-.photo-stack-container:hover .stack-card:nth-child(3) { transform: rotate(-8deg) translateY(24px) translateX(-14px); }
-.photo-stack-container:hover .stack-card:nth-child(4) { transform: rotate(5deg) translateY(32px) translateX(10px); }
-.photo-stack-label {
-    text-align: center;
-    margin-top: 3rem;
-    font-family: 'Newsreader', serif;
-    font-style: italic;
-    font-size: 1.25rem;
-    color: #384c31;
-}
-.photo-stack-count {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: #feae8c;
-    color: #360f00;
-    border-radius: 9999px;
-    width: 28px;
-    height: 28px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    font-family: 'Inter', sans-serif;
-    font-style: normal;
-    position: absolute;
-    top: -8px;
-    right: -8px;
-    z-index: 10;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-}
+    <style>
+        /* Photo Stack - Apple Messages style */
+        .photo-stack-container {
+            position: relative;
+            width: 280px;
+            height: 320px;
+            cursor: pointer;
+            margin: 0 auto;
+            perspective: 800px;
+        }
 
-/* Lightbox Gallery */
-.gallery-lightbox {
-    position: fixed;
-    inset: 0;
-    z-index: 200;
-    background: rgba(0,0,0,0.92);
-    backdrop-filter: blur(12px);
-    display: none;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    overflow-y: auto;
-    padding: 2rem;
-}
-.gallery-lightbox.active {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.gallery-lightbox.visible {
-    opacity: 1;
-}
-.gallery-lightbox .gallery-close {
-    position: fixed;
-    top: 1.5rem;
-    right: 1.5rem;
-    z-index: 210;
-    background: rgba(255,255,255,0.15);
-    backdrop-filter: blur(8px);
-    border: none;
-    color: white;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s;
-}
-.gallery-lightbox .gallery-close:hover {
-    background: rgba(255,255,255,0.3);
-    transform: rotate(90deg);
-}
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1rem;
-    max-width: 1200px;
-    width: 100%;
-    margin-top: 3rem;
-    padding-bottom: 3rem;
-}
-.gallery-grid img {
-    width: 100%;
-    aspect-ratio: 1;
-    object-fit: cover;
-    border-radius: 0.75rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    opacity: 0;
-    transform: scale(0.9);
-}
-.gallery-grid img.loaded {
-    opacity: 1;
-    transform: scale(1);
-}
-.gallery-grid img:hover {
-    transform: scale(1.03);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-}
-.gallery-lightbox h3 {
-    color: white;
-    font-family: 'Newsreader', serif;
-    font-size: 2rem;
-    font-style: italic;
-    margin-top: 4rem;
-}
-</style>
+        .photo-stack-container .stack-card {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border: 3px solid #fcf9f3;
+        }
+
+        .photo-stack-container .stack-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .photo-stack-container .stack-card:nth-child(1) {
+            z-index: 5;
+            transform: rotate(-2deg) translateY(0px);
+        }
+
+        .photo-stack-container .stack-card:nth-child(2) {
+            z-index: 4;
+            transform: rotate(3deg) translateY(8px) translateX(8px);
+        }
+
+        .photo-stack-container .stack-card:nth-child(3) {
+            z-index: 3;
+            transform: rotate(-4deg) translateY(16px) translateX(-6px);
+        }
+
+        .photo-stack-container .stack-card:nth-child(4) {
+            z-index: 2;
+            transform: rotate(2deg) translateY(24px) translateX(4px);
+        }
+
+        .photo-stack-container:hover .stack-card:nth-child(1) {
+            transform: rotate(-6deg) translateY(-8px) scale(1.03);
+        }
+
+        .photo-stack-container:hover .stack-card:nth-child(2) {
+            transform: rotate(6deg) translateY(12px) translateX(16px);
+        }
+
+        .photo-stack-container:hover .stack-card:nth-child(3) {
+            transform: rotate(-8deg) translateY(24px) translateX(-14px);
+        }
+
+        .photo-stack-container:hover .stack-card:nth-child(4) {
+            transform: rotate(5deg) translateY(32px) translateX(10px);
+        }
+
+        .photo-stack-label {
+            text-align: center;
+            margin-top: 3rem;
+            font-family: 'Newsreader', serif;
+            font-style: italic;
+            font-size: 1.25rem;
+            color: #384c31;
+        }
+
+        .photo-stack-count {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #feae8c;
+            color: #360f00;
+            border-radius: 9999px;
+            width: 28px;
+            height: 28px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+            font-style: normal;
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            z-index: 10;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Lightbox Gallery */
+        .gallery-lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 200;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(12px);
+            display: none;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            overflow-y: auto;
+            padding: 2rem;
+        }
+
+        .gallery-lightbox.active {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .gallery-lightbox.visible {
+            opacity: 1;
+        }
+
+        .gallery-lightbox .gallery-close {
+            position: fixed;
+            top: 1.5rem;
+            right: 1.5rem;
+            z-index: 210;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+            border: none;
+            color: white;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .gallery-lightbox .gallery-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+            max-width: 1200px;
+            width: 100%;
+            margin-top: 3rem;
+            padding-bottom: 3rem;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border-radius: 0.75rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        .gallery-grid img.loaded {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        .gallery-lightbox h3 {
+            color: white;
+            font-family: 'Newsreader', serif;
+            font-size: 2rem;
+            font-style: italic;
+            margin-top: 4rem;
+        }
+    </style>
 
 
     <!-- Open Graph / Social Sharing -->
-    <meta property="og:type" content="website"/>
-    <meta property="og:locale" content="fr_FR"/>
-    <meta property="og:site_name" content="Brume Coffee"/>
-    <meta property="og:title" content="Brume — Votre cocon de douceur et de slow living"/>
-    <meta property="og:description" content="Café de spécialité, matcha de cérémonie et pâtisseries artisanales à Levallois-Perret. Un refuge pensé pour savourer l'instant présent."/>
-    <meta property="og:image" content="assets/brume_photo_5.jpg"/>
-    <meta name="twitter:card" content="summary_large_image"/>
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Brume Coffee" />
+    <meta property="og:title" content="Brume — Votre cocon de douceur et de slow living" />
+    <meta property="og:description"
+        content="Café de spécialité, matcha de cérémonie et pâtisseries artisanales à Levallois-Perret. Un refuge pensé pour savourer l'instant présent." />
+    <meta property="og:image" content="assets/brume_photo_5.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
 
-<style>
-.brume-reveal {
-    opacity: 0;
-    transform: translateY(28px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-}
-.brume-visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-</style>
-</head>
-<body class="antialiased">
-<!-- Mobile Menu Overlay -->
-<div id="mobileMenu" class="fixed inset-0 z-40 bg-[#fcf9f3] dark:bg-[#1c1c18] flex flex-col items-center justify-center space-y-10 opacity-0 pointer-events-none transition-opacity duration-300">
-        <a class="font-serif text-4xl text-[#4f6447] dark:text-[#c4c8be] hover:text-[#384c31] dark:hover:text-[#feae8c] transition-colors duration-300" href="index.html">Accueil</a>
-        <a class="font-serif text-4xl text-[#4f6447] dark:text-[#c4c8be] hover:text-[#384c31] dark:hover:text-[#feae8c] transition-colors duration-300" href="menu.html">Menu</a>
-        <a class="font-serif text-4xl text-[#4f6447] dark:text-[#c4c8be] hover:text-[#384c31] dark:hover:text-[#feae8c] transition-colors duration-300" href="histoire.html">Notre Histoire</a>
-        <a class="font-serif text-4xl text-[#384c31] dark:text-[#feae8c] italic" href="galerie.html">Galerie</a>
-        <a class="font-serif text-4xl text-[#4f6447] dark:text-[#c4c8be] hover:text-[#384c31] dark:hover:text-[#feae8c] transition-colors duration-300" href="visiter.html">Nous Visiter</a>
-</div>
-
-<!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-[#fcf9f3]/85 dark:bg-[#1c1c18]/85 backdrop-blur-xl transition-all duration-300 shadow-sm border-b border-[#384c31]/5">
-    <div class="flex justify-between items-center max-w-7xl mx-auto px-6 md:px-8 py-4 md:py-6 relative">
-        <a class="font-serif text-2xl font-bold italic text-[#384c31] dark:text-[#fcf9f3] z-50 relative" href="index.html">Brume</a>
-        
-        <div class="hidden md:flex items-center space-x-12">
-            <a class="text-[#4f6447] dark:text-[#c4c8be] hover:text-[#384c31] dark:hover:text-[#feae8c] transition-colors duration-300 font-serif text-lg tracking-tight Newsreader" href="index.html">Accueil</a>
-            <a class="text-[#4f6447] dark:text-[#c4c8be] hover:text-[#384c31] dark:hover:text-[#feae8c] transition-colors duration-300 font-serif text-lg tracking-tight Newsreader" href="menu.html">Menu</a>
-            <a class="text-[#4f6447] dark:text-[#c4c8be] hover:text-[#384c31] dark:hover:text-[#feae8c] transition-colors duration-300 font-serif text-lg tracking-tight Newsreader" href="histoire.html">Notre Histoire</a>
-            <a class="text-[#384c31] dark:text-[#feae8c] border-b border-[#384c31] dark:border-[#feae8c] pb-1 font-serif text-lg tracking-tight Newsreader" href="galerie.html">Galerie</a>
-            <a class="text-[#4f6447] dark:text-[#c4c8be] hover:text-[#384c31] dark:hover:text-[#feae8c] transition-colors duration-300 font-serif text-lg tracking-tight Newsreader" href="visiter.html">Nous Visiter</a>
-        </div>
-        
-        <div class="flex items-center gap-4 z-50 relative">
-            <a href="#" onclick="showReservation(event)" class="bg-[#384c31] text-white px-5 md:px-8 py-2 md:py-2.5 rounded-lg font-body text-sm font-medium tracking-wide hover:opacity-90 transition-opacity" style="display:flex; justify-content:center; align-items:center;">
-                Réserver
-            </a>
-            <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="md:hidden text-[#384c31] dark:text-[#fcf9f3] p-1 focus:outline-none flex items-center justify-center" aria-label="Menu" style="width:40px; height:40px;">
-                <span class="material-symbols-outlined text-3xl menu-icon">menu</span>
-            </button>
-        </div>
-    </div>
-</nav>
-<main class="pt-32 pb-24">
-<!-- Hero Section -->
-<header class="max-w-7xl mx-auto px-8 mb-24">
-<div class="max-w-3xl">
-<h1 class="text-7xl md:text-8xl font-headline italic text-primary leading-[0.9] tracking-tighter mb-8">
-                    Instants de <br/>Douceur.
-                </h1>
-<p class="text-xl md:text-2xl font-body text-on-surface-variant leading-relaxed max-w-xl">
-                    Chaque image est un fragment de notre quotidien, un sourire partagé, une main qui crée avec amour. Soyez les bienvenus dans notre univers chaleureux.
-                </p>
-</div>
-</header>
-<!-- Asymmetric Editorial Gallery -->
-<section class="max-w-7xl mx-auto px-8">
-<div class="grid grid-cols-12 gap-y-24 md:gap-y-48 gap-x-8">
-<!-- Large Vertical Image & Quote -->
-<div class="col-span-12 md:col-span-7 relative">
-<div class="aspect-[4/5] rounded-xl overflow-hidden shadow-sm" style="border-bottom-right-radius: 0;">
-<img class="w-full h-full object-cover" data-alt="Close-up of artisan hands gently dusting flour over fresh bread dough in a sunlit rustic kitchen setting" src="assets/galerie_img1.jpg"/>
-</div>
-<div class="mt-8 md:absolute md:-right-16 md:bottom-24 md:w-80 bg-surface-container-lowest p-8 md:shadow-lg">
-<span class="block font-headline text-3xl italic text-secondary mb-4">"Le goût de l'authentique"</span>
-<p class="font-body text-sm text-on-surface-variant leading-relaxed">
-                            Le goût des choses vraies. Nos créations sont le fruit d'une passion sincère et d'une patience infinie.
-                        </p>
-</div>
-</div>
-<!-- Text Interstitial -->
-<div class="col-span-12 md:col-span-4 md:col-start-9 flex flex-col justify-center">
-<h2 class="font-headline text-4xl text-primary mb-6">Chaleur Humaine</h2>
-<p class="font-body text-lg text-on-surface-variant mb-8 leading-relaxed">
-                        Plus qu'un lieu, Brume est un refuge. Une table où l'on se retrouve, une parenthèse enchantée dans le tumulte du quotidien.
-                    </p>
-<div class="w-16 h-0.5 bg-secondary opacity-30"></div>
-</div>
-<!-- Bento Grid Layout for Smaller Moments -->
-<div class="col-span-12 grid grid-cols-1 md:grid-cols-3 gap-12">
-<!-- Image 10 -->
-<div class="flex flex-col">
-<div class="aspect-square bg-surface-container-low rounded-xl overflow-hidden mb-6">
-<img class="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700" data-alt="Warm intimate gathering of friends around a wooden table with soft candlelight and artisanal ceramic plates" src="assets/matcha_brewing.jpg"/>
-</div>
-<h3 class="font-headline text-2xl text-on-surface italic">Moments partagés</h3>
-<p class="font-body text-sm text-on-surface-variant mt-2">La douceur d'être ensemble.</p>
-</div>
-<!-- Decorative Text Block -->
-<div class="hidden md:flex flex-col justify-center items-center text-center p-8 border border-outline-variant/20 rounded-xl">
-<span class="material-symbols-outlined text-4xl text-secondary mb-4" data-icon="auto_awesome">auto_awesome</span>
-<p class="font-headline text-xl text-primary px-4 italic">"La simplicité est le luxe suprême."</p>
-</div>
-<!-- Image 11 -->
-<div class="flex flex-col">
-<div class="aspect-square bg-surface-container-low rounded-xl overflow-hidden mb-6" style="border-top-left-radius: 0;">
-<img class="w-full h-full object-cover" data-alt="Selection of homemade pastries and seasonal fruits arranged on a rustic linen tablecloth in natural morning light" src="assets/baristas.jpg"/>
-</div>
-<h3 class="font-headline text-2xl text-on-surface italic">Fait Maison</h3>
-<p class="font-body text-sm text-on-surface-variant mt-2">Des ingrédients locaux, un savoir-faire intact.</p>
-</div>
-</div>
-</div>
-</section>
-
-<!-- Avis Clients Section -->
-<section class="py-24 bg-surface-container-high overflow-hidden relative">
-    <div class="max-w-7xl mx-auto px-8 mb-16 text-center">
-        <h2 class="text-5xl font-headline text-primary italic mb-4">Vos Mots Doux</h2>
-        <p class="text-xl font-body text-on-surface-variant max-w-2xl mx-auto">Ceux qui en parlent le mieux, c'est vous.</p>
-    </div>
-    
     <style>
-        .marquee-wrapper { overflow: hidden; white-space: nowrap; width: 100%; position: relative; }
-        .marquee-content { display: inline-flex; flex-wrap: nowrap; width: max-content; animation: scroll-left 120s linear infinite; }
-        .marquee-content:hover { animation-play-state: paused; }
-        @keyframes scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-        .review-card {
-            flex: 0 0 auto; width: 350px; min-height: 220px; background: var(--surface, #fcf9f3); border-radius: 1rem;
-            padding: 2rem; margin-right: 1.5rem; white-space: normal; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); display: flex; flex-direction: column; justify-content: space-between;
+        .brume-reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .brume-visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
+</head>
 
-    
-    <div class="marquee-wrapper">
-                <div class="marquee-content">
-            <!-- Batch 1 -->
-            <div class="review-card">
-                <div class="flex items-center gap-1 mb-4 text-secondary-container">
-                    ★★★★★
-                </div>
-                <p class="font-body text-on-surface-variant italic mb-6">"J’ai découvert le matcha chez Brume pour la toute première fois… et j’ai adoré ! Très doux, bien équilibré, pas trop sucré… une super découverte. Les gâteaux faits maison sont aussi délicieux, on sent que tout est préparé avec soin."</p>
-                <div class="font-bold text-primary">- Lilia Mahfoudi</div>
+<body class="antialiased">
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenu"
+        class="fixed inset-0 z-40 bg-[#fcf9f3] dark:bg-[#1c1c18] flex flex-col items-center justify-center space-y-10 opacity-0 pointer-events-none transition-opacity duration-300">
+        <a class="font-serif text-4xl text-[#4f6447] dark:text-[#c4c8be] hover:text-[#384c31] dark:hover:text-[#feae8c] transition-colors duration-300"
+            href="index.html">Accueil</a>
+        <a class="font-serif text-4xl text-[#4f6447] dark:text-[#c4c8be] hover:text-[#384c31] dark:hover:text-[#feae8c] transition-colors duration-300"
+            href="menu.html">Menu</a>
+        <a class="font-serif text-4xl text-[#4f6447] dark:text-[#c4c8be] hover:text-[#384c31] dark:hover:text-[#feae8c] transition-colors duration-300"
+            href="histoire.html">Notre Histoire</a>
+        <a class="font-serif text-4xl text-[#384c31] dark:text-[#feae8c] italic" href="galerie.html">Galerie</a>
+        <a class="font-serif text-4xl text-[#4f6447] dark:text-[#c4c8be] hover:text-[#384c31] dark:hover:text-[#feae8c] transition-colors duration-300"
+            href="visiter.html">Nous Visiter</a>
+    </div>
+
+    <!-- TopNavBar -->
+    <nav
+        class="fixed top-0 w-full z-50 bg-[#fcf9f3]/85 dark:bg-[#1c1c18]/85 backdrop-blur-xl transition-all duration-300 shadow-sm border-b border-[#384c31]/5">
+        <div class="flex justify-between items-center max-w-7xl mx-auto px-6 md:px-8 py-4 md:py-6 relative">
+            <a class="font-serif text-2xl font-bold italic text-[#384c31] dark:text-[#fcf9f3] z-50 relative"
+                href="index.html">Brume</a>
+
+            <div class="hidden md:flex items-center space-x-12">
+                <a class="text-[#4f6447] dark:text-[#c4c8be] hover:text-[#384c31] dark:hover:text-[#feae8c] transition-colors duration-300 font-serif text-lg tracking-tight Newsreader"
+                    href="index.html">Accueil</a>
+                <a class="text-[#4f6447] dark:text-[#c4c8be] hover:text-[#384c31] dark:hover:text-[#feae8c] transition-colors duration-300 font-serif text-lg tracking-tight Newsreader"
+                    href="menu.html">Menu</a>
+                <a class="text-[#4f6447] dark:text-[#c4c8be] hover:text-[#384c31] dark:hover:text-[#feae8c] transition-colors duration-300 font-serif text-lg tracking-tight Newsreader"
+                    href="histoire.html">Notre Histoire</a>
+                <a class="text-[#384c31] dark:text-[#feae8c] border-b border-[#384c31] dark:border-[#feae8c] pb-1 font-serif text-lg tracking-tight Newsreader"
+                    href="galerie.html">Galerie</a>
+                <a class="text-[#4f6447] dark:text-[#c4c8be] hover:text-[#384c31] dark:hover:text-[#feae8c] transition-colors duration-300 font-serif text-lg tracking-tight Newsreader"
+                    href="visiter.html">Nous Visiter</a>
             </div>
-            <div class="review-card">
-                <div class="flex items-center gap-1 mb-4 text-secondary-container">
-                    ★★★★★
-                </div>
-                <p class="font-body text-on-surface-variant italic mb-6">"Very passionate and welcoming owner. I would recommend a trip to brume to anyone in the area! A cozy vibe and all handmade treats."</p>
-                <div class="font-bold text-primary">- Morgan Farley</div>
-            </div>
-            <div class="review-card">
-                <div class="flex items-center gap-1 mb-4 text-secondary-container">
-                    ★★★★★
-                </div>
-                <p class="font-body text-on-surface-variant italic mb-6">"Polecam , pyszna kawa , smaczna matcha , bardzo miła obsługa , uroczy lokal . 👌"</p>
-                <div class="font-bold text-primary">- Teresa Lorkiewicz</div>
-            </div>
-            <div class="review-card">
-                <div class="flex items-center gap-1 mb-4 text-secondary-container">
-                    ★★★★★
-                </div>
-                <p class="font-body text-on-surface-variant italic mb-6">"Sehr schönes Café. Tolle Matcha Latte und Kaffe ✨👌🏼"</p>
-                <div class="font-bold text-primary">- Nuria Catalán</div>
-            </div>
-            <div class="review-card">
-                <div class="flex items-center gap-1 mb-4 text-secondary-container">
-                    ★★★★★
-                </div>
-                <p class="font-body text-on-surface-variant italic mb-6">"Très bonne expérience chez Brume, le matcha au caramel était très bon (le sirop de caramel est fait maison !), et le carrot cake (maison aussi) était délicieux. Olga la gérante est très gentille et accueillante !"</p>
-                <div class="font-bold text-primary">- Juliette Valor</div>
-            </div>
-            <div class="review-card">
-                <div class="flex items-center gap-1 mb-4 text-secondary-container">
-                    ★★★★★
-                </div>
-                <p class="font-body text-on-surface-variant italic mb-6">"I love Japan culture. Matcha prepared very profesionally Taste lovely. 10/10"</p>
-                <div class="font-bold text-primary">- Milena</div>
-            </div>
-            <div class="review-card">
-                <div class="flex items-center gap-1 mb-4 text-secondary-container">
-                    ★★★★★
-                </div>
-                <p class="font-body text-on-surface-variant italic mb-6">"Super kawa. To jest ten smak :) Fajne, przyjazne miejsce na mapie Paryża. polecam"</p>
-                <div class="font-bold text-primary">- Grzegorz Dziechciarz</div>
-            </div>
-            <div class="review-card">
-                <div class="flex items-center gap-1 mb-4 text-secondary-container">
-                    ★★★★★
-                </div>
-                <p class="font-body text-on-surface-variant italic mb-6">"Excellent service and peaceful atmosphere, the owner told us the story of how they build the coffee shop and types of coffee. I highly recommend :)"</p>
-                <div class="font-bold text-primary">- Guillaume Fournier</div>
-            </div>
-            <div class="review-card">
-                <div class="flex items-center gap-1 mb-4 text-secondary-container">
-                    ★★★★★
-                </div>
-                <p class="font-body text-on-surface-variant italic mb-6">"Très bonne adresse, qui vient d’ouvrir. Le lieu est très cosy et les matchas délicieux ! Je reviendrai avec plaisir"</p>
-                <div class="font-bold text-primary">- Emi BECAERT</div>
-            </div>
-            <div class="review-card">
-                <div class="flex items-center gap-1 mb-4 text-secondary-container">
-                    ★★★★★
-                </div>
-                <p class="font-body text-on-surface-variant italic mb-6">"Matcha najwyższej jakości. Miałam okazję uczestniczyć w ich spotkaniu z dostawcą matchy prosto z ekologicznych plantacji z Japonii. Smak mówi sam za siebie. Polecam sprawdzić"</p>
-                <div class="font-bold text-primary">- Szczęście wPlecaku</div>
-            </div>
-            <div class="review-card">
-                <div class="flex items-center gap-1 mb-4 text-secondary-container">
-                    ★★★★★
-                </div>
-                <p class="font-body text-on-surface-variant italic mb-6">"Étant amatrice de matcha, celui-là je vous le conseille à 100% les yeux fermés. On sent bien le mélange sans avoir un goût d’herbe, l’ambiance est superbe avec de bonnes musiques relaxantes et le personnel est très agréable. Foncez !!!"</p>
-                <div class="font-bold text-primary">- Sara dumitrean</div>
-            </div>
-            <div class="review-card">
-                <div class="flex items-center gap-1 mb-4 text-secondary-container">
-                    ★★★★★
-                </div>
-                <p class="font-body text-on-surface-variant italic mb-6">"If you need a good matcha this is the only place in Paris you can get it 🥰🥰🥰😩"</p>
-                <div class="font-bold text-primary">- Joan Rwamba</div>
-            </div>
-            <div class="review-card">
-                <div class="flex items-center gap-1 mb-4 text-secondary-container">
-                    ★★★★★
-                </div>
-                <p class="font-body text-on-surface-variant italic mb-6">"Ważny punkt na mapie - zdecydowanie warto odwiedzić 🍵"</p>
-                <div class="font-bold text-primary">- Adrian Kiełtyka</div>
-            </div>
-            <div class="review-card">
-                <div class="flex items-center gap-1 mb-4 text-secondary-container">
-                    ★★★★★
-                </div>
-                <p class="font-body text-on-surface-variant italic mb-6">"Accueil très sympathique par cette jeune propriétaire et sa maman... Apparemment ils sont spécialisés dans la préparation du matcha, perso j’ai pris un cappuccino qui était très bon. Mention spéciale au gâteau à la clémentine!"</p>
-                <div class="font-bold text-primary">- Paola MANZONI</div>
-            </div>
-            <div class="review-card">
-                <div class="flex items-center gap-1 mb-4 text-secondary-container">
-                    ★★★★★
-                </div>
-                <p class="font-body text-on-surface-variant italic mb-6">"Super miejsce!! Polecam ♥️"</p>
-                <div class="font-bold text-primary">- Jull j</div>
-            </div>
-            <div class="review-card">
-                <div class="flex items-center gap-1 mb-4 text-secondary-container">
-                    ★★★★★
-                </div>
-                <p class="font-body text-on-surface-variant italic mb-6">"Very passionate owner, kind, cheerful and full of energy."</p>
-                <div class="font-bold text-primary">- Joshua Balata</div>
-            </div>
-            <div class="review-card">
-                <div class="flex items-center gap-1 mb-4 text-secondary-container">
-                    ★★★★★
-                </div>
-                <p class="font-body text-on-surface-variant italic mb-6">"Personnel adorable et chaleureuse. Il y a un grand choix de boisson qu'on ne voit pas à Levallois. Le matcha était doux et les patisseries très gourmands. Je recommande fortement pour un moment chill ☺️"</p>
-                <div class="font-bold text-primary">- Eloidee Fernando</div>
-            </div>
-            <div class="review-card">
-                <div class="flex items-center gap-1 mb-4 text-secondary-container">
-                    ★★★★★
-                </div>
-                <p class="font-body text-on-surface-variant italic mb-6">"Best Matcha in Paris."</p>
-                <div class="font-bold text-primary">- Michał Lupa</div>
-            </div>
-            
-            <!-- Batch 2 (Duplicate for continuous loop) -->
-            <div class="review-card">
-                <div class="flex items-center gap-1 mb-4 text-secondary-container">
-                    ★★★★★
-                </div>
-                <p class="font-body text-on-surface-variant italic mb-6">"J’ai découvert le matcha chez Brume pour la toute première fois… et j’ai adoré ! Très doux, bien équilibré, pas trop sucré… une super découverte. Les gâteaux faits maison sont aussi délicieux, on sent que tout est préparé avec soin."</p>
-                <div class="font-bold text-primary">- Lilia Mahfoudi</div>
-            </div>
-            <div class="review-card">
-                <div class="flex items-center gap-1 mb-4 text-secondary-container">
-                    ★★★★★
-                </div>
-                <p class="font-body text-on-surface-variant italic mb-6">"Very passionate and welcoming owner. I would recommend a trip to brume to anyone in the area! A cozy vibe and all handmade treats."</p>
-                <div class="font-bold text-primary">- Morgan Farley</div>
-            </div>
-            <div class="review-card">
-                <div class="flex items-center gap-1 mb-4 text-secondary-container">
-                    ★★★★★
-                </div>
-                <p class="font-body text-on-surface-variant italic mb-6">"Polecam , pyszna kawa , smaczna matcha , bardzo miła obsługa , uroczy lokal . 👌"</p>
-                <div class="font-bold text-primary">- Teresa Lorkiewicz</div>
-            </div>
-            <div class="review-card">
-                <div class="flex items-center gap-1 mb-4 text-secondary-container">
-                    ★★★★★
-                </div>
-                <p class="font-body text-on-surface-variant italic mb-6">"Sehr schönes Café. Tolle Matcha Latte und Kaffe ✨👌🏼"</p>
-                <div class="font-bold text-primary">- Nuria Catalán</div>
-            </div>
-            <div class="review-card">
-                <div class="flex items-center gap-1 mb-4 text-secondary-container">
-                    ★★★★★
-                </div>
-                <p class="font-body text-on-surface-variant italic mb-6">"Très bonne expérience chez Brume, le matcha au caramel était très bon (le sirop de caramel est fait maison !), et le carrot cake (maison aussi) était délicieux. Olga la gérante est très gentille et accueillante !"</p>
-                <div class="font-bold text-primary">- Juliette Valor</div>
-            </div>
-            <div class="review-card">
-                <div class="flex items-center gap-1 mb-4 text-secondary-container">
-                    ★★★★★
-                </div>
-                <p class="font-body text-on-surface-variant italic mb-6">"I love Japan culture. Matcha prepared very profesionally Taste lovely. 10/10"</p>
-                <div class="font-bold text-primary">- Milena</div>
-            </div>
-            <div class="review-card">
-                <div class="flex items-center gap-1 mb-4 text-secondary-container">
-                    ★★★★★
-                </div>
-                <p class="font-body text-on-surface-variant italic mb-6">"Super kawa. To jest ten smak :) Fajne, przyjazne miejsce na mapie Paryża. polecam"</p>
-                <div class="font-bold text-primary">- Grzegorz Dziechciarz</div>
-            </div>
-            <div class="review-card">
-                <div class="flex items-center gap-1 mb-4 text-secondary-container">
-                    ★★★★★
-                </div>
-                <p class="font-body text-on-surface-variant italic mb-6">"Excellent service and peaceful atmosphere, the owner told us the story of how they build the coffee shop and types of coffee. I highly recommend :)"</p>
-                <div class="font-bold text-primary">- Guillaume Fournier</div>
-            </div>
-            <div class="review-card">
-                <div class="flex items-center gap-1 mb-4 text-secondary-container">
-                    ★★★★★
-                </div>
-                <p class="font-body text-on-surface-variant italic mb-6">"Très bonne adresse, qui vient d’ouvrir. Le lieu est très cosy et les matchas délicieux ! Je reviendrai avec plaisir"</p>
-                <div class="font-bold text-primary">- Emi BECAERT</div>
-            </div>
-            <div class="review-card">
-                <div class="flex items-center gap-1 mb-4 text-secondary-container">
-                    ★★★★★
-                </div>
-                <p class="font-body text-on-surface-variant italic mb-6">"Matcha najwyższej jakości. Miałam okazję uczestniczyć w ich spotkaniu z dostawcą matchy prosto z ekologicznych plantacji z Japonii. Smak mówi sam za siebie. Polecam sprawdzić"</p>
-                <div class="font-bold text-primary">- Szczęście wPlecaku</div>
-            </div>
-            <div class="review-card">
-                <div class="flex items-center gap-1 mb-4 text-secondary-container">
-                    ★★★★★
-                </div>
-                <p class="font-body text-on-surface-variant italic mb-6">"Étant amatrice de matcha, celui-là je vous le conseille à 100% les yeux fermés. On sent bien le mélange sans avoir un goût d’herbe, l’ambiance est superbe avec de bonnes musiques relaxantes et le personnel est très agréable. Foncez !!!"</p>
-                <div class="font-bold text-primary">- Sara dumitrean</div>
-            </div>
-            <div class="review-card">
-                <div class="flex items-center gap-1 mb-4 text-secondary-container">
-                    ★★★★★
-                </div>
-                <p class="font-body text-on-surface-variant italic mb-6">"If you need a good matcha this is the only place in Paris you can get it 🥰🥰🥰😩"</p>
-                <div class="font-bold text-primary">- Joan Rwamba</div>
-            </div>
-            <div class="review-card">
-                <div class="flex items-center gap-1 mb-4 text-secondary-container">
-                    ★★★★★
-                </div>
-                <p class="font-body text-on-surface-variant italic mb-6">"Ważny punkt na mapie - zdecydowanie warto odwiedzić 🍵"</p>
-                <div class="font-bold text-primary">- Adrian Kiełtyka</div>
-            </div>
-            <div class="review-card">
-                <div class="flex items-center gap-1 mb-4 text-secondary-container">
-                    ★★★★★
-                </div>
-                <p class="font-body text-on-surface-variant italic mb-6">"Accueil très sympathique par cette jeune propriétaire et sa maman... Apparemment ils sont spécialisés dans la préparation du matcha, perso j’ai pris un cappuccino qui était très bon. Mention spéciale au gâteau à la clémentine!"</p>
-                <div class="font-bold text-primary">- Paola MANZONI</div>
-            </div>
-            <div class="review-card">
-                <div class="flex items-center gap-1 mb-4 text-secondary-container">
-                    ★★★★★
-                </div>
-                <p class="font-body text-on-surface-variant italic mb-6">"Super miejsce!! Polecam ♥️"</p>
-                <div class="font-bold text-primary">- Jull j</div>
-            </div>
-            <div class="review-card">
-                <div class="flex items-center gap-1 mb-4 text-secondary-container">
-                    ★★★★★
-                </div>
-                <p class="font-body text-on-surface-variant italic mb-6">"Very passionate owner, kind, cheerful and full of energy."</p>
-                <div class="font-bold text-primary">- Joshua Balata</div>
-            </div>
-            <div class="review-card">
-                <div class="flex items-center gap-1 mb-4 text-secondary-container">
-                    ★★★★★
-                </div>
-                <p class="font-body text-on-surface-variant italic mb-6">"Personnel adorable et chaleureuse. Il y a un grand choix de boisson qu'on ne voit pas à Levallois. Le matcha était doux et les patisseries très gourmands. Je recommande fortement pour un moment chill ☺️"</p>
-                <div class="font-bold text-primary">- Eloidee Fernando</div>
-            </div>
-            <div class="review-card">
-                <div class="flex items-center gap-1 mb-4 text-secondary-container">
-                    ★★★★★
-                </div>
-                <p class="font-body text-on-surface-variant italic mb-6">"Best Matcha in Paris."</p>
-                <div class="font-bold text-primary">- Michał Lupa</div>
+
+            <div class="flex items-center gap-4 z-50 relative">
+                <a href="#" onclick="showReservation(event)"
+                    class="bg-[#384c31] text-white px-5 md:px-8 py-2 md:py-2.5 rounded-lg font-body text-sm font-medium tracking-wide hover:opacity-90 transition-opacity"
+                    style="display:flex; justify-content:center; align-items:center;">
+                    Réserver
+                </a>
+                <button id="mobileMenuBtn" onclick="toggleMobileMenu()"
+                    class="md:hidden text-[#384c31] dark:text-[#fcf9f3] p-1 focus:outline-none flex items-center justify-center"
+                    aria-label="Menu" style="width:40px; height:40px;">
+                    <span class="material-symbols-outlined text-3xl menu-icon">menu</span>
+                </button>
             </div>
         </div>
-</div>
-            
-</section>
+    </nav>
+    <main class="pt-32 pb-24">
+        <!-- Hero Section -->
+        <header class="max-w-7xl mx-auto px-8 mb-24">
+            <div class="max-w-3xl">
+                <h1 class="text-7xl md:text-8xl font-headline italic text-primary leading-[0.9] tracking-tighter mb-8">
+                    Instants de <br />Douceur.
+                </h1>
+                <p class="text-xl md:text-2xl font-body text-on-surface-variant leading-relaxed max-w-xl">
+                    Chaque image est un fragment de notre quotidien, un sourire partagé, une main qui crée avec amour.
+                    Soyez les bienvenus dans notre univers chaleureux.
+                </p>
+            </div>
+        </header>
+        <!-- Asymmetric Editorial Gallery -->
+        <section class="max-w-7xl mx-auto px-8">
+            <div class="grid grid-cols-12 gap-y-24 md:gap-y-48 gap-x-8">
+                <!-- Large Vertical Image & Quote -->
+                <div class="col-span-12 md:col-span-7 relative">
+                    <div class="aspect-[4/5] rounded-xl overflow-hidden shadow-sm"
+                        style="border-bottom-right-radius: 0;">
+                        <img class="w-full h-full object-cover"
+                            data-alt="Close-up of artisan hands gently dusting flour over fresh bread dough in a sunlit rustic kitchen setting"
+                            src="assets/galerie_img1.jpg" />
+                    </div>
+                    <div
+                        class="mt-8 md:absolute md:-right-16 md:bottom-24 md:w-80 bg-surface-container-lowest p-8 md:shadow-lg">
+                        <span class="block font-headline text-3xl italic text-secondary mb-4">"Le goût de
+                            l'authentique"</span>
+                        <p class="font-body text-sm text-on-surface-variant leading-relaxed">
+                            Le goût des choses vraies. Nos créations sont le fruit d'une passion sincère et d'une
+                            patience infinie.
+                        </p>
+                    </div>
+                </div>
+                <!-- Text Interstitial -->
+                <div class="col-span-12 md:col-span-4 md:col-start-9 flex flex-col justify-center">
+                    <h2 class="font-headline text-4xl text-primary mb-6">Chaleur Humaine</h2>
+                    <p class="font-body text-lg text-on-surface-variant mb-8 leading-relaxed">
+                        Plus qu'un lieu, Brume est un refuge. Une table où l'on se retrouve, une parenthèse enchantée
+                        dans le tumulte du quotidien.
+                    </p>
+                    <div class="w-16 h-0.5 bg-secondary opacity-30"></div>
+                </div>
+                <!-- Bento Grid Layout for Smaller Moments -->
+                <div class="col-span-12 grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <!-- Image 10 -->
+                    <div class="flex flex-col">
+                        <div class="aspect-square bg-surface-container-low rounded-xl overflow-hidden mb-6">
+                            <img class="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700"
+                                data-alt="Warm intimate gathering of friends around a wooden table with soft candlelight and artisanal ceramic plates"
+                                src="assets/matcha_brewing.jpg" />
+                        </div>
+                        <h3 class="font-headline text-2xl text-on-surface italic">Moments partagés</h3>
+                        <p class="font-body text-sm text-on-surface-variant mt-2">La douceur d'être ensemble.</p>
+                    </div>
+                    <!-- Decorative Text Block -->
+                    <div
+                        class="hidden md:flex flex-col justify-center items-center text-center p-8 border border-outline-variant/20 rounded-xl">
+                        <span class="material-symbols-outlined text-4xl text-secondary mb-4"
+                            data-icon="auto_awesome">auto_awesome</span>
+                        <p class="font-headline text-xl text-primary px-4 italic">"La simplicité est le luxe suprême."
+                        </p>
+                    </div>
+                    <!-- Image 11 -->
+                    <div class="flex flex-col">
+                        <div class="aspect-square bg-surface-container-low rounded-xl overflow-hidden mb-6"
+                            style="border-top-left-radius: 0;">
+                            <img class="w-full h-full object-cover"
+                                data-alt="Selection of homemade pastries and seasonal fruits arranged on a rustic linen tablecloth in natural morning light"
+                                src="assets/baristas.jpg" />
+                        </div>
+                        <h3 class="font-headline text-2xl text-on-surface italic">Fait Maison</h3>
+                        <p class="font-body text-sm text-on-surface-variant mt-2">Des ingrédients locaux, un
+                            savoir-faire intact.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<section class="max-w-7xl mx-auto px-8 mt-24 md:mt-48">
-<div class="grid grid-cols-12 gap-y-24 md:gap-y-48 gap-x-8">
-<!-- Signature Editorial Section -->
-<div class="col-span-12 bg-surface-container-low p-12 md:p-24 rounded-3xl grid md:grid-cols-2 gap-16 items-center">
-<div>
-<h2 class="font-headline text-5xl text-primary leading-tight mb-8 italic">Une atmosphère, <br/>une émotion.</h2>
-<div class="space-y-12">
-<div class="flex gap-6">
-<span class="font-headline text-4xl text-secondary opacity-50 italic">01</span>
-<div>
-<h4 class="font-body font-semibold text-on-surface mb-2">La Tendresse</h4>
-<p class="font-body text-on-surface-variant leading-relaxed">Un accueil doux dès le seuil de la porte, une attention sincère pour que vous vous sentiez ici chez vous.</p>
-</div>
-</div>
-<div class="flex gap-6">
-<span class="font-headline text-4xl text-secondary opacity-50 italic">02</span>
-<div>
-<h4 class="font-body font-semibold text-on-surface mb-2">La transmission</h4>
-<p class="font-body text-on-surface-variant leading-relaxed">Chaque préparation porte une histoire, transmise avec émotion par nos artisans passionnés.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="relative h-full min-h-[400px] rounded-2xl overflow-hidden group">
-<div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-500"></div>
-<img class="w-full h-full object-cover" data-alt="Atmospheric detail shot of a sun-drenched wooden interior with steam rising and soft shadows" src="assets/galerie_img2.jpg"/>
-<div class="absolute inset-0 flex items-center justify-center">
-<a href="#" onclick="event.preventDefault(); openGalleryLightbox();" class="bg-surface-bright/90 backdrop-blur-md p-6 rounded-full shadow-lg group-hover:scale-110 transition-transform cursor-pointer flex items-center justify-center">
-<span class="material-symbols-outlined text-primary text-3xl" data-icon="play_arrow" data-weight="fill">play_arrow</span>
-</a>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Journal CTA -->
-<section class="max-w-7xl mx-auto px-8 mt-48 text-center">
-<div class="inline-block px-6 py-2 border border-outline-variant/30 rounded-full mb-8">
-<span class="font-body text-xs uppercase tracking-[0.2em] text-on-surface-variant">Rejoignez l'expérience</span>
-</div>
-<h2 class="font-headline text-6xl text-primary italic mb-12">Vivez l'instant présent.</h2>
-<button onclick="showReservation(event)" class="bg-primary text-on-primary px-12 py-4 rounded-lg font-body font-medium hover:opacity-90 transition-all transform hover:-translate-y-1">
+        <!-- Avis Clients Section -->
+        <section class="py-24 bg-surface-container-high overflow-hidden relative">
+            <div class="max-w-7xl mx-auto px-8 mb-16 text-center">
+                <h2 class="text-5xl font-headline text-primary italic mb-4">Vos Mots Doux</h2>
+                <p class="text-xl font-body text-on-surface-variant max-w-2xl mx-auto">Ceux qui en parlent le mieux,
+                    c'est vous.</p>
+            </div>
+
+            <style>
+                .marquee-wrapper {
+                    overflow: hidden;
+                    white-space: nowrap;
+                    width: 100%;
+                    position: relative;
+                }
+
+                .marquee-content {
+                    display: inline-flex;
+                    flex-wrap: nowrap;
+                    width: max-content;
+                    animation: scroll-left 120s linear infinite;
+                }
+
+                .marquee-content:hover {
+                    animation-play-state: paused;
+                }
+
+                @keyframes scroll-left {
+                    0% {
+                        transform: translateX(0);
+                    }
+
+                    100% {
+                        transform: translateX(-50%);
+                    }
+                }
+
+                .review-card {
+                    flex: 0 0 auto;
+                    width: 350px;
+                    min-height: 220px;
+                    background: var(--surface, #fcf9f3);
+                    border-radius: 1rem;
+                    padding: 2rem;
+                    margin-right: 1.5rem;
+                    white-space: normal;
+                    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                }
+            </style>
+
+
+            <div class="marquee-wrapper">
+                <div class="marquee-content">
+                    <!-- Batch 1 -->
+                    <div class="review-card">
+                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                            ★★★★★
+                        </div>
+                        <p class="font-body text-on-surface-variant italic mb-6">"J’ai découvert le matcha chez Brume
+                            pour la toute première fois… et j’ai adoré ! Très doux, bien équilibré, pas trop sucré… une
+                            super découverte. Les gâteaux faits maison sont aussi délicieux, on sent que tout est
+                            préparé avec soin."</p>
+                        <div class="font-bold text-primary">- Lilia Mahfoudi</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                            ★★★★★
+                        </div>
+                        <p class="font-body text-on-surface-variant italic mb-6">"Very passionate and welcoming owner. I
+                            would recommend a trip to brume to anyone in the area! A cozy vibe and all handmade treats."
+                        </p>
+                        <div class="font-bold text-primary">- Morgan Farley</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                            ★★★★★
+                        </div>
+                        <p class="font-body text-on-surface-variant italic mb-6">"Polecam , pyszna kawa , smaczna matcha
+                            , bardzo miła obsługa , uroczy lokal . 👌"</p>
+                        <div class="font-bold text-primary">- Teresa Lorkiewicz</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                            ★★★★★
+                        </div>
+                        <p class="font-body text-on-surface-variant italic mb-6">"Sehr schönes Café. Tolle Matcha Latte
+                            und Kaffe ✨👌🏼"</p>
+                        <div class="font-bold text-primary">- Nuria Catalán</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                            ★★★★★
+                        </div>
+                        <p class="font-body text-on-surface-variant italic mb-6">"Très bonne expérience chez Brume, le
+                            matcha au caramel était très bon (le sirop de caramel est fait maison !), et le carrot cake
+                            (maison aussi) était délicieux. Olga la gérante est très gentille et accueillante !"</p>
+                        <div class="font-bold text-primary">- Juliette Valor</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                            ★★★★★
+                        </div>
+                        <p class="font-body text-on-surface-variant italic mb-6">"I love Japan culture. Matcha prepared
+                            very profesionally Taste lovely. 10/10"</p>
+                        <div class="font-bold text-primary">- Milena</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                            ★★★★★
+                        </div>
+                        <p class="font-body text-on-surface-variant italic mb-6">"Super kawa. To jest ten smak :) Fajne,
+                            przyjazne miejsce na mapie Paryża. polecam"</p>
+                        <div class="font-bold text-primary">- Grzegorz Dziechciarz</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                            ★★★★★
+                        </div>
+                        <p class="font-body text-on-surface-variant italic mb-6">"Excellent service and peaceful
+                            atmosphere, the owner told us the story of how they build the coffee shop and types of
+                            coffee. I highly recommend :)"</p>
+                        <div class="font-bold text-primary">- Guillaume Fournier</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                            ★★★★★
+                        </div>
+                        <p class="font-body text-on-surface-variant italic mb-6">"Très bonne adresse, qui vient
+                            d’ouvrir. Le lieu est très cosy et les matchas délicieux ! Je reviendrai avec plaisir"</p>
+                        <div class="font-bold text-primary">- Emi BECAERT</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                            ★★★★★
+                        </div>
+                        <p class="font-body text-on-surface-variant italic mb-6">"Matcha najwyższej jakości. Miałam
+                            okazję uczestniczyć w ich spotkaniu z dostawcą matchy prosto z ekologicznych plantacji z
+                            Japonii. Smak mówi sam za siebie. Polecam sprawdzić"</p>
+                        <div class="font-bold text-primary">- Szczęście wPlecaku</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                            ★★★★★
+                        </div>
+                        <p class="font-body text-on-surface-variant italic mb-6">"Étant amatrice de matcha, celui-là je
+                            vous le conseille à 100% les yeux fermés. On sent bien le mélange sans avoir un goût
+                            d’herbe, l’ambiance est superbe avec de bonnes musiques relaxantes et le personnel est très
+                            agréable. Foncez !!!"</p>
+                        <div class="font-bold text-primary">- Sara dumitrean</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                            ★★★★★
+                        </div>
+                        <p class="font-body text-on-surface-variant italic mb-6">"If you need a good matcha this is the
+                            only place in Paris you can get it 🥰🥰🥰😩"</p>
+                        <div class="font-bold text-primary">- Joan Rwamba</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                            ★★★★★
+                        </div>
+                        <p class="font-body text-on-surface-variant italic mb-6">"Ważny punkt na mapie - zdecydowanie
+                            warto odwiedzić 🍵"</p>
+                        <div class="font-bold text-primary">- Adrian Kiełtyka</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                            ★★★★★
+                        </div>
+                        <p class="font-body text-on-surface-variant italic mb-6">"Accueil très sympathique par cette
+                            jeune propriétaire et sa maman... Apparemment ils sont spécialisés dans la préparation du
+                            matcha, perso j’ai pris un cappuccino qui était très bon. Mention spéciale au gâteau à la
+                            clémentine!"</p>
+                        <div class="font-bold text-primary">- Paola MANZONI</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                            ★★★★★
+                        </div>
+                        <p class="font-body text-on-surface-variant italic mb-6">"Super miejsce!! Polecam ♥️"</p>
+                        <div class="font-bold text-primary">- Jull j</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                            ★★★★★
+                        </div>
+                        <p class="font-body text-on-surface-variant italic mb-6">"Very passionate owner, kind, cheerful
+                            and full of energy."</p>
+                        <div class="font-bold text-primary">- Joshua Balata</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                            ★★★★★
+                        </div>
+                        <p class="font-body text-on-surface-variant italic mb-6">"Personnel adorable et chaleureuse. Il
+                            y a un grand choix de boisson qu'on ne voit pas à Levallois. Le matcha était doux et les
+                            patisseries très gourmands. Je recommande fortement pour un moment chill ☺️"</p>
+                        <div class="font-bold text-primary">- Eloidee Fernando</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                            ★★★★★
+                        </div>
+                        <p class="font-body text-on-surface-variant italic mb-6">"Best Matcha in Paris."</p>
+                        <div class="font-bold text-primary">- Michał Lupa</div>
+                    </div>
+
+                    <!-- Batch 2 (Duplicate for continuous loop) -->
+                    <div class="review-card">
+                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                            ★★★★★
+                        </div>
+                        <p class="font-body text-on-surface-variant italic mb-6">"J’ai découvert le matcha chez Brume
+                            pour la toute première fois… et j’ai adoré ! Très doux, bien équilibré, pas trop sucré… une
+                            super découverte. Les gâteaux faits maison sont aussi délicieux, on sent que tout est
+                            préparé avec soin."</p>
+                        <div class="font-bold text-primary">- Lilia Mahfoudi</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                            ★★★★★
+                        </div>
+                        <p class="font-body text-on-surface-variant italic mb-6">"Very passionate and welcoming owner. I
+                            would recommend a trip to brume to anyone in the area! A cozy vibe and all handmade treats."
+                        </p>
+                        <div class="font-bold text-primary">- Morgan Farley</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                            ★★★★★
+                        </div>
+                        <p class="font-body text-on-surface-variant italic mb-6">"Polecam , pyszna kawa , smaczna matcha
+                            , bardzo miła obsługa , uroczy lokal . 👌"</p>
+                        <div class="font-bold text-primary">- Teresa Lorkiewicz</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                            ★★★★★
+                        </div>
+                        <p class="font-body text-on-surface-variant italic mb-6">"Sehr schönes Café. Tolle Matcha Latte
+                            und Kaffe ✨👌🏼"</p>
+                        <div class="font-bold text-primary">- Nuria Catalán</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                            ★★★★★
+                        </div>
+                        <p class="font-body text-on-surface-variant italic mb-6">"Très bonne expérience chez Brume, le
+                            matcha au caramel était très bon (le sirop de caramel est fait maison !), et le carrot cake
+                            (maison aussi) était délicieux. Olga la gérante est très gentille et accueillante !"</p>
+                        <div class="font-bold text-primary">- Juliette Valor</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                            ★★★★★
+                        </div>
+                        <p class="font-body text-on-surface-variant italic mb-6">"I love Japan culture. Matcha prepared
+                            very profesionally Taste lovely. 10/10"</p>
+                        <div class="font-bold text-primary">- Milena</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                            ★★★★★
+                        </div>
+                        <p class="font-body text-on-surface-variant italic mb-6">"Super kawa. To jest ten smak :) Fajne,
+                            przyjazne miejsce na mapie Paryża. polecam"</p>
+                        <div class="font-bold text-primary">- Grzegorz Dziechciarz</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                            ★★★★★
+                        </div>
+                        <p class="font-body text-on-surface-variant italic mb-6">"Excellent service and peaceful
+                            atmosphere, the owner told us the story of how they build the coffee shop and types of
+                            coffee. I highly recommend :)"</p>
+                        <div class="font-bold text-primary">- Guillaume Fournier</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                            ★★★★★
+                        </div>
+                        <p class="font-body text-on-surface-variant italic mb-6">"Très bonne adresse, qui vient
+                            d’ouvrir. Le lieu est très cosy et les matchas délicieux ! Je reviendrai avec plaisir"</p>
+                        <div class="font-bold text-primary">- Emi BECAERT</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                            ★★★★★
+                        </div>
+                        <p class="font-body text-on-surface-variant italic mb-6">"Matcha najwyższej jakości. Miałam
+                            okazję uczestniczyć w ich spotkaniu z dostawcą matchy prosto z ekologicznych plantacji z
+                            Japonii. Smak mówi sam za siebie. Polecam sprawdzić"</p>
+                        <div class="font-bold text-primary">- Szczęście wPlecaku</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                            ★★★★★
+                        </div>
+                        <p class="font-body text-on-surface-variant italic mb-6">"Étant amatrice de matcha, celui-là je
+                            vous le conseille à 100% les yeux fermés. On sent bien le mélange sans avoir un goût
+                            d’herbe, l’ambiance est superbe avec de bonnes musiques relaxantes et le personnel est très
+                            agréable. Foncez !!!"</p>
+                        <div class="font-bold text-primary">- Sara dumitrean</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                            ★★★★★
+                        </div>
+                        <p class="font-body text-on-surface-variant italic mb-6">"If you need a good matcha this is the
+                            only place in Paris you can get it 🥰🥰🥰😩"</p>
+                        <div class="font-bold text-primary">- Joan Rwamba</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                            ★★★★★
+                        </div>
+                        <p class="font-body text-on-surface-variant italic mb-6">"Ważny punkt na mapie - zdecydowanie
+                            warto odwiedzić 🍵"</p>
+                        <div class="font-bold text-primary">- Adrian Kiełtyka</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                            ★★★★★
+                        </div>
+                        <p class="font-body text-on-surface-variant italic mb-6">"Accueil très sympathique par cette
+                            jeune propriétaire et sa maman... Apparemment ils sont spécialisés dans la préparation du
+                            matcha, perso j’ai pris un cappuccino qui était très bon. Mention spéciale au gâteau à la
+                            clémentine!"</p>
+                        <div class="font-bold text-primary">- Paola MANZONI</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                            ★★★★★
+                        </div>
+                        <p class="font-body text-on-surface-variant italic mb-6">"Super miejsce!! Polecam ♥️"</p>
+                        <div class="font-bold text-primary">- Jull j</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                            ★★★★★
+                        </div>
+                        <p class="font-body text-on-surface-variant italic mb-6">"Very passionate owner, kind, cheerful
+                            and full of energy."</p>
+                        <div class="font-bold text-primary">- Joshua Balata</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                            ★★★★★
+                        </div>
+                        <p class="font-body text-on-surface-variant italic mb-6">"Personnel adorable et chaleureuse. Il
+                            y a un grand choix de boisson qu'on ne voit pas à Levallois. Le matcha était doux et les
+                            patisseries très gourmands. Je recommande fortement pour un moment chill ☺️"</p>
+                        <div class="font-bold text-primary">- Eloidee Fernando</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                            ★★★★★
+                        </div>
+                        <p class="font-body text-on-surface-variant italic mb-6">"Best Matcha in Paris."</p>
+                        <div class="font-bold text-primary">- Michał Lupa</div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="max-w-7xl mx-auto px-8 mt-24 md:mt-48">
+            <div class="grid grid-cols-12 gap-y-24 md:gap-y-48 gap-x-8">
+                <!-- Signature Editorial Section -->
+                <div
+                    class="col-span-12 bg-surface-container-low p-12 md:p-24 rounded-3xl grid md:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h2 class="font-headline text-5xl text-primary leading-tight mb-8 italic">Une atmosphère,
+                            <br />une émotion.
+                        </h2>
+                        <div class="space-y-12">
+                            <div class="flex gap-6">
+                                <span class="font-headline text-4xl text-secondary opacity-50 italic">01</span>
+                                <div>
+                                    <h4 class="font-body font-semibold text-on-surface mb-2">La Tendresse</h4>
+                                    <p class="font-body text-on-surface-variant leading-relaxed">Un accueil doux dès le
+                                        seuil de la porte, une attention sincère pour que vous vous sentiez ici chez
+                                        vous.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-6">
+                                <span class="font-headline text-4xl text-secondary opacity-50 italic">02</span>
+                                <div>
+                                    <h4 class="font-body font-semibold text-on-surface mb-2">La transmission</h4>
+                                    <p class="font-body text-on-surface-variant leading-relaxed">Chaque préparation
+                                        porte une histoire, transmise avec émotion par nos artisans passionnés.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative h-full min-h-[400px] rounded-2xl overflow-hidden group">
+                        <div
+                            class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-500">
+                        </div>
+                        <img class="w-full h-full object-cover"
+                            data-alt="Atmospheric detail shot of a sun-drenched wooden interior with steam rising and soft shadows"
+                            src="assets/galerie_img2.jpg" />
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <a href="#" onclick="event.preventDefault(); openGalleryLightbox();"
+                                class="bg-surface-bright/90 backdrop-blur-md p-6 rounded-full shadow-lg group-hover:scale-110 transition-transform cursor-pointer flex items-center justify-center">
+                                <span class="material-symbols-outlined text-primary text-3xl" data-icon="play_arrow"
+                                    data-weight="fill">play_arrow</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Journal CTA -->
+        <section class="max-w-7xl mx-auto px-8 mt-48 text-center">
+            <div class="inline-block px-6 py-2 border border-outline-variant/30 rounded-full mb-8">
+                <span class="font-body text-xs uppercase tracking-[0.2em] text-on-surface-variant">Rejoignez
+                    l'expérience</span>
+            </div>
+            <h2 class="font-headline text-6xl text-primary italic mb-12">Vivez l'instant présent.</h2>
+            <button onclick="showReservation(event)"
+                class="bg-primary text-on-primary px-12 py-4 rounded-lg font-body font-medium hover:opacity-90 transition-all transform hover:-translate-y-1">
                 Passer nous voir
             </button>
-</section>
+        </section>
 
-<!-- Gallery Lightbox -->
-<div class="gallery-lightbox" id="galleryLightbox">
-    <button class="gallery-close" onclick="closeGalleryLightbox()">
-        <span class="material-symbols-outlined" style="font-size:24px;">close</span>
-    </button>
-    <h3>Galerie Brume</h3>
-    <div class="gallery-grid">
-            <img src="assets/baristas.jpg" alt="Brume Coffee" onload="this.classList.add('loaded')">
-            <img src="assets/brume_photo_1.jpg" loading="lazy" loading="lazy" alt="Brume Coffee" onload="this.classList.add('loaded')">
-            <img src="assets/brume_photo_10.jpg" loading="lazy" loading="lazy" alt="Brume Coffee" onload="this.classList.add('loaded')">
-            <img src="assets/brume_photo_11.jpg" loading="lazy" loading="lazy" alt="Brume Coffee" onload="this.classList.add('loaded')">
-            <img src="assets/brume_photo_12.jpg" loading="lazy" loading="lazy" alt="Brume Coffee" onload="this.classList.add('loaded')">
-            <img src="assets/brume_photo_13.jpg" loading="lazy" loading="lazy" alt="Brume Coffee" onload="this.classList.add('loaded')">
-            <img src="assets/brume_photo_14.jpg" loading="lazy" loading="lazy" alt="Brume Coffee" onload="this.classList.add('loaded')">
-            <img src="assets/brume_photo_2.jpg" loading="lazy" loading="lazy" alt="Brume Coffee" onload="this.classList.add('loaded')">
-            <img src="assets/brume_photo_3.jpg" loading="lazy" loading="lazy" alt="Brume Coffee" onload="this.classList.add('loaded')">
-            <img src="assets/brume_photo_4.jpg" loading="lazy" loading="lazy" alt="Brume Coffee" onload="this.classList.add('loaded')">
-            <img src="assets/brume_photo_5.jpg" loading="lazy" loading="lazy" alt="Brume Coffee" onload="this.classList.add('loaded')">
-            <img src="assets/brume_photo_6.jpg" loading="lazy" loading="lazy" alt="Brume Coffee" onload="this.classList.add('loaded')">
-            <img src="assets/brume_photo_7.jpg" loading="lazy" loading="lazy" alt="Brume Coffee" onload="this.classList.add('loaded')">
-            <img src="assets/brume_photo_8.jpg" loading="lazy" loading="lazy" alt="Brume Coffee" onload="this.classList.add('loaded')">
-            <img src="assets/brume_photo_9.jpg" loading="lazy" loading="lazy" alt="Brume Coffee" onload="this.classList.add('loaded')">
-            <img src="assets/galerie_img1.jpg" alt="Brume Coffee" onload="this.classList.add('loaded')">
-            <img src="assets/galerie_img2.jpg" alt="Brume Coffee" onload="this.classList.add('loaded')">
-            <img src="assets/histoire_bg1.jpg" alt="Brume Coffee" onload="this.classList.add('loaded')">
-            <img src="assets/histoire_bg2.jpg" alt="Brume Coffee" onload="this.classList.add('loaded')">
-            <img src="assets/latte_art.jpg" alt="Brume Coffee" onload="this.classList.add('loaded')">
-            <img src="assets/matcha_brewing.jpg" alt="Brume Coffee" onload="this.classList.add('loaded')">
-            <img src="assets/brume_photo_5.jpg" loading="lazy" loading="lazy" alt="Brume Coffee" onload="this.classList.add('loaded')">
-            <img src="assets/two_cups.jpg" alt="Brume Coffee" onload="this.classList.add('loaded')">
-            <img src="assets/visiter_hero.jpg" alt="Brume Coffee" onload="this.classList.add('loaded')">
-    </div>
-</div>
-
-<script>
-    function openGalleryLightbox() {
-        const lb = document.getElementById('galleryLightbox');
-        lb.classList.add('active');
-        document.body.style.overflow = 'hidden';
-        setTimeout(() => lb.classList.add('visible'), 10);
-    }
-    function closeGalleryLightbox() {
-        const lb = document.getElementById('galleryLightbox');
-        lb.classList.remove('visible');
-        setTimeout(() => {
-            lb.classList.remove('active');
-            document.body.style.overflow = '';
-        }, 400);
-    }
-    document.getElementById('galleryLightbox').addEventListener('click', function(e) {
-        if (e.target === this) closeGalleryLightbox();
-    });
-</script>
-
-
-<!-- Gallery Lightbox -->
-<div class="gallery-lightbox" id="galleryLightbox">
-    <button class="gallery-close" onclick="closeGalleryLightbox()">
-        <span class="material-symbols-outlined" style="font-size:24px;">close</span>
-    </button>
-    <h3>Galerie Brume</h3>
-    <div class="gallery-grid">
-            <img src="assets/baristas.jpg" alt="Brume Coffee" onload="this.classList.add('loaded')">
-            <img src="assets/brume_photo_1.jpg" loading="lazy" loading="lazy" alt="Brume Coffee" onload="this.classList.add('loaded')">
-            <img src="assets/brume_photo_10.jpg" loading="lazy" loading="lazy" alt="Brume Coffee" onload="this.classList.add('loaded')">
-            <img src="assets/brume_photo_11.jpg" loading="lazy" loading="lazy" alt="Brume Coffee" onload="this.classList.add('loaded')">
-            <img src="assets/brume_photo_12.jpg" loading="lazy" loading="lazy" alt="Brume Coffee" onload="this.classList.add('loaded')">
-            <img src="assets/brume_photo_13.jpg" loading="lazy" loading="lazy" alt="Brume Coffee" onload="this.classList.add('loaded')">
-            <img src="assets/brume_photo_14.jpg" loading="lazy" loading="lazy" alt="Brume Coffee" onload="this.classList.add('loaded')">
-            <img src="assets/brume_photo_2.jpg" loading="lazy" loading="lazy" alt="Brume Coffee" onload="this.classList.add('loaded')">
-            <img src="assets/brume_photo_3.jpg" loading="lazy" loading="lazy" alt="Brume Coffee" onload="this.classList.add('loaded')">
-            <img src="assets/brume_photo_4.jpg" loading="lazy" loading="lazy" alt="Brume Coffee" onload="this.classList.add('loaded')">
-            <img src="assets/brume_photo_5.jpg" loading="lazy" loading="lazy" alt="Brume Coffee" onload="this.classList.add('loaded')">
-            <img src="assets/brume_photo_6.jpg" loading="lazy" loading="lazy" alt="Brume Coffee" onload="this.classList.add('loaded')">
-            <img src="assets/brume_photo_7.jpg" loading="lazy" loading="lazy" alt="Brume Coffee" onload="this.classList.add('loaded')">
-            <img src="assets/brume_photo_8.jpg" loading="lazy" loading="lazy" alt="Brume Coffee" onload="this.classList.add('loaded')">
-            <img src="assets/brume_photo_9.jpg" loading="lazy" loading="lazy" alt="Brume Coffee" onload="this.classList.add('loaded')">
-            <img src="assets/galerie_img1.jpg" alt="Brume Coffee" onload="this.classList.add('loaded')">
-            <img src="assets/galerie_img2.jpg" alt="Brume Coffee" onload="this.classList.add('loaded')">
-            <img src="assets/histoire_bg1.jpg" alt="Brume Coffee" onload="this.classList.add('loaded')">
-            <img src="assets/histoire_bg2.jpg" alt="Brume Coffee" onload="this.classList.add('loaded')">
-            <img src="assets/latte_art.jpg" alt="Brume Coffee" onload="this.classList.add('loaded')">
-            <img src="assets/matcha_brewing.jpg" alt="Brume Coffee" onload="this.classList.add('loaded')">
-            <img src="assets/brume_photo_5.jpg" loading="lazy" loading="lazy" alt="Brume Coffee" onload="this.classList.add('loaded')">
-            <img src="assets/two_cups.jpg" alt="Brume Coffee" onload="this.classList.add('loaded')">
-            <img src="assets/visiter_hero.jpg" alt="Brume Coffee" onload="this.classList.add('loaded')">
-    </div>
-</div>
-
-<script>
-    function openGalleryLightbox() {
-        const lb = document.getElementById('galleryLightbox');
-        lb.classList.add('active');
-        document.body.style.overflow = 'hidden';
-        setTimeout(() => lb.classList.add('visible'), 10);
-    }
-    function closeGalleryLightbox() {
-        const lb = document.getElementById('galleryLightbox');
-        lb.classList.remove('visible');
-        setTimeout(() => {
-            lb.classList.remove('active');
-            document.body.style.overflow = '';
-        }, 400);
-    }
-    document.getElementById('galleryLightbox').addEventListener('click', function(e) {
-        if (e.target === this) closeGalleryLightbox();
-    });
-</script>
-
-</main>
-<!-- Footer -->
-<footer class="bg-[#f6f3ed] w-full pt-16 pb-8 px-8 border-t border-[#384c31]/10">
-<div class="max-w-7xl mx-auto">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-        <!-- Brand -->
-        <div class="md:col-span-1 space-y-4">
-            <span class="font-serif text-2xl italic text-[#384c31] font-bold">Brume</span>
-            <p class="text-sm text-[#384c31]/60 leading-relaxed">Un cocon de douceur et de slow living au coeur de Levallois-Perret.</p>
-            <a href="https://www.instagram.com/brume.levallois/" target="_blank" class="inline-flex items-center gap-2 text-[#384c31]/70 hover:text-[#384c31] transition-colors text-sm font-medium">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                @brume.levallois
-            </a>
-        </div>
-        <!-- Navigation -->
-        <div class="space-y-4">
-            <h4 class="font-serif text-[#384c31] font-semibold text-sm uppercase tracking-widest">Pages</h4>
-            <nav class="flex flex-col space-y-2">
-                <a href="index.html" class="text-sm text-[#384c31]/60 hover:text-[#384c31] transition-colors">Accueil</a>
-                <a href="menu.html" class="text-sm text-[#384c31]/60 hover:text-[#384c31] transition-colors">La Carte</a>
-                <a href="histoire.html" class="text-sm text-[#384c31]/60 hover:text-[#384c31] transition-colors">Notre Histoire</a>
-                <a href="galerie.html" class="text-sm text-[#384c31]/60 hover:text-[#384c31] transition-colors">Galerie</a>
-                <a href="visiter.html" class="text-sm text-[#384c31]/60 hover:text-[#384c31] transition-colors">Nous Visiter</a>
-            </nav>
-        </div>
-        <!-- Hours -->
-        <div class="space-y-4">
-            <h4 class="font-serif text-[#384c31] font-semibold text-sm uppercase tracking-widest">Horaires</h4>
-            <table class="text-sm text-[#384c31]/60 w-full">
-                <tr><td class="pr-4 py-0.5">Lundi</td><td class="text-right">09:30–12:00, 16:00–18:00</td></tr>
-                <tr><td class="pr-4 py-0.5">Mardi – Vendredi</td><td class="text-right">08:30–18:00</td></tr>
-                <tr><td class="pr-4 py-0.5">Samedi</td><td class="text-right">10:00–18:00</td></tr>
-                <tr><td class="pr-4 py-0.5">Dimanche</td><td class="text-right">10:00–15:00</td></tr>
-            </table>
-        </div>
-        <!-- Contact -->
-        <div class="space-y-4">
-            <h4 class="font-serif text-[#384c31] font-semibold text-sm uppercase tracking-widest">Contact</h4>
-            <div class="text-sm text-[#384c31]/60 space-y-2">
-                <p>2 Rue Camille Pelletan<br/>92300 Levallois-Perret</p>
-                <p><a href="tel:+33775867647" class="hover:text-[#384c31] transition-colors">07 75 86 76 47</a></p>
-                <p><a href="mailto:essaievendredi123@gmail.com" class="hover:text-[#384c31] transition-colors">essaievendredi123@gmail.com</a></p>
-            </div>
-        </div>
-    </div>
-    <!-- Bottom bar -->
-    <div class="border-t border-[#384c31]/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-        <span class="text-xs text-[#384c31]/40">&copy; 2026 Brume Coffee — Levallois-Perret</span>
-        <a href="#" onclick="showMentionsLegales(event)" class="text-xs text-[#384c31]/40 hover:text-[#384c31]/80 underline decoration-[#feae8c] transition-colors">Mentions Légales</a>
-    </div>
-</div>
-</footer>
-
-<!-- Mentions Légales Modal -->
-<div id="mentionsModal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 transition-opacity duration-300">
-    <div class="bg-surface p-8 md:p-12 rounded-2xl shadow-2xl max-w-2xl w-[90%] max-h-[80vh] overflow-y-auto transform scale-95 transition-transform duration-300">
-        <div class="flex justify-between items-start mb-6">
-            <h2 class="font-headline text-3xl text-primary italic">Mentions Légales</h2>
-            <button onclick="closeMentions()" class="text-on-surface-variant hover:text-primary transition-colors">
-                <span class="material-symbols-outlined">close</span>
+        <!-- Gallery Lightbox -->
+        <div class="gallery-lightbox" id="galleryLightbox">
+            <button class="gallery-close" onclick="closeGalleryLightbox()">
+                <span class="material-symbols-outlined" style="font-size:24px;">close</span>
             </button>
+            <h3>Galerie Brume</h3>
+            <div class="gallery-grid">
+                <img src="assets/baristas.jpg" alt="Brume Coffee" onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_1.jpg" loading="lazy" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_10.jpg" loading="lazy" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_11.jpg" loading="lazy" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_12.jpg" loading="lazy" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_13.jpg" loading="lazy" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_14.jpg" loading="lazy" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_2.jpg" loading="lazy" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_3.jpg" loading="lazy" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_4.jpg" loading="lazy" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_5.jpg" loading="lazy" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_6.jpg" loading="lazy" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_7.jpg" loading="lazy" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_8.jpg" loading="lazy" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_9.jpg" loading="lazy" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/galerie_img1.jpg" alt="Brume Coffee" onload="this.classList.add('loaded')">
+                <img src="assets/galerie_img2.jpg" alt="Brume Coffee" onload="this.classList.add('loaded')">
+                <img src="assets/histoire_bg1.jpg" alt="Brume Coffee" onload="this.classList.add('loaded')">
+                <img src="assets/histoire_bg2.jpg" alt="Brume Coffee" onload="this.classList.add('loaded')">
+                <img src="assets/latte_art.jpg" alt="Brume Coffee" onload="this.classList.add('loaded')">
+                <img src="assets/matcha_brewing.jpg" alt="Brume Coffee" onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_5.jpg" loading="lazy" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/two_cups.jpg" alt="Brume Coffee" onload="this.classList.add('loaded')">
+                <img src="assets/visiter_hero.jpg" alt="Brume Coffee" onload="this.classList.add('loaded')">
+            </div>
         </div>
-        <div class="space-y-4 font-body text-on-surface-variant text-sm md:text-base leading-relaxed">
-            <p><strong>Éditeur du site :</strong> Brume Coffee</p>
-            <p><strong>Responsable :</strong> Olga</p>
-            <p><strong>Adresse :</strong> 2 Rue Camille Pelletan, 92300 Levallois-Perret</p>
-            <p><strong>Téléphone :</strong> 07 75 86 76 47</p>
-            <p><strong>Hébergement :</strong> Vercel Inc., 340 S Lemon Ave #4133 Walnut, CA 91789, USA.</p>
-            <p>Conformément à la loi "Informatique et Libertés", vous disposez d'un droit d'accès, de rectification et d'opposition aux données personnelles vous concernant.</p>
-        </div>
-        <div class="mt-8 pt-6 border-t border-secondary-container text-right">
-            <button onclick="closeMentions()" class="bg-primary text-on-primary px-6 py-2 rounded-lg font-medium hover:opacity-90 transition-opacity">Fermer</button>
-        </div>
-    </div>
-</div>
 
-<script>
-    function showMentionsLegales(event) {
-        if(event) event.preventDefault();
-        const modal = document.getElementById('mentionsModal');
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
-        setTimeout(() => {
-            modal.classList.remove('opacity-0');
-            modal.querySelector('div').classList.remove('scale-95');
-        }, 10);
-    }
-    
-    function closeMentions() {
-        const modal = document.getElementById('mentionsModal');
-        modal.classList.add('opacity-0');
-        modal.querySelector('div').classList.add('scale-95');
-        setTimeout(() => {
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-        }, 300);
-    }
-</script>
-
-
-<!-- Reservation Modal -->
-<div id="reservationModal" class="fixed inset-0 z-[110] hidden items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 transition-opacity duration-300">
-    <div class="bg-surface p-8 md:p-12 rounded-2xl shadow-2xl max-w-lg w-[90%] max-h-[90vh] overflow-y-auto transform scale-95 transition-transform duration-300">
-        <div class="flex justify-between items-start mb-6">
-            <h2 class="font-headline text-3xl text-primary italic">Réserver une table</h2>
-            <button onclick="closeReservation()" class="text-on-surface-variant hover:text-primary transition-colors">
-                <span class="material-symbols-outlined">close</span>
-            </button>
-        </div>
-        <form class="space-y-4" id="reservationForm" onsubmit="handleReservation(event)">
-            <div>
-                <label class="block font-body text-sm font-medium text-on-surface-variant mb-1">Nom complet</label>
-                <input type="text" id="resName" required class="w-full rounded-lg border border-outline-variant/50 focus:border-primary focus:ring-primary bg-surface-container-low px-4 py-2.5" placeholder="Votre nom">
-            </div>
-            <div class="grid grid-cols-2 gap-4">
-                <div>
-                    <label class="block font-body text-sm font-medium text-on-surface-variant mb-1">Date</label>
-                    <input type="date" id="resDate" required onchange="validateReservationTime()" class="w-full rounded-lg border border-outline-variant/50 focus:border-primary focus:ring-primary bg-surface-container-low px-4 py-2.5">
-                </div>
-                <div>
-                    <label class="block font-body text-sm font-medium text-on-surface-variant mb-1">Heure exacte</label>
-                    <input type="time" id="resTime" required onchange="validateReservationTime()" class="w-full rounded-lg border border-outline-variant/50 focus:border-primary focus:ring-primary bg-surface-container-low px-4 py-2.5">
-                </div>
-            </div>
-            <div>
-                <label class="block font-body text-sm font-medium text-on-surface-variant mb-1">Nombre de personnes</label>
-                <select id="resGuests" required class="w-full rounded-lg border border-outline-variant/50 focus:border-primary focus:ring-primary bg-surface-container-low px-4 py-2.5">
-                    <option value="1">1 personne</option>
-                    <option value="2" selected>2 personnes</option>
-                    <option value="3">3 personnes</option>
-                    <option value="4">4 personnes</option>
-                    <option value="5+">5+ personnes</option>
-                </select>
-            </div>
-            <div>
-                <label class="block font-body text-sm font-medium text-on-surface-variant mb-1">Téléphone / E-mail</label>
-                <input type="text" id="resContact" required class="w-full rounded-lg border border-outline-variant/50 focus:border-primary focus:ring-primary bg-surface-container-low px-4 py-2.5" placeholder="Pour vous contacter si besoin">
-            </div>
-            <div class="pt-4">
-                <button type="submit" class="w-full bg-primary text-on-primary px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">Confirmer la réservation</button>
-            </div>
-        </form>
-    </div>
-</div>
-
-<script>
-    function validateReservationTime() {
-        const dateInput = document.getElementById('resDate');
-        const timeInput = document.getElementById('resTime');
-        if(!dateInput.value || !timeInput.value) return true;
-        const date = new Date(dateInput.value + 'T00:00:00');
-        const day = date.getDay();
-        const time = timeInput.value;
-        let isValid = false;
-        let message = "Nous sommes fermés à cette heure.";
-        if(day === 1) {
-            if((time >= "09:30" && time <= "12:00") || (time >= "16:00" && time <= "18:00")) isValid = true;
-            else message = "Le lundi, nous sommes ouverts de 09h30 à 12h00 et de 16h00 à 18h00.";
-        } else if(day === 2) {
-            if(time >= "08:30" && time <= "18:00") isValid = true;
-            else message = "Le mardi, nous sommes ouverts de 08h30 à 18h00.";
-        } else if(day === 3) {
-            if(time >= "09:00" && time <= "18:00") isValid = true;
-            else message = "Le mercredi, nous sommes ouverts de 09h00 à 18h00.";
-        } else if(day === 4) {
-            if(time >= "08:30" && time <= "18:00") isValid = true;
-            else message = "Le jeudi, nous sommes ouverts de 08h30 à 18h00.";
-        } else if(day === 5) {
-            if(time >= "08:30" && time <= "18:00") isValid = true;
-            else message = "Le vendredi, nous sommes ouverts de 08h30 à 18h00.";
-        } else if(day === 6) {
-            if(time >= "10:00" && time <= "18:00") isValid = true;
-            else message = "Le samedi, nous sommes ouverts de 10h00 à 18h00.";
-        } else if(day === 0) {
-            if(time >= "10:00" && time <= "15:00") isValid = true;
-            else message = "Le dimanche, nous sommes ouverts de 10h00 à 15h00.";
-        }
-        if(!isValid) { timeInput.setCustomValidity(message); timeInput.reportValidity(); }
-        else { timeInput.setCustomValidity(""); }
-        return isValid;
-    }
-    function handleReservation(event) {
-        event.preventDefault();
-        if (!validateReservationTime()) return;
-        var name = document.getElementById('resName').value;
-        var date = document.getElementById('resDate').value;
-        var time = document.getElementById('resTime').value;
-        var guests = document.getElementById('resGuests').value;
-        var contact = document.getElementById('resContact').value;
-        var subject = encodeURIComponent("Reservation Brume Coffee - " + name);
-        var nl = "\n";
-        var body = encodeURIComponent("Bonjour Olga," + nl + nl + "Je souhaite réserver une table chez Brume Coffee." + nl + nl + "Nom : " + name + nl + "Date : " + date + nl + "Heure : " + time + nl + "Nombre de personnes : " + guests + nl + "Contact : " + contact + nl + nl + "Merci beaucoup !" + nl + "À très vite chez Brume.");
-        window.location.href = "mailto:essaievendredi123@gmail.com?subject=" + subject + "&body=" + body;
-        alert("Votre réservation a bien été envoyée ! Nous vous attendons le " + date + " a " + time + ". À très vite chez Brume !");
-        closeReservation();
-        document.getElementById('reservationForm').reset();
-    }
-    function showReservation(event) {
-        if(event) event.preventDefault();
-        const modal = document.getElementById('reservationModal');
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
-        setTimeout(function() {
-            modal.classList.remove('opacity-0');
-            modal.querySelector('div').classList.remove('scale-95');
-        }, 10);
-    }
-    function closeReservation() {
-        const modal = document.getElementById('reservationModal');
-        modal.classList.add('opacity-0');
-        modal.querySelector('div').classList.add('scale-95');
-        setTimeout(function() {
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-        }, 300);
-    }
-</script>
-
-
-<script>
-    function toggleMobileMenu() {
-        const menu = document.getElementById('mobileMenu');
-        const icon = document.querySelector('.menu-icon');
-        if (menu.classList.contains('opacity-0')) {
-            menu.classList.remove('opacity-0', 'pointer-events-none');
-            document.body.classList.add('overflow-hidden');
-            icon.textContent = 'close';
-        } else {
-            menu.classList.add('opacity-0', 'pointer-events-none');
-            document.body.classList.remove('overflow-hidden');
-            icon.textContent = 'menu';
-        }
-    }
-</script>
-
-
-<script>
-/* Scroll Reveal Animation */
-(function(){
-    const observer = new IntersectionObserver(function(entries){
-        entries.forEach(function(entry){
-            if(entry.isIntersecting){
-                entry.target.classList.add('brume-visible');
-                observer.unobserve(entry.target);
+        <script>
+            function openGalleryLightbox() {
+                const lb = document.getElementById('galleryLightbox');
+                lb.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                setTimeout(() => lb.classList.add('visible'), 10);
             }
-        });
-    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
-    document.querySelectorAll('.brume-reveal').forEach(function(el){
-        observer.observe(el);
-    });
-})();
-</script>
-</body></html>
+            function closeGalleryLightbox() {
+                const lb = document.getElementById('galleryLightbox');
+                lb.classList.remove('visible');
+                setTimeout(() => {
+                    lb.classList.remove('active');
+                    document.body.style.overflow = '';
+                }, 400);
+            }
+            document.getElementById('galleryLightbox').addEventListener('click', function (e) {
+                if (e.target === this) closeGalleryLightbox();
+            });
+        </script>
+
+
+        <!-- Gallery Lightbox -->
+        <div class="gallery-lightbox" id="galleryLightbox">
+            <button class="gallery-close" onclick="closeGalleryLightbox()">
+                <span class="material-symbols-outlined" style="font-size:24px;">close</span>
+            </button>
+            <h3>Galerie Brume</h3>
+            <div class="gallery-grid">
+                <img src="assets/baristas.jpg" alt="Brume Coffee" onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_1.jpg" loading="lazy" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_10.jpg" loading="lazy" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_11.jpg" loading="lazy" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_12.jpg" loading="lazy" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_13.jpg" loading="lazy" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_14.jpg" loading="lazy" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_2.jpg" loading="lazy" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_3.jpg" loading="lazy" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_4.jpg" loading="lazy" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_5.jpg" loading="lazy" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_6.jpg" loading="lazy" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_7.jpg" loading="lazy" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_8.jpg" loading="lazy" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_9.jpg" loading="lazy" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/galerie_img1.jpg" alt="Brume Coffee" onload="this.classList.add('loaded')">
+                <img src="assets/galerie_img2.jpg" alt="Brume Coffee" onload="this.classList.add('loaded')">
+                <img src="assets/histoire_bg1.jpg" alt="Brume Coffee" onload="this.classList.add('loaded')">
+                <img src="assets/histoire_bg2.jpg" alt="Brume Coffee" onload="this.classList.add('loaded')">
+                <img src="assets/latte_art.jpg" alt="Brume Coffee" onload="this.classList.add('loaded')">
+                <img src="assets/matcha_brewing.jpg" alt="Brume Coffee" onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_5.jpg" loading="lazy" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/two_cups.jpg" alt="Brume Coffee" onload="this.classList.add('loaded')">
+                <img src="assets/visiter_hero.jpg" alt="Brume Coffee" onload="this.classList.add('loaded')">
+            </div>
+        </div>
+
+        <script>
+            function openGalleryLightbox() {
+                const lb = document.getElementById('galleryLightbox');
+                lb.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                setTimeout(() => lb.classList.add('visible'), 10);
+            }
+            function closeGalleryLightbox() {
+                const lb = document.getElementById('galleryLightbox');
+                lb.classList.remove('visible');
+                setTimeout(() => {
+                    lb.classList.remove('active');
+                    document.body.style.overflow = '';
+                }, 400);
+            }
+            document.getElementById('galleryLightbox').addEventListener('click', function (e) {
+                if (e.target === this) closeGalleryLightbox();
+            });
+        </script>
+
+    </main>
+    <!-- Footer -->
+    <footer class="bg-[#f6f3ed] w-full pt-16 pb-8 px-8 border-t border-[#384c31]/10">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div class="md:col-span-1 space-y-4">
+                    <span class="font-serif text-2xl italic text-[#384c31] font-bold">Brume</span>
+                    <p class="text-sm text-[#384c31]/60 leading-relaxed">Un cocon de douceur et de slow living au coeur
+                        de Levallois-Perret.</p>
+                    <a href="https://www.instagram.com/brume.levallois/" target="_blank"
+                        class="inline-flex items-center gap-2 text-[#384c31]/70 hover:text-[#384c31] transition-colors text-sm font-medium">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                        @brume.levallois
+                    </a>
+                </div>
+                <!-- Navigation -->
+                <div class="space-y-4">
+                    <h4 class="font-serif text-[#384c31] font-semibold text-sm uppercase tracking-widest">Pages</h4>
+                    <nav class="flex flex-col space-y-2">
+                        <a href="index.html"
+                            class="text-sm text-[#384c31]/60 hover:text-[#384c31] transition-colors">Accueil</a>
+                        <a href="menu.html" class="text-sm text-[#384c31]/60 hover:text-[#384c31] transition-colors">La
+                            Carte</a>
+                        <a href="histoire.html"
+                            class="text-sm text-[#384c31]/60 hover:text-[#384c31] transition-colors">Notre Histoire</a>
+                        <a href="galerie.html"
+                            class="text-sm text-[#384c31]/60 hover:text-[#384c31] transition-colors">Galerie</a>
+                        <a href="visiter.html"
+                            class="text-sm text-[#384c31]/60 hover:text-[#384c31] transition-colors">Nous Visiter</a>
+                    </nav>
+                </div>
+                <!-- Hours -->
+                <div class="space-y-4">
+                    <h4 class="font-serif text-[#384c31] font-semibold text-sm uppercase tracking-widest">Horaires</h4>
+                    <table class="text-sm text-[#384c31]/60 w-full">
+                        <tr>
+                            <td class="pr-4 py-0.5">Lundi</td>
+                            <td class="text-right">09:30–12:00, 16:00–18:00</td>
+                        </tr>
+                        <tr>
+                            <td class="pr-4 py-0.5">Mardi – Vendredi</td>
+                            <td class="text-right">08:30–18:00</td>
+                        </tr>
+                        <tr>
+                            <td class="pr-4 py-0.5">Samedi</td>
+                            <td class="text-right">10:00–18:00</td>
+                        </tr>
+                        <tr>
+                            <td class="pr-4 py-0.5">Dimanche</td>
+                            <td class="text-right">10:00–15:00</td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- Contact -->
+                <div class="space-y-4">
+                    <h4 class="font-serif text-[#384c31] font-semibold text-sm uppercase tracking-widest">Contact</h4>
+                    <div class="text-sm text-[#384c31]/60 space-y-2">
+                        <a href="https://maps.app.goo.gl/DxdbmxsdsEMXXF6B8" target="_blank"
+                            class="flex items-center space-x-2 text-primary hover:text-secondary transition-colors font-medium">
+                            <p>2 Rue Camille Pelletan<br />92300 Levallois-Perret</p>
+                        </a>
+                        <p><a href="tel:+33775867647" class="hover:text-[#384c31] transition-colors">07 75 86 76 47</a>
+                        </p>
+                        <p><a href="mailto:essaievendredi123@gmail.com"
+                                class="hover:text-[#384c31] transition-colors">essaievendredi123@gmail.com</a></p>
+                    </div>
+                </div>
+            </div>
+            <!-- Bottom bar -->
+            <div class="border-t border-[#384c31]/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <span class="text-xs text-[#384c31]/40">&copy; 2026 Brume Coffee — Levallois-Perret</span>
+                <a href="#" onclick="showMentionsLegales(event)"
+                    class="text-xs text-[#384c31]/40 hover:text-[#384c31]/80 underline decoration-[#feae8c] transition-colors">Mentions
+                    Légales</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mentions Légales Modal -->
+    <div id="mentionsModal"
+        class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 transition-opacity duration-300">
+        <div
+            class="bg-surface p-8 md:p-12 rounded-2xl shadow-2xl max-w-2xl w-[90%] max-h-[80vh] overflow-y-auto transform scale-95 transition-transform duration-300">
+            <div class="flex justify-between items-start mb-6">
+                <h2 class="font-headline text-3xl text-primary italic">Mentions Légales</h2>
+                <button onclick="closeMentions()" class="text-on-surface-variant hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <div class="space-y-4 font-body text-on-surface-variant text-sm md:text-base leading-relaxed">
+                <p><strong>Éditeur du site :</strong> Brume Coffee</p>
+                <p><strong>Responsable :</strong> Olga</p>
+                <a href="https://maps.app.goo.gl/DxdbmxsdsEMXXF6B8" target="_blank"
+                    class="flex items-center space-x-2 text-primary hover:text-secondary transition-colors font-medium">
+                    <p><strong>Adresse :</strong> 2 Rue Camille Pelletan, 92300 Levallois-Perret</p>
+                </a>
+                <p><strong>Téléphone :</strong> 07 75 86 76 47</p>
+                <p><strong>Hébergement :</strong> Vercel Inc., 340 S Lemon Ave #4133 Walnut, CA 91789, USA.</p>
+                <p>Conformément à la loi "Informatique et Libertés", vous disposez d'un droit d'accès, de rectification
+                    et d'opposition aux données personnelles vous concernant.</p>
+            </div>
+            <div class="mt-8 pt-6 border-t border-secondary-container text-right">
+                <button onclick="closeMentions()"
+                    class="bg-primary text-on-primary px-6 py-2 rounded-lg font-medium hover:opacity-90 transition-opacity">Fermer</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showMentionsLegales(event) {
+            if (event) event.preventDefault();
+            const modal = document.getElementById('mentionsModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modal.querySelector('div').classList.remove('scale-95');
+            }, 10);
+        }
+
+        function closeMentions() {
+            const modal = document.getElementById('mentionsModal');
+            modal.classList.add('opacity-0');
+            modal.querySelector('div').classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }, 300);
+        }
+    </script>
+
+
+    <!-- Reservation Modal -->
+    <div id="reservationModal"
+        class="fixed inset-0 z-[110] hidden items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 transition-opacity duration-300">
+        <div
+            class="bg-surface p-8 md:p-12 rounded-2xl shadow-2xl max-w-lg w-[90%] max-h-[90vh] overflow-y-auto transform scale-95 transition-transform duration-300">
+            <div class="flex justify-between items-start mb-6">
+                <h2 class="font-headline text-3xl text-primary italic">Réserver une table</h2>
+                <button onclick="closeReservation()"
+                    class="text-on-surface-variant hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <form class="space-y-4" id="reservationForm" onsubmit="handleReservation(event)">
+                <div>
+                    <label class="block font-body text-sm font-medium text-on-surface-variant mb-1">Nom complet</label>
+                    <input type="text" id="resName" required
+                        class="w-full rounded-lg border border-outline-variant/50 focus:border-primary focus:ring-primary bg-surface-container-low px-4 py-2.5"
+                        placeholder="Votre nom">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block font-body text-sm font-medium text-on-surface-variant mb-1">Date</label>
+                        <input type="date" id="resDate" required onchange="validateReservationTime()"
+                            class="w-full rounded-lg border border-outline-variant/50 focus:border-primary focus:ring-primary bg-surface-container-low px-4 py-2.5">
+                    </div>
+                    <div>
+                        <label class="block font-body text-sm font-medium text-on-surface-variant mb-1">Heure
+                            exacte</label>
+                        <input type="time" id="resTime" required onchange="validateReservationTime()"
+                            class="w-full rounded-lg border border-outline-variant/50 focus:border-primary focus:ring-primary bg-surface-container-low px-4 py-2.5">
+                    </div>
+                </div>
+                <div>
+                    <label class="block font-body text-sm font-medium text-on-surface-variant mb-1">Nombre de
+                        personnes</label>
+                    <select id="resGuests" required
+                        class="w-full rounded-lg border border-outline-variant/50 focus:border-primary focus:ring-primary bg-surface-container-low px-4 py-2.5">
+                        <option value="1">1 personne</option>
+                        <option value="2" selected>2 personnes</option>
+                        <option value="3">3 personnes</option>
+                        <option value="4">4 personnes</option>
+                        <option value="5+">5+ personnes</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block font-body text-sm font-medium text-on-surface-variant mb-1">Téléphone /
+                        E-mail</label>
+                    <input type="text" id="resContact" required
+                        class="w-full rounded-lg border border-outline-variant/50 focus:border-primary focus:ring-primary bg-surface-container-low px-4 py-2.5"
+                        placeholder="Pour vous contacter si besoin">
+                </div>
+                <div class="pt-4">
+                    <button type="submit"
+                        class="w-full bg-primary text-on-primary px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">Confirmer
+                        la réservation</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function validateReservationTime() {
+            const dateInput = document.getElementById('resDate');
+            const timeInput = document.getElementById('resTime');
+            if (!dateInput.value || !timeInput.value) return true;
+            const date = new Date(dateInput.value + 'T00:00:00');
+            const day = date.getDay();
+            const time = timeInput.value;
+            let isValid = false;
+            let message = "Nous sommes fermés à cette heure.";
+            if (day === 1) {
+                if ((time >= "09:30" && time <= "12:00") || (time >= "16:00" && time <= "18:00")) isValid = true;
+                else message = "Le lundi, nous sommes ouverts de 09h30 à 12h00 et de 16h00 à 18h00.";
+            } else if (day === 2) {
+                if (time >= "08:30" && time <= "18:00") isValid = true;
+                else message = "Le mardi, nous sommes ouverts de 08h30 à 18h00.";
+            } else if (day === 3) {
+                if (time >= "09:00" && time <= "18:00") isValid = true;
+                else message = "Le mercredi, nous sommes ouverts de 09h00 à 18h00.";
+            } else if (day === 4) {
+                if (time >= "08:30" && time <= "18:00") isValid = true;
+                else message = "Le jeudi, nous sommes ouverts de 08h30 à 18h00.";
+            } else if (day === 5) {
+                if (time >= "08:30" && time <= "18:00") isValid = true;
+                else message = "Le vendredi, nous sommes ouverts de 08h30 à 18h00.";
+            } else if (day === 6) {
+                if (time >= "10:00" && time <= "18:00") isValid = true;
+                else message = "Le samedi, nous sommes ouverts de 10h00 à 18h00.";
+            } else if (day === 0) {
+                if (time >= "10:00" && time <= "15:00") isValid = true;
+                else message = "Le dimanche, nous sommes ouverts de 10h00 à 15h00.";
+            }
+            if (!isValid) { timeInput.setCustomValidity(message); timeInput.reportValidity(); }
+            else { timeInput.setCustomValidity(""); }
+            return isValid;
+        }
+        function handleReservation(event) {
+            event.preventDefault();
+            if (!validateReservationTime()) return;
+            var name = document.getElementById('resName').value;
+            var date = document.getElementById('resDate').value;
+            var time = document.getElementById('resTime').value;
+            var guests = document.getElementById('resGuests').value;
+            var contact = document.getElementById('resContact').value;
+            var subject = encodeURIComponent("Reservation Brume Coffee - " + name);
+            var nl = "\n";
+            var body = encodeURIComponent("Bonjour Olga," + nl + nl + "Je souhaite réserver une table chez Brume Coffee." + nl + nl + "Nom : " + name + nl + "Date : " + date + nl + "Heure : " + time + nl + "Nombre de personnes : " + guests + nl + "Contact : " + contact + nl + nl + "Merci beaucoup !" + nl + "À très vite chez Brume.");
+            window.location.href = "mailto:essaievendredi123@gmail.com?subject=" + subject + "&body=" + body;
+            alert("Votre réservation a bien été envoyée ! Nous vous attendons le " + date + " a " + time + ". À très vite chez Brume !");
+            closeReservation();
+            document.getElementById('reservationForm').reset();
+        }
+        function showReservation(event) {
+            if (event) event.preventDefault();
+            const modal = document.getElementById('reservationModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            setTimeout(function () {
+                modal.classList.remove('opacity-0');
+                modal.querySelector('div').classList.remove('scale-95');
+            }, 10);
+        }
+        function closeReservation() {
+            const modal = document.getElementById('reservationModal');
+            modal.classList.add('opacity-0');
+            modal.querySelector('div').classList.add('scale-95');
+            setTimeout(function () {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }, 300);
+        }
+    </script>
+
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const icon = document.querySelector('.menu-icon');
+            if (menu.classList.contains('opacity-0')) {
+                menu.classList.remove('opacity-0', 'pointer-events-none');
+                document.body.classList.add('overflow-hidden');
+                icon.textContent = 'close';
+            } else {
+                menu.classList.add('opacity-0', 'pointer-events-none');
+                document.body.classList.remove('overflow-hidden');
+                icon.textContent = 'menu';
+            }
+        }
+    </script>
+
+
+    <script>
+        /* Scroll Reveal Animation */
+        (function () {
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('brume-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+            document.querySelectorAll('.brume-reveal').forEach(function (el) {
+                observer.observe(el);
+            });
+        })();
+    </script>
+</body>
+
+</html>

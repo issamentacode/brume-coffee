@@ -1,473 +1,582 @@
 <!DOCTYPE html>
 
-<html class="light" lang="fr"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "surface-bright": "#fcf9f3",
-                    "secondary-fixed-dim": "#ffb597",
-                    "inverse-surface": "#31312d",
-                    "on-primary-container": "#c7e0bb",
-                    "surface": "#fcf9f3",
-                    "error": "#ba1a1a",
-                    "primary": "#384c31",
-                    "on-secondary-fixed-variant": "#6f381e",
-                    "tertiary": "#524343",
-                    "on-surface": "#1c1c18",
-                    "surface-container-low": "#f6f3ed",
-                    "surface-container-high": "#ebe8e2",
-                    "on-secondary-fixed": "#360f00",
-                    "secondary": "#8b4e33",
-                    "primary-fixed-dim": "#b6cdaa",
-                    "inverse-on-surface": "#f3f0ea",
-                    "background": "#fcf9f3",
-                    "on-error-container": "#93000a",
-                    "error-container": "#ffdad6",
-                    "surface-container-lowest": "#ffffff",
-                    "tertiary-container": "#6a5b5b",
-                    "on-tertiary-fixed-variant": "#524343",
-                    "tertiary-fixed": "#f3dedd",
-                    "on-error": "#ffffff",
-                    "on-background": "#1c1c18",
-                    "surface-container-highest": "#e5e2dc",
-                    "outline-variant": "#c4c8be",
-                    "on-primary-fixed-variant": "#384c31",
-                    "inverse-primary": "#b6cdaa",
-                    "surface-variant": "#e5e2dc",
-                    "on-secondary-container": "#783f25",
-                    "on-secondary": "#ffffff",
-                    "primary-fixed": "#d1eac5",
-                    "surface-dim": "#dcdad4",
-                    "surface-tint": "#4f6447",
-                    "on-tertiary-fixed": "#241919",
-                    "primary-container": "#4f6447",
-                    "outline": "#747870",
-                    "on-surface-variant": "#444840",
-                    "on-tertiary": "#ffffff",
-                    "surface-container": "#f0eee8",
-                    "secondary-container": "#feae8c",
-                    "on-primary-fixed": "#0d2009",
-                    "on-primary": "#ffffff",
-                    "tertiary-fixed-dim": "#d6c2c1",
-                    "on-tertiary-container": "#e9d4d3",
-                    "secondary-fixed": "#ffdbcd"
+<html class="light" lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#fcf9f3",
+                        "secondary-fixed-dim": "#ffb597",
+                        "inverse-surface": "#31312d",
+                        "on-primary-container": "#c7e0bb",
+                        "surface": "#fcf9f3",
+                        "error": "#ba1a1a",
+                        "primary": "#384c31",
+                        "on-secondary-fixed-variant": "#6f381e",
+                        "tertiary": "#524343",
+                        "on-surface": "#1c1c18",
+                        "surface-container-low": "#f6f3ed",
+                        "surface-container-high": "#ebe8e2",
+                        "on-secondary-fixed": "#360f00",
+                        "secondary": "#8b4e33",
+                        "primary-fixed-dim": "#b6cdaa",
+                        "inverse-on-surface": "#f3f0ea",
+                        "background": "#fcf9f3",
+                        "on-error-container": "#93000a",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#6a5b5b",
+                        "on-tertiary-fixed-variant": "#524343",
+                        "tertiary-fixed": "#f3dedd",
+                        "on-error": "#ffffff",
+                        "on-background": "#1c1c18",
+                        "surface-container-highest": "#e5e2dc",
+                        "outline-variant": "#c4c8be",
+                        "on-primary-fixed-variant": "#384c31",
+                        "inverse-primary": "#b6cdaa",
+                        "surface-variant": "#e5e2dc",
+                        "on-secondary-container": "#783f25",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#d1eac5",
+                        "surface-dim": "#dcdad4",
+                        "surface-tint": "#4f6447",
+                        "on-tertiary-fixed": "#241919",
+                        "primary-container": "#4f6447",
+                        "outline": "#747870",
+                        "on-surface-variant": "#444840",
+                        "on-tertiary": "#ffffff",
+                        "surface-container": "#f0eee8",
+                        "secondary-container": "#feae8c",
+                        "on-primary-fixed": "#0d2009",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#d6c2c1",
+                        "on-tertiary-container": "#e9d4d3",
+                        "secondary-fixed": "#ffdbcd"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Newsreader"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
             },
-            "borderRadius": {
-                    "DEFAULT": "0.25rem",
-                    "lg": "0.5rem",
-                    "xl": "0.75rem",
-                    "full": "9999px"
-            },
-            "fontFamily": {
-                    "headline": ["Newsreader"],
-                    "body": ["Inter"],
-                    "label": ["Inter"]
-            }
-          },
-        },
-      }
+        }
     </script>
-<style>
-        body { font-family: 'Inter', sans-serif; }
-        .font-serif { font-family: 'Newsreader', serif; }
-        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-serif {
+            font-family: 'Newsreader', serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
     </style>
 
     <!-- Open Graph / Social Sharing -->
-    <meta property="og:type" content="website"/>
-    <meta property="og:locale" content="fr_FR"/>
-    <meta property="og:site_name" content="Brume Coffee"/>
-    <meta property="og:title" content="Brume — Votre cocon de douceur et de slow living"/>
-    <meta property="og:description" content="Café de spécialité, matcha de cérémonie et pâtisseries artisanales à Levallois-Perret. Un refuge pensé pour savourer l'instant présent."/>
-    <meta property="og:image" content="assets/brume_photo_5.jpg"/>
-    <meta name="twitter:card" content="summary_large_image"/>
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Brume Coffee" />
+    <meta property="og:title" content="Brume — Votre cocon de douceur et de slow living" />
+    <meta property="og:description"
+        content="Café de spécialité, matcha de cérémonie et pâtisseries artisanales à Levallois-Perret. Un refuge pensé pour savourer l'instant présent." />
+    <meta property="og:image" content="assets/brume_photo_5.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
 
-<style>
-.brume-reveal {
-    opacity: 0;
-    transform: translateY(28px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-}
-.brume-visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-</style>
+    <style>
+        .brume-reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .brume-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
+
 <body class="bg-surface text-on-surface selection:bg-secondary-container">
-<!-- Top Navigation Bar -->
-<!-- Mobile Menu Overlay -->
-<div id="mobileMenu" class="fixed inset-0 z-40 bg-[#fcf9f3] dark:bg-[#1c1c18] flex flex-col items-center justify-center space-y-10 opacity-0 pointer-events-none transition-opacity duration-300">
-        <a class="font-serif text-4xl text-[#4f6447] dark:text-[#c4c8be] hover:text-[#384c31] dark:hover:text-[#feae8c] transition-colors duration-300" href="index.html">Accueil</a>
-        <a class="font-serif text-4xl text-[#4f6447] dark:text-[#c4c8be] hover:text-[#384c31] dark:hover:text-[#feae8c] transition-colors duration-300" href="menu.html">Menu</a>
+    <!-- Top Navigation Bar -->
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenu"
+        class="fixed inset-0 z-40 bg-[#fcf9f3] dark:bg-[#1c1c18] flex flex-col items-center justify-center space-y-10 opacity-0 pointer-events-none transition-opacity duration-300">
+        <a class="font-serif text-4xl text-[#4f6447] dark:text-[#c4c8be] hover:text-[#384c31] dark:hover:text-[#feae8c] transition-colors duration-300"
+            href="index.html">Accueil</a>
+        <a class="font-serif text-4xl text-[#4f6447] dark:text-[#c4c8be] hover:text-[#384c31] dark:hover:text-[#feae8c] transition-colors duration-300"
+            href="menu.html">Menu</a>
         <a class="font-serif text-4xl text-[#384c31] dark:text-[#feae8c] italic" href="histoire.html">Notre Histoire</a>
-        <a class="font-serif text-4xl text-[#4f6447] dark:text-[#c4c8be] hover:text-[#384c31] dark:hover:text-[#feae8c] transition-colors duration-300" href="galerie.html">Galerie</a>
-        <a class="font-serif text-4xl text-[#4f6447] dark:text-[#c4c8be] hover:text-[#384c31] dark:hover:text-[#feae8c] transition-colors duration-300" href="visiter.html">Nous Visiter</a>
-</div>
-
-<!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-[#fcf9f3]/85 dark:bg-[#1c1c18]/85 backdrop-blur-xl transition-all duration-300 shadow-sm border-b border-[#384c31]/5">
-    <div class="flex justify-between items-center max-w-7xl mx-auto px-6 md:px-8 py-4 md:py-6 relative">
-        <a class="font-serif text-2xl font-bold italic text-[#384c31] dark:text-[#fcf9f3] z-50 relative" href="index.html">Brume</a>
-        
-        <div class="hidden md:flex items-center space-x-12">
-            <a class="text-[#4f6447] dark:text-[#c4c8be] hover:text-[#384c31] dark:hover:text-[#feae8c] transition-colors duration-300 font-serif text-lg tracking-tight Newsreader" href="index.html">Accueil</a>
-            <a class="text-[#4f6447] dark:text-[#c4c8be] hover:text-[#384c31] dark:hover:text-[#feae8c] transition-colors duration-300 font-serif text-lg tracking-tight Newsreader" href="menu.html">Menu</a>
-            <a class="text-[#384c31] dark:text-[#feae8c] border-b border-[#384c31] dark:border-[#feae8c] pb-1 font-serif text-lg tracking-tight Newsreader" href="histoire.html">Notre Histoire</a>
-            <a class="text-[#4f6447] dark:text-[#c4c8be] hover:text-[#384c31] dark:hover:text-[#feae8c] transition-colors duration-300 font-serif text-lg tracking-tight Newsreader" href="galerie.html">Galerie</a>
-            <a class="text-[#4f6447] dark:text-[#c4c8be] hover:text-[#384c31] dark:hover:text-[#feae8c] transition-colors duration-300 font-serif text-lg tracking-tight Newsreader" href="visiter.html">Nous Visiter</a>
-        </div>
-        
-        <div class="flex items-center gap-4 z-50 relative">
-            <a href="#" onclick="showReservation(event)" class="bg-[#384c31] text-white px-5 md:px-8 py-2 md:py-2.5 rounded-lg font-body text-sm font-medium tracking-wide hover:opacity-90 transition-opacity" style="display:flex; justify-content:center; align-items:center;">
-                Réserver
-            </a>
-            <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="md:hidden text-[#384c31] dark:text-[#fcf9f3] p-1 focus:outline-none flex items-center justify-center" aria-label="Menu" style="width:40px; height:40px;">
-                <span class="material-symbols-outlined text-3xl menu-icon">menu</span>
-            </button>
-        </div>
+        <a class="font-serif text-4xl text-[#4f6447] dark:text-[#c4c8be] hover:text-[#384c31] dark:hover:text-[#feae8c] transition-colors duration-300"
+            href="galerie.html">Galerie</a>
+        <a class="font-serif text-4xl text-[#4f6447] dark:text-[#c4c8be] hover:text-[#384c31] dark:hover:text-[#feae8c] transition-colors duration-300"
+            href="visiter.html">Nous Visiter</a>
     </div>
-</nav>
-<main class="pt-32">
-<!-- Hero Section: Editorial Header -->
-<section class="max-w-7xl mx-auto px-8 mb-32">
-<div class="flex flex-col md:flex-row items-end justify-between gap-12">
-<div class="max-w-2xl">
-<span class="font-label text-sm uppercase tracking-[0.2em] text-secondary mb-6 block">Depuis 2026</span>
-<h1 class="font-headline text-6xl md:text-8xl text-primary leading-[0.9] tracking-tight mb-8">
-                        L'éveil des <br/><span class="italic">sens</span> par le geste.
+
+    <!-- TopNavBar -->
+    <nav
+        class="fixed top-0 w-full z-50 bg-[#fcf9f3]/85 dark:bg-[#1c1c18]/85 backdrop-blur-xl transition-all duration-300 shadow-sm border-b border-[#384c31]/5">
+        <div class="flex justify-between items-center max-w-7xl mx-auto px-6 md:px-8 py-4 md:py-6 relative">
+            <a class="font-serif text-2xl font-bold italic text-[#384c31] dark:text-[#fcf9f3] z-50 relative"
+                href="index.html">Brume</a>
+
+            <div class="hidden md:flex items-center space-x-12">
+                <a class="text-[#4f6447] dark:text-[#c4c8be] hover:text-[#384c31] dark:hover:text-[#feae8c] transition-colors duration-300 font-serif text-lg tracking-tight Newsreader"
+                    href="index.html">Accueil</a>
+                <a class="text-[#4f6447] dark:text-[#c4c8be] hover:text-[#384c31] dark:hover:text-[#feae8c] transition-colors duration-300 font-serif text-lg tracking-tight Newsreader"
+                    href="menu.html">Menu</a>
+                <a class="text-[#384c31] dark:text-[#feae8c] border-b border-[#384c31] dark:border-[#feae8c] pb-1 font-serif text-lg tracking-tight Newsreader"
+                    href="histoire.html">Notre Histoire</a>
+                <a class="text-[#4f6447] dark:text-[#c4c8be] hover:text-[#384c31] dark:hover:text-[#feae8c] transition-colors duration-300 font-serif text-lg tracking-tight Newsreader"
+                    href="galerie.html">Galerie</a>
+                <a class="text-[#4f6447] dark:text-[#c4c8be] hover:text-[#384c31] dark:hover:text-[#feae8c] transition-colors duration-300 font-serif text-lg tracking-tight Newsreader"
+                    href="visiter.html">Nous Visiter</a>
+            </div>
+
+            <div class="flex items-center gap-4 z-50 relative">
+                <a href="#" onclick="showReservation(event)"
+                    class="bg-[#384c31] text-white px-5 md:px-8 py-2 md:py-2.5 rounded-lg font-body text-sm font-medium tracking-wide hover:opacity-90 transition-opacity"
+                    style="display:flex; justify-content:center; align-items:center;">
+                    Réserver
+                </a>
+                <button id="mobileMenuBtn" onclick="toggleMobileMenu()"
+                    class="md:hidden text-[#384c31] dark:text-[#fcf9f3] p-1 focus:outline-none flex items-center justify-center"
+                    aria-label="Menu" style="width:40px; height:40px;">
+                    <span class="material-symbols-outlined text-3xl menu-icon">menu</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <main class="pt-32">
+        <!-- Hero Section: Editorial Header -->
+        <section class="max-w-7xl mx-auto px-8 mb-32">
+            <div class="flex flex-col md:flex-row items-end justify-between gap-12">
+                <div class="max-w-2xl">
+                    <span class="font-label text-sm uppercase tracking-[0.2em] text-secondary mb-6 block">Depuis
+                        2026</span>
+                    <h1 class="font-headline text-6xl md:text-8xl text-primary leading-[0.9] tracking-tight mb-8">
+                        L'éveil des <br /><span class="italic">sens</span> par le geste.
                     </h1>
-</div>
-<div class="max-w-xs pb-4">
-<p class="font-body text-lg text-on-surface-variant leading-relaxed italic">
-                        "Brume est née d'un rêve : celui d'offrir un refuge où le temps n'a plus d'emprise. Ici, chaque boisson et chaque gourmandise est une invitation au voyage intérieur."
-                    </p>
-</div>
-</div>
-</section>
-<!-- Signature Asymmetric Imagery & Narrative -->
-<section class="mb-32">
-<div class="grid grid-cols-1 md:grid-cols-12 gap-0 items-center">
-<!-- Large Feature Image -->
-<div class="md:col-span-7 pr-8 md:pr-0">
-<div class="relative rounded-tr-xl rounded-br-xl overflow-hidden aspect-[4/5] md:aspect-[16/10]">
-<img alt="Interior of Brume coffee house" class="w-full h-full object-cover" data-alt="close-up of artisan barista carefully pouring latte art in a sunlit ceramic cup, steam rising softly, wood textures" src="assets/histoire_bg1.jpg"/>
-<div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
-</div>
-</div>
-<!-- Narrative Text -->
-<div class="md:col-span-5 px-8 md:px-24 py-16 md:py-0">
-<h2 class="font-headline text-4xl text-primary mb-8 leading-tight">La Main qui <br/>Murmure au Grain</h2>
-<p class="font-body text-lg text-on-surface-variant leading-relaxed mb-6">
-                        Brume est née d'un silence matinal, de cette vapeur qui s'échappe d'une tasse et de la conviction que la lenteur est une vertu. Nous ne cherchons pas la perfection mécanique, mais la justesse artisanale. 
-                    </p>
-<p class="font-body text-lg text-on-surface-variant leading-relaxed">
-                        Chaque matin, nous écoutons le murmure des grains, tandis que nos pâtissiers façonnent les pâtes avec la patience infinie des artisans. C'est cette sincérité, brute et généreuse, qui bat dans le cœur de Brume.
-                    </p>
-</div>
-</div>
-</section>
-<!-- Bento Grid: The Ritual Moments -->
-<section class="max-w-7xl mx-auto px-8 mb-32">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-<!-- Card 2: Pastry (Spans 2 columns on mobile) -->
-<div class="bg-surface-container-highest p-10 rounded-xl flex flex-col items-center text-center justify-center space-y-8">
-<div class="max-w-xs">
-<h3 class="font-headline text-4xl text-primary mb-4 italic">Le geste pur</h3>
-<p class="font-body text-on-surface">Un retour à l'essentiel. Du beurre de baratte choisi avec soin, des farines anciennes et le temps sacré du levage naturel.</p>
-</div>
-<div class="w-full h-64 rounded-xl overflow-hidden shadow-2xl rotate-2">
-<img class="w-full h-full object-cover" data-alt="floured hands of a baker kneading dough on a heavy wooden table with morning light coming through a window" src="assets/brume_photo_3.jpg"/>
-</div>
-</div>
-<!-- Card 3: Community -->
-<div class="bg-primary text-on-primary p-10 rounded-xl flex flex-col justify-between">
-<div>
-<span class="material-symbols-outlined text-on-primary-container text-4xl mb-6">temp_preferences_eco</span>
-<h3 class="font-headline text-3xl mb-4">L'Héritage</h3>
-<p class="opacity-80 font-body leading-relaxed">Plus qu'un café, Brume est un refuge pour ceux qui cherchent la poésie dans l'ordinaire.</p>
-</div>
-<div class="mt-8 pt-8 border-t border-on-primary/20">
-<p class="font-serif italic text-xl">"Le bonheur de se retrouver."</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Full Width Atmosphere Image -->
-<section class="w-full h-[614px] relative mb-32 overflow-hidden">
-<img alt="Atmosphere at Brume" class="w-full h-full object-cover" data-alt="interior of a minimalist coffee shop with large windows, hanging plants, and soft moody lighting at dusk" src="assets/histoire_bg2.jpg"/>
-<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
-<div class="absolute bottom-12 left-12 md:left-24">
-<p class="font-headline text-5xl text-on-surface max-w-xl">Une atmosphère suspendue, entre terre et ciel.</p>
-</div>
-</section>
-<!-- Closing Sentiment -->
-<section class="max-w-4xl mx-auto px-8 text-center mb-32">
-<span class="material-symbols-outlined text-secondary-fixed-dim text-6xl mb-8" data-weight="fill">local_florist</span>
-<h2 class="font-headline text-5xl text-primary mb-12">Nous avons hâte de partager ce rituel avec vous.</h2>
-<div class="flex flex-col md:flex-row justify-center gap-6">
-<a href="menu.html" class="bg-secondary-container text-on-secondary-container px-12 py-4 rounded-lg font-serif text-xl hover:opacity-90 transition-all" style="display:inline-flex; align-items:center; justify-content:center;">Découvrir le Menu</a>
-<a href="#" onclick="showReservation(event)" class="text-primary font-serif text-xl hover:underline decoration-secondary underline-offset-8 transition-all">Réserver une table</a>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="bg-[#f6f3ed] w-full pt-16 pb-8 px-8 border-t border-[#384c31]/10">
-<div class="max-w-7xl mx-auto">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-        <!-- Brand -->
-        <div class="md:col-span-1 space-y-4">
-            <span class="font-serif text-2xl italic text-[#384c31] font-bold">Brume</span>
-            <p class="text-sm text-[#384c31]/60 leading-relaxed">Un cocon de douceur et de slow living au coeur de Levallois-Perret.</p>
-            <a href="https://www.instagram.com/brume.levallois/" target="_blank" class="inline-flex items-center gap-2 text-[#384c31]/70 hover:text-[#384c31] transition-colors text-sm font-medium">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                @brume.levallois
-            </a>
-        </div>
-        <!-- Navigation -->
-        <div class="space-y-4">
-            <h4 class="font-serif text-[#384c31] font-semibold text-sm uppercase tracking-widest">Pages</h4>
-            <nav class="flex flex-col space-y-2">
-                <a href="index.html" class="text-sm text-[#384c31]/60 hover:text-[#384c31] transition-colors">Accueil</a>
-                <a href="menu.html" class="text-sm text-[#384c31]/60 hover:text-[#384c31] transition-colors">La Carte</a>
-                <a href="histoire.html" class="text-sm text-[#384c31]/60 hover:text-[#384c31] transition-colors">Notre Histoire</a>
-                <a href="galerie.html" class="text-sm text-[#384c31]/60 hover:text-[#384c31] transition-colors">Galerie</a>
-                <a href="visiter.html" class="text-sm text-[#384c31]/60 hover:text-[#384c31] transition-colors">Nous Visiter</a>
-            </nav>
-        </div>
-        <!-- Hours -->
-        <div class="space-y-4">
-            <h4 class="font-serif text-[#384c31] font-semibold text-sm uppercase tracking-widest">Horaires</h4>
-            <table class="text-sm text-[#384c31]/60 w-full">
-                <tr><td class="pr-4 py-0.5">Lundi</td><td class="text-right">09:30–12:00, 16:00–18:00</td></tr>
-                <tr><td class="pr-4 py-0.5">Mardi – Vendredi</td><td class="text-right">08:30–18:00</td></tr>
-                <tr><td class="pr-4 py-0.5">Samedi</td><td class="text-right">10:00–18:00</td></tr>
-                <tr><td class="pr-4 py-0.5">Dimanche</td><td class="text-right">10:00–15:00</td></tr>
-            </table>
-        </div>
-        <!-- Contact -->
-        <div class="space-y-4">
-            <h4 class="font-serif text-[#384c31] font-semibold text-sm uppercase tracking-widest">Contact</h4>
-            <div class="text-sm text-[#384c31]/60 space-y-2">
-                <p>2 Rue Camille Pelletan<br/>92300 Levallois-Perret</p>
-                <p><a href="tel:+33775867647" class="hover:text-[#384c31] transition-colors">07 75 86 76 47</a></p>
-                <p><a href="mailto:essaievendredi123@gmail.com" class="hover:text-[#384c31] transition-colors">essaievendredi123@gmail.com</a></p>
-            </div>
-        </div>
-    </div>
-    <!-- Bottom bar -->
-    <div class="border-t border-[#384c31]/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-        <span class="text-xs text-[#384c31]/40">&copy; 2026 Brume Coffee — Levallois-Perret</span>
-        <a href="#" onclick="showMentionsLegales(event)" class="text-xs text-[#384c31]/40 hover:text-[#384c31]/80 underline decoration-[#feae8c] transition-colors">Mentions Légales</a>
-    </div>
-</div>
-</footer>
-
-<!-- Mentions Légales Modal -->
-<div id="mentionsModal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 transition-opacity duration-300">
-    <div class="bg-surface p-8 md:p-12 rounded-2xl shadow-2xl max-w-2xl w-[90%] max-h-[80vh] overflow-y-auto transform scale-95 transition-transform duration-300">
-        <div class="flex justify-between items-start mb-6">
-            <h2 class="font-headline text-3xl text-primary italic">Mentions Légales</h2>
-            <button onclick="closeMentions()" class="text-on-surface-variant hover:text-primary transition-colors">
-                <span class="material-symbols-outlined">close</span>
-            </button>
-        </div>
-        <div class="space-y-4 font-body text-on-surface-variant text-sm md:text-base leading-relaxed">
-            <p><strong>Éditeur du site :</strong> Brume Coffee</p>
-            <p><strong>Responsable :</strong> Olga</p>
-            <p><strong>Adresse :</strong> 2 Rue Camille Pelletan, 92300 Levallois-Perret</p>
-            <p><strong>Téléphone :</strong> 07 75 86 76 47</p>
-            <p><strong>Hébergement :</strong> Vercel Inc., 340 S Lemon Ave #4133 Walnut, CA 91789, USA.</p>
-            <p>Conformément à la loi "Informatique et Libertés", vous disposez d'un droit d'accès, de rectification et d'opposition aux données personnelles vous concernant.</p>
-        </div>
-        <div class="mt-8 pt-6 border-t border-secondary-container text-right">
-            <button onclick="closeMentions()" class="bg-primary text-on-primary px-6 py-2 rounded-lg font-medium hover:opacity-90 transition-opacity">Fermer</button>
-        </div>
-    </div>
-</div>
-
-<script>
-    function showMentionsLegales(event) {
-        if(event) event.preventDefault();
-        const modal = document.getElementById('mentionsModal');
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
-        setTimeout(() => {
-            modal.classList.remove('opacity-0');
-            modal.querySelector('div').classList.remove('scale-95');
-        }, 10);
-    }
-    
-    function closeMentions() {
-        const modal = document.getElementById('mentionsModal');
-        modal.classList.add('opacity-0');
-        modal.querySelector('div').classList.add('scale-95');
-        setTimeout(() => {
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-        }, 300);
-    }
-</script>
-
-
-<!-- Reservation Modal -->
-<div id="reservationModal" class="fixed inset-0 z-[110] hidden items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 transition-opacity duration-300">
-    <div class="bg-surface p-8 md:p-12 rounded-2xl shadow-2xl max-w-lg w-[90%] max-h-[90vh] overflow-y-auto transform scale-95 transition-transform duration-300">
-        <div class="flex justify-between items-start mb-6">
-            <h2 class="font-headline text-3xl text-primary italic">Réserver une table</h2>
-            <button onclick="closeReservation()" class="text-on-surface-variant hover:text-primary transition-colors">
-                <span class="material-symbols-outlined">close</span>
-            </button>
-        </div>
-        <form class="space-y-4" id="reservationForm" onsubmit="handleReservation(event)">
-            <div>
-                <label class="block font-body text-sm font-medium text-on-surface-variant mb-1">Nom complet</label>
-                <input type="text" id="resName" required class="w-full rounded-lg border border-outline-variant/50 focus:border-primary focus:ring-primary bg-surface-container-low px-4 py-2.5" placeholder="Votre nom">
-            </div>
-            <div class="grid grid-cols-2 gap-4">
-                <div>
-                    <label class="block font-body text-sm font-medium text-on-surface-variant mb-1">Date</label>
-                    <input type="date" id="resDate" required onchange="validateReservationTime()" class="w-full rounded-lg border border-outline-variant/50 focus:border-primary focus:ring-primary bg-surface-container-low px-4 py-2.5">
                 </div>
-                <div>
-                    <label class="block font-body text-sm font-medium text-on-surface-variant mb-1">Heure exacte</label>
-                    <input type="time" id="resTime" required onchange="validateReservationTime()" class="w-full rounded-lg border border-outline-variant/50 focus:border-primary focus:ring-primary bg-surface-container-low px-4 py-2.5">
+                <div class="max-w-xs pb-4">
+                    <p class="font-body text-lg text-on-surface-variant leading-relaxed italic">
+                        "Brume est née d'un rêve : celui d'offrir un refuge où le temps n'a plus d'emprise. Ici, chaque
+                        boisson et chaque gourmandise est une invitation au voyage intérieur."
+                    </p>
                 </div>
             </div>
-            <div>
-                <label class="block font-body text-sm font-medium text-on-surface-variant mb-1">Nombre de personnes</label>
-                <select id="resGuests" required class="w-full rounded-lg border border-outline-variant/50 focus:border-primary focus:ring-primary bg-surface-container-low px-4 py-2.5">
-                    <option value="1">1 personne</option>
-                    <option value="2" selected>2 personnes</option>
-                    <option value="3">3 personnes</option>
-                    <option value="4">4 personnes</option>
-                    <option value="5+">5+ personnes</option>
-                </select>
+        </section>
+        <!-- Signature Asymmetric Imagery & Narrative -->
+        <section class="mb-32">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-0 items-center">
+                <!-- Large Feature Image -->
+                <div class="md:col-span-7 pr-8 md:pr-0">
+                    <div class="relative rounded-tr-xl rounded-br-xl overflow-hidden aspect-[4/5] md:aspect-[16/10]">
+                        <img alt="Interior of Brume coffee house" class="w-full h-full object-cover"
+                            data-alt="close-up of artisan barista carefully pouring latte art in a sunlit ceramic cup, steam rising softly, wood textures"
+                            src="assets/histoire_bg1.jpg" />
+                        <div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
+                    </div>
+                </div>
+                <!-- Narrative Text -->
+                <div class="md:col-span-5 px-8 md:px-24 py-16 md:py-0">
+                    <h2 class="font-headline text-4xl text-primary mb-8 leading-tight">La Main qui <br />Murmure au
+                        Grain</h2>
+                    <p class="font-body text-lg text-on-surface-variant leading-relaxed mb-6">
+                        Brume est née d'un silence matinal, de cette vapeur qui s'échappe d'une tasse et de la
+                        conviction que la lenteur est une vertu. Nous ne cherchons pas la perfection mécanique, mais la
+                        justesse artisanale.
+                    </p>
+                    <p class="font-body text-lg text-on-surface-variant leading-relaxed">
+                        Chaque matin, nous écoutons le murmure des grains, tandis que nos pâtissiers façonnent les pâtes
+                        avec la patience infinie des artisans. C'est cette sincérité, brute et généreuse, qui bat dans
+                        le cœur de Brume.
+                    </p>
+                </div>
             </div>
-            <div>
-                <label class="block font-body text-sm font-medium text-on-surface-variant mb-1">Téléphone / E-mail</label>
-                <input type="text" id="resContact" required class="w-full rounded-lg border border-outline-variant/50 focus:border-primary focus:ring-primary bg-surface-container-low px-4 py-2.5" placeholder="Pour vous contacter si besoin">
+        </section>
+        <!-- Bento Grid: The Ritual Moments -->
+        <section class="max-w-7xl mx-auto px-8 mb-32">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Card 2: Pastry (Spans 2 columns on mobile) -->
+                <div
+                    class="bg-surface-container-highest p-10 rounded-xl flex flex-col items-center text-center justify-center space-y-8">
+                    <div class="max-w-xs">
+                        <h3 class="font-headline text-4xl text-primary mb-4 italic">Le geste pur</h3>
+                        <p class="font-body text-on-surface">Un retour à l'essentiel. Du beurre de baratte choisi avec
+                            soin, des farines anciennes et le temps sacré du levage naturel.</p>
+                    </div>
+                    <div class="w-full h-64 rounded-xl overflow-hidden shadow-2xl rotate-2">
+                        <img class="w-full h-full object-cover"
+                            data-alt="floured hands of a baker kneading dough on a heavy wooden table with morning light coming through a window"
+                            src="assets/brume_photo_3.jpg" />
+                    </div>
+                </div>
+                <!-- Card 3: Community -->
+                <div class="bg-primary text-on-primary p-10 rounded-xl flex flex-col justify-between">
+                    <div>
+                        <span
+                            class="material-symbols-outlined text-on-primary-container text-4xl mb-6">temp_preferences_eco</span>
+                        <h3 class="font-headline text-3xl mb-4">L'Héritage</h3>
+                        <p class="opacity-80 font-body leading-relaxed">Plus qu'un café, Brume est un refuge pour ceux
+                            qui cherchent la poésie dans l'ordinaire.</p>
+                    </div>
+                    <div class="mt-8 pt-8 border-t border-on-primary/20">
+                        <p class="font-serif italic text-xl">"Le bonheur de se retrouver."</p>
+                    </div>
+                </div>
             </div>
-            <div class="pt-4">
-                <button type="submit" class="w-full bg-primary text-on-primary px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">Confirmer la réservation</button>
+        </section>
+        <!-- Full Width Atmosphere Image -->
+        <section class="w-full h-[614px] relative mb-32 overflow-hidden">
+            <img alt="Atmosphere at Brume" class="w-full h-full object-cover"
+                data-alt="interior of a minimalist coffee shop with large windows, hanging plants, and soft moody lighting at dusk"
+                src="assets/histoire_bg2.jpg" />
+            <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
+            <div class="absolute bottom-12 left-12 md:left-24">
+                <p class="font-headline text-5xl text-on-surface max-w-xl">Une atmosphère suspendue, entre terre et
+                    ciel.</p>
             </div>
-        </form>
+        </section>
+        <!-- Closing Sentiment -->
+        <section class="max-w-4xl mx-auto px-8 text-center mb-32">
+            <span class="material-symbols-outlined text-secondary-fixed-dim text-6xl mb-8"
+                data-weight="fill">local_florist</span>
+            <h2 class="font-headline text-5xl text-primary mb-12">Nous avons hâte de partager ce rituel avec vous.</h2>
+            <div class="flex flex-col md:flex-row justify-center gap-6">
+                <a href="menu.html"
+                    class="bg-secondary-container text-on-secondary-container px-12 py-4 rounded-lg font-serif text-xl hover:opacity-90 transition-all"
+                    style="display:inline-flex; align-items:center; justify-content:center;">Découvrir le Menu</a>
+                <a href="#" onclick="showReservation(event)"
+                    class="text-primary font-serif text-xl hover:underline decoration-secondary underline-offset-8 transition-all">Réserver
+                    une table</a>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-[#f6f3ed] w-full pt-16 pb-8 px-8 border-t border-[#384c31]/10">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div class="md:col-span-1 space-y-4">
+                    <span class="font-serif text-2xl italic text-[#384c31] font-bold">Brume</span>
+                    <p class="text-sm text-[#384c31]/60 leading-relaxed">Un cocon de douceur et de slow living au coeur
+                        de Levallois-Perret.</p>
+                    <a href="https://www.instagram.com/brume.levallois/" target="_blank"
+                        class="inline-flex items-center gap-2 text-[#384c31]/70 hover:text-[#384c31] transition-colors text-sm font-medium">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                        @brume.levallois
+                    </a>
+                </div>
+                <!-- Navigation -->
+                <div class="space-y-4">
+                    <h4 class="font-serif text-[#384c31] font-semibold text-sm uppercase tracking-widest">Pages</h4>
+                    <nav class="flex flex-col space-y-2">
+                        <a href="index.html"
+                            class="text-sm text-[#384c31]/60 hover:text-[#384c31] transition-colors">Accueil</a>
+                        <a href="menu.html" class="text-sm text-[#384c31]/60 hover:text-[#384c31] transition-colors">La
+                            Carte</a>
+                        <a href="histoire.html"
+                            class="text-sm text-[#384c31]/60 hover:text-[#384c31] transition-colors">Notre Histoire</a>
+                        <a href="galerie.html"
+                            class="text-sm text-[#384c31]/60 hover:text-[#384c31] transition-colors">Galerie</a>
+                        <a href="visiter.html"
+                            class="text-sm text-[#384c31]/60 hover:text-[#384c31] transition-colors">Nous Visiter</a>
+                    </nav>
+                </div>
+                <!-- Hours -->
+                <div class="space-y-4">
+                    <h4 class="font-serif text-[#384c31] font-semibold text-sm uppercase tracking-widest">Horaires</h4>
+                    <table class="text-sm text-[#384c31]/60 w-full">
+                        <tr>
+                            <td class="pr-4 py-0.5">Lundi</td>
+                            <td class="text-right">09:30–12:00, 16:00–18:00</td>
+                        </tr>
+                        <tr>
+                            <td class="pr-4 py-0.5">Mardi – Vendredi</td>
+                            <td class="text-right">08:30–18:00</td>
+                        </tr>
+                        <tr>
+                            <td class="pr-4 py-0.5">Samedi</td>
+                            <td class="text-right">10:00–18:00</td>
+                        </tr>
+                        <tr>
+                            <td class="pr-4 py-0.5">Dimanche</td>
+                            <td class="text-right">10:00–15:00</td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- Contact -->
+                <div class="space-y-4">
+                    <h4 class="font-serif text-[#384c31] font-semibold text-sm uppercase tracking-widest">Contact</h4>
+                    <div class="text-sm text-[#384c31]/60 space-y-2">
+                        <a href="https://maps.app.goo.gl/DxdbmxsdsEMXXF6B8" target="_blank"
+                            class="flex items-center space-x-2 text-primary hover:text-secondary transition-colors font-medium">
+                            <p>2 Rue Camille Pelletan<br />92300 Levallois-Perret</p>
+                        </a>
+                        <p><a href="tel:+33775867647" class="hover:text-[#384c31] transition-colors">07 75 86 76 47</a>
+                        </p>
+                        <p><a href="mailto:essaievendredi123@gmail.com"
+                                class="hover:text-[#384c31] transition-colors">essaievendredi123@gmail.com</a></p>
+                    </div>
+                </div>
+            </div>
+            <!-- Bottom bar -->
+            <div class="border-t border-[#384c31]/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <span class="text-xs text-[#384c31]/40">&copy; 2026 Brume Coffee — Levallois-Perret</span>
+                <a href="#" onclick="showMentionsLegales(event)"
+                    class="text-xs text-[#384c31]/40 hover:text-[#384c31]/80 underline decoration-[#feae8c] transition-colors">Mentions
+                    Légales</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mentions Légales Modal -->
+    <div id="mentionsModal"
+        class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 transition-opacity duration-300">
+        <div
+            class="bg-surface p-8 md:p-12 rounded-2xl shadow-2xl max-w-2xl w-[90%] max-h-[80vh] overflow-y-auto transform scale-95 transition-transform duration-300">
+            <div class="flex justify-between items-start mb-6">
+                <h2 class="font-headline text-3xl text-primary italic">Mentions Légales</h2>
+                <button onclick="closeMentions()" class="text-on-surface-variant hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <div class="space-y-4 font-body text-on-surface-variant text-sm md:text-base leading-relaxed">
+                <p><strong>Éditeur du site :</strong> Brume Coffee</p>
+                <p><strong>Responsable :</strong> Olga</p>
+                <a href="https://maps.app.goo.gl/DxdbmxsdsEMXXF6B8" target="_blank"
+                    class="flex items-center space-x-2 text-primary hover:text-secondary transition-colors font-medium">
+                    <p><strong>Adresse :</strong> 2 Rue Camille Pelletan, 92300 Levallois-Perret</p>
+                </a>
+                <p><strong>Téléphone :</strong> 07 75 86 76 47</p>
+                <p><strong>Hébergement :</strong> Vercel Inc., 340 S Lemon Ave #4133 Walnut, CA 91789, USA.</p>
+                <p>Conformément à la loi "Informatique et Libertés", vous disposez d'un droit d'accès, de rectification
+                    et d'opposition aux données personnelles vous concernant.</p>
+            </div>
+            <div class="mt-8 pt-6 border-t border-secondary-container text-right">
+                <button onclick="closeMentions()"
+                    class="bg-primary text-on-primary px-6 py-2 rounded-lg font-medium hover:opacity-90 transition-opacity">Fermer</button>
+            </div>
+        </div>
     </div>
-</div>
 
-<script>
-    function validateReservationTime() {
-        const dateInput = document.getElementById('resDate');
-        const timeInput = document.getElementById('resTime');
-        if(!dateInput.value || !timeInput.value) return true;
-        const date = new Date(dateInput.value + 'T00:00:00');
-        const day = date.getDay();
-        const time = timeInput.value;
-        let isValid = false;
-        let message = "Nous sommes fermés à cette heure.";
-        if(day === 1) {
-            if((time >= "09:30" && time <= "12:00") || (time >= "16:00" && time <= "18:00")) isValid = true;
-            else message = "Le lundi, nous sommes ouverts de 09h30 à 12h00 et de 16h00 à 18h00.";
-        } else if(day === 2) {
-            if(time >= "08:30" && time <= "18:00") isValid = true;
-            else message = "Le mardi, nous sommes ouverts de 08h30 à 18h00.";
-        } else if(day === 3) {
-            if(time >= "09:00" && time <= "18:00") isValid = true;
-            else message = "Le mercredi, nous sommes ouverts de 09h00 à 18h00.";
-        } else if(day === 4) {
-            if(time >= "08:30" && time <= "18:00") isValid = true;
-            else message = "Le jeudi, nous sommes ouverts de 08h30 à 18h00.";
-        } else if(day === 5) {
-            if(time >= "08:30" && time <= "18:00") isValid = true;
-            else message = "Le vendredi, nous sommes ouverts de 08h30 à 18h00.";
-        } else if(day === 6) {
-            if(time >= "10:00" && time <= "18:00") isValid = true;
-            else message = "Le samedi, nous sommes ouverts de 10h00 à 18h00.";
-        } else if(day === 0) {
-            if(time >= "10:00" && time <= "15:00") isValid = true;
-            else message = "Le dimanche, nous sommes ouverts de 10h00 à 15h00.";
+    <script>
+        function showMentionsLegales(event) {
+            if (event) event.preventDefault();
+            const modal = document.getElementById('mentionsModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modal.querySelector('div').classList.remove('scale-95');
+            }, 10);
         }
-        if(!isValid) { timeInput.setCustomValidity(message); timeInput.reportValidity(); }
-        else { timeInput.setCustomValidity(""); }
-        return isValid;
-    }
-    function handleReservation(event) {
-        event.preventDefault();
-        if (!validateReservationTime()) return;
-        var name = document.getElementById('resName').value;
-        var date = document.getElementById('resDate').value;
-        var time = document.getElementById('resTime').value;
-        var guests = document.getElementById('resGuests').value;
-        var contact = document.getElementById('resContact').value;
-        var subject = encodeURIComponent("Reservation Brume Coffee - " + name);
-        var nl = "\n";
-        var body = encodeURIComponent("Bonjour Olga," + nl + nl + "Je souhaite réserver une table chez Brume Coffee." + nl + nl + "Nom : " + name + nl + "Date : " + date + nl + "Heure : " + time + nl + "Nombre de personnes : " + guests + nl + "Contact : " + contact + nl + nl + "Merci beaucoup !" + nl + "À très vite chez Brume.");
-        window.location.href = "mailto:essaievendredi123@gmail.com?subject=" + subject + "&body=" + body;
-        alert("Votre réservation a bien été envoyée ! Nous vous attendons le " + date + " a " + time + ". À très vite chez Brume !");
-        closeReservation();
-        document.getElementById('reservationForm').reset();
-    }
-    function showReservation(event) {
-        if(event) event.preventDefault();
-        const modal = document.getElementById('reservationModal');
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
-        setTimeout(function() {
-            modal.classList.remove('opacity-0');
-            modal.querySelector('div').classList.remove('scale-95');
-        }, 10);
-    }
-    function closeReservation() {
-        const modal = document.getElementById('reservationModal');
-        modal.classList.add('opacity-0');
-        modal.querySelector('div').classList.add('scale-95');
-        setTimeout(function() {
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-        }, 300);
-    }
-</script>
 
-
-<script>
-    function toggleMobileMenu() {
-        const menu = document.getElementById('mobileMenu');
-        const icon = document.querySelector('.menu-icon');
-        if (menu.classList.contains('opacity-0')) {
-            menu.classList.remove('opacity-0', 'pointer-events-none');
-            document.body.classList.add('overflow-hidden');
-            icon.textContent = 'close';
-        } else {
-            menu.classList.add('opacity-0', 'pointer-events-none');
-            document.body.classList.remove('overflow-hidden');
-            icon.textContent = 'menu';
+        function closeMentions() {
+            const modal = document.getElementById('mentionsModal');
+            modal.classList.add('opacity-0');
+            modal.querySelector('div').classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }, 300);
         }
-    }
-</script>
+    </script>
 
 
-<script>
-/* Scroll Reveal Animation */
-(function(){
-    const observer = new IntersectionObserver(function(entries){
-        entries.forEach(function(entry){
-            if(entry.isIntersecting){
-                entry.target.classList.add('brume-visible');
-                observer.unobserve(entry.target);
+    <!-- Reservation Modal -->
+    <div id="reservationModal"
+        class="fixed inset-0 z-[110] hidden items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 transition-opacity duration-300">
+        <div
+            class="bg-surface p-8 md:p-12 rounded-2xl shadow-2xl max-w-lg w-[90%] max-h-[90vh] overflow-y-auto transform scale-95 transition-transform duration-300">
+            <div class="flex justify-between items-start mb-6">
+                <h2 class="font-headline text-3xl text-primary italic">Réserver une table</h2>
+                <button onclick="closeReservation()"
+                    class="text-on-surface-variant hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <form class="space-y-4" id="reservationForm" onsubmit="handleReservation(event)">
+                <div>
+                    <label class="block font-body text-sm font-medium text-on-surface-variant mb-1">Nom complet</label>
+                    <input type="text" id="resName" required
+                        class="w-full rounded-lg border border-outline-variant/50 focus:border-primary focus:ring-primary bg-surface-container-low px-4 py-2.5"
+                        placeholder="Votre nom">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block font-body text-sm font-medium text-on-surface-variant mb-1">Date</label>
+                        <input type="date" id="resDate" required onchange="validateReservationTime()"
+                            class="w-full rounded-lg border border-outline-variant/50 focus:border-primary focus:ring-primary bg-surface-container-low px-4 py-2.5">
+                    </div>
+                    <div>
+                        <label class="block font-body text-sm font-medium text-on-surface-variant mb-1">Heure
+                            exacte</label>
+                        <input type="time" id="resTime" required onchange="validateReservationTime()"
+                            class="w-full rounded-lg border border-outline-variant/50 focus:border-primary focus:ring-primary bg-surface-container-low px-4 py-2.5">
+                    </div>
+                </div>
+                <div>
+                    <label class="block font-body text-sm font-medium text-on-surface-variant mb-1">Nombre de
+                        personnes</label>
+                    <select id="resGuests" required
+                        class="w-full rounded-lg border border-outline-variant/50 focus:border-primary focus:ring-primary bg-surface-container-low px-4 py-2.5">
+                        <option value="1">1 personne</option>
+                        <option value="2" selected>2 personnes</option>
+                        <option value="3">3 personnes</option>
+                        <option value="4">4 personnes</option>
+                        <option value="5+">5+ personnes</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block font-body text-sm font-medium text-on-surface-variant mb-1">Téléphone /
+                        E-mail</label>
+                    <input type="text" id="resContact" required
+                        class="w-full rounded-lg border border-outline-variant/50 focus:border-primary focus:ring-primary bg-surface-container-low px-4 py-2.5"
+                        placeholder="Pour vous contacter si besoin">
+                </div>
+                <div class="pt-4">
+                    <button type="submit"
+                        class="w-full bg-primary text-on-primary px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity">Confirmer
+                        la réservation</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function validateReservationTime() {
+            const dateInput = document.getElementById('resDate');
+            const timeInput = document.getElementById('resTime');
+            if (!dateInput.value || !timeInput.value) return true;
+            const date = new Date(dateInput.value + 'T00:00:00');
+            const day = date.getDay();
+            const time = timeInput.value;
+            let isValid = false;
+            let message = "Nous sommes fermés à cette heure.";
+            if (day === 1) {
+                if ((time >= "09:30" && time <= "12:00") || (time >= "16:00" && time <= "18:00")) isValid = true;
+                else message = "Le lundi, nous sommes ouverts de 09h30 à 12h00 et de 16h00 à 18h00.";
+            } else if (day === 2) {
+                if (time >= "08:30" && time <= "18:00") isValid = true;
+                else message = "Le mardi, nous sommes ouverts de 08h30 à 18h00.";
+            } else if (day === 3) {
+                if (time >= "09:00" && time <= "18:00") isValid = true;
+                else message = "Le mercredi, nous sommes ouverts de 09h00 à 18h00.";
+            } else if (day === 4) {
+                if (time >= "08:30" && time <= "18:00") isValid = true;
+                else message = "Le jeudi, nous sommes ouverts de 08h30 à 18h00.";
+            } else if (day === 5) {
+                if (time >= "08:30" && time <= "18:00") isValid = true;
+                else message = "Le vendredi, nous sommes ouverts de 08h30 à 18h00.";
+            } else if (day === 6) {
+                if (time >= "10:00" && time <= "18:00") isValid = true;
+                else message = "Le samedi, nous sommes ouverts de 10h00 à 18h00.";
+            } else if (day === 0) {
+                if (time >= "10:00" && time <= "15:00") isValid = true;
+                else message = "Le dimanche, nous sommes ouverts de 10h00 à 15h00.";
             }
-        });
-    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
-    document.querySelectorAll('.brume-reveal').forEach(function(el){
-        observer.observe(el);
-    });
-})();
-</script>
-</body></html>
+            if (!isValid) { timeInput.setCustomValidity(message); timeInput.reportValidity(); }
+            else { timeInput.setCustomValidity(""); }
+            return isValid;
+        }
+        function handleReservation(event) {
+            event.preventDefault();
+            if (!validateReservationTime()) return;
+            var name = document.getElementById('resName').value;
+            var date = document.getElementById('resDate').value;
+            var time = document.getElementById('resTime').value;
+            var guests = document.getElementById('resGuests').value;
+            var contact = document.getElementById('resContact').value;
+            var subject = encodeURIComponent("Reservation Brume Coffee - " + name);
+            var nl = "\n";
+            var body = encodeURIComponent("Bonjour Olga," + nl + nl + "Je souhaite réserver une table chez Brume Coffee." + nl + nl + "Nom : " + name + nl + "Date : " + date + nl + "Heure : " + time + nl + "Nombre de personnes : " + guests + nl + "Contact : " + contact + nl + nl + "Merci beaucoup !" + nl + "À très vite chez Brume.");
+            window.location.href = "mailto:essaievendredi123@gmail.com?subject=" + subject + "&body=" + body;
+            alert("Votre réservation a bien été envoyée ! Nous vous attendons le " + date + " a " + time + ". À très vite chez Brume !");
+            closeReservation();
+            document.getElementById('reservationForm').reset();
+        }
+        function showReservation(event) {
+            if (event) event.preventDefault();
+            const modal = document.getElementById('reservationModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            setTimeout(function () {
+                modal.classList.remove('opacity-0');
+                modal.querySelector('div').classList.remove('scale-95');
+            }, 10);
+        }
+        function closeReservation() {
+            const modal = document.getElementById('reservationModal');
+            modal.classList.add('opacity-0');
+            modal.querySelector('div').classList.add('scale-95');
+            setTimeout(function () {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }, 300);
+        }
+    </script>
+
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const icon = document.querySelector('.menu-icon');
+            if (menu.classList.contains('opacity-0')) {
+                menu.classList.remove('opacity-0', 'pointer-events-none');
+                document.body.classList.add('overflow-hidden');
+                icon.textContent = 'close';
+            } else {
+                menu.classList.add('opacity-0', 'pointer-events-none');
+                document.body.classList.remove('overflow-hidden');
+                icon.textContent = 'menu';
+            }
+        }
+    </script>
+
+
+    <script>
+        /* Scroll Reveal Animation */
+        (function () {
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('brume-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+            document.querySelectorAll('.brume-reveal').forEach(function (el) {
+                observer.observe(el);
+            });
+        })();
+    </script>
+</body>
+
+</html>
