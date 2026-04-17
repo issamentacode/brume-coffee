@@ -1,0 +1,163 @@
+@font-face {
+    font-family: 'The Seasons';
+    src: url('../fonts/TheSeasonsRegular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'The Seasons';
+    src: url('../fonts/TheSeasonsItalic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'The Seasons';
+    src: url('../fonts/TheSeasonsBold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    /* Mode Jour (Matinée Matcha) - Par défaut */
+    --bg-primary: #F8EDF3;
+    --text-main: #77846A;
+    --accent-color: #859675;
+    --surface-low: #FFF5FA;
+    --inverse-color: #1E241A;
+}
+
+html.dark {
+    /* Mode Nuit (Torréfaction Nocturne) */
+    --bg-primary: #1E241A;
+    --text-main: #F8EDF3;
+    --accent-color: #859675;
+    --surface-low: #2A3224;
+    --inverse-color: #F8EDF3;
+}
+
+html {
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+body {
+    background-color: transparent !important;
+    color: inherit !important;
+}
+
+/* Règle Sans-Ligne (No-Line Rule) - Surchauffe de Tailwind si besoin */
+* {
+    border-color: transparent;
+}
+.no-line {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Skeleton Loading Animation */
+@keyframes shimmer {
+    0% { background-position: -1000px 0; }
+    100% { background-position: 1000px 0; }
+}
+
+.skeleton-box {
+    display: inline-block;
+    height: 1em;
+    position: relative;
+    overflow: hidden;
+    background: var(--surface-low);
+    border-radius: 8px;
+}
+
+.skeleton-box::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%);
+    background-image: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0,
+        rgba(255, 255, 255, 0.2) 20%,
+        rgba(255, 255, 255, 0.5) 60%,
+        rgba(255, 255, 255, 0)
+    );
+    animation: shimmer 2s infinite;
+    content: '';
+}
+
+/* Interactive Emojis & Words Reveal */
+.reveal-container {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 24px;
+}
+
+.reveal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 1rem;
+    text-align: center;
+}
+
+.reveal-container.active .reveal-overlay {
+    opacity: 1;
+}
+
+.reveal-item {
+    font-family: 'The Seasons', serif;
+    font-size: 1.5rem;
+    color: #FFF;
+    transform: translateY(10px) scale(0.9);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.reveal-container.active .reveal-item {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+/* Rituel Loading Indicator */
+.rituel-loader {
+    width: 60px;
+    height: 6px;
+    background-color: var(--surface-low);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    margin: 2rem auto;
+}
+.rituel-loader::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 30%;
+    background-color: var(--accent-color);
+    border-radius: 10px;
+    animation: rituel-flow 1.5s ease-in-out infinite;
+}
+
+@keyframes rituel-flow {
+    0% { left: -30%; width: 30%; }
+    50% { left: 30%; width: 60%; }
+    100% { left: 100%; width: 30%; }
+}

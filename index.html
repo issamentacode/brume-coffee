@@ -21,64 +21,24 @@
             theme: {
                 extend: {
                     "colors": {
-                        "surface-bright": "#fcf9f3",
-                        "secondary-fixed-dim": "#ffb597",
-                        "inverse-surface": "#31312d",
-                        "on-primary-container": "#c7e0bb",
-                        "surface": "#fcf9f3",
-                        "error": "#ba1a1a",
-                        "primary": "#384c31",
-                        "on-secondary-fixed-variant": "#6f381e",
-                        "tertiary": "#524343",
-                        "on-surface": "#1c1c18",
-                        "surface-container-low": "#f6f3ed",
-                        "surface-container-high": "#ebe8e2",
-                        "on-secondary-fixed": "#360f00",
-                        "secondary": "#8b4e33",
-                        "primary-fixed-dim": "#b6cdaa",
-                        "inverse-on-surface": "#f3f0ea",
-                        "background": "#fcf9f3",
-                        "on-error-container": "#93000a",
-                        "error-container": "#ffdad6",
-                        "surface-container-lowest": "#ffffff",
-                        "tertiary-container": "#6a5b5b",
-                        "on-tertiary-fixed-variant": "#524343",
-                        "tertiary-fixed": "#f3dedd",
-                        "on-error": "#ffffff",
-                        "on-background": "#1c1c18",
-                        "surface-container-highest": "#e5e2dc",
-                        "outline-variant": "#c4c8be",
-                        "on-primary-fixed-variant": "#384c31",
-                        "inverse-primary": "#b6cdaa",
-                        "surface-variant": "#e5e2dc",
-                        "on-secondary-container": "#783f25",
-                        "on-secondary": "#ffffff",
-                        "primary-fixed": "#d1eac5",
-                        "surface-dim": "#dcdad4",
-                        "surface-tint": "#4f6447",
-                        "on-tertiary-fixed": "#241919",
-                        "primary-container": "#4f6447",
-                        "outline": "#747870",
-                        "on-surface-variant": "#444840",
-                        "on-tertiary": "#ffffff",
-                        "surface-container": "#f0eee8",
-                        "secondary-container": "#feae8c",
-                        "on-primary-fixed": "#0d2009",
-                        "on-primary": "#ffffff",
-                        "tertiary-fixed-dim": "#d6c2c1",
-                        "on-tertiary-container": "#e9d4d3",
-                        "secondary-fixed": "#ffdbcd"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
+                        "surface": "var(--bg-primary)",
+                        "on-surface": "var(--text-main)",
+                        "primary": "var(--accent-color)",
+                        "on-primary": "var(--inverse-color)",
+                        "surface-container-low": "var(--surface-low)",
+                        "surface-container-high": "var(--surface-low)",
+                        "surface-container": "var(--bg-primary)",
+                        "secondary-container": "var(--surface-low)",
+                        "on-secondary-container": "var(--text-main)",
+                        "secondary": "var(--text-main)",
+                        "on-surface-variant": "var(--text-main)",
+                        "outline-variant": "transparent"
                     },
                     "fontFamily": {
-                        "headline": ["Newsreader"],
-                        "body": ["Inter"],
-                        "label": ["Inter"]
+                        "headline": ["'The Seasons'", "serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"],
+                        "serif": ["'The Seasons'", "serif"]
                     }
                 }
             }
@@ -304,51 +264,56 @@
             transform: translateY(0);
         }
     </style>
+    <link rel="stylesheet" href="assets/css/theme.css" />
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/api.js"></script>
 </head>
 
 <body class="bg-surface text-on-surface selection:bg-secondary-container">
     <!-- Mobile Menu Overlay -->
     <div id="mobileMenu"
-        class="fixed inset-0 z-40 bg-[#fcf9f3] dark:bg-[#1c1c18] flex flex-col items-center justify-center space-y-10 opacity-0 pointer-events-none transition-opacity duration-300">
-        <a class="font-serif text-4xl text-[#384c31] dark:text-[#feae8c] italic" href="index.html">Accueil</a>
-        <a class="font-serif text-4xl text-[#4f6447] dark:text-[#c4c8be] hover:text-[#384c31] dark:hover:text-[#feae8c] transition-colors duration-300"
+        class="fixed inset-0 z-40 bg-[#fcf9f3]  flex flex-col items-center justify-center space-y-10 opacity-0 pointer-events-none transition-opacity duration-300">
+        <a class="font-serif text-4xl text-[#384c31]  italic" href="index.html">Accueil</a>
+        <a class="font-serif text-4xl text-[#4f6447]  hover:text-[#384c31]  transition-colors duration-300"
             href="menu.html">Menu</a>
-        <a class="font-serif text-4xl text-[#4f6447] dark:text-[#c4c8be] hover:text-[#384c31] dark:hover:text-[#feae8c] transition-colors duration-300"
+        <a class="font-serif text-4xl text-[#4f6447]  hover:text-[#384c31]  transition-colors duration-300"
             href="histoire.html">Notre Histoire</a>
-        <a class="font-serif text-4xl text-[#4f6447] dark:text-[#c4c8be] hover:text-[#384c31] dark:hover:text-[#feae8c] transition-colors duration-300"
+        <a class="font-serif text-4xl text-[#4f6447]  hover:text-[#384c31]  transition-colors duration-300"
             href="galerie.html">Galerie</a>
-        <a class="font-serif text-4xl text-[#4f6447] dark:text-[#c4c8be] hover:text-[#384c31] dark:hover:text-[#feae8c] transition-colors duration-300"
+        <a class="font-serif text-4xl text-[#4f6447]  hover:text-[#384c31]  transition-colors duration-300"
             href="visiter.html">Nous Visiter</a>
     </div>
 
     <!-- TopNavBar -->
     <nav
-        class="fixed top-0 w-full z-50 bg-[#fcf9f3]/85 dark:bg-[#1c1c18]/85 backdrop-blur-xl transition-all duration-300 shadow-sm border-b border-[#384c31]/5">
+        class="fixed top-0 w-full z-50 bg-[#fcf9f3]/85 /85 backdrop-blur-xl transition-all duration-300 shadow-sm border-none">
         <div class="flex justify-between items-center max-w-7xl mx-auto px-6 md:px-8 py-4 md:py-6 relative">
-            <a class="font-serif text-2xl font-bold italic text-[#384c31] dark:text-[#fcf9f3] z-50 relative"
-                href="index.html">Brume</a>
+            <a class="font-serif text-2xl font-bold italic text-[#384c31]  z-50 relative" href="index.html">Brume</a>
 
             <div class="hidden md:flex items-center space-x-12">
-                <a class="text-[#384c31] dark:text-[#feae8c] border-b border-[#384c31] dark:border-[#feae8c] pb-1 font-serif text-lg tracking-tight Newsreader"
+                <a class="text-[#384c31]  border-none  pb-1 font-serif text-lg tracking-tight Newsreader"
                     href="index.html">Accueil</a>
-                <a class="text-[#4f6447] dark:text-[#c4c8be] hover:text-[#384c31] dark:hover:text-[#feae8c] transition-colors duration-300 font-serif text-lg tracking-tight Newsreader"
+                <a class="text-[#4f6447]  hover:text-[#384c31]  transition-colors duration-300 font-serif text-lg tracking-tight Newsreader"
                     href="menu.html">Menu</a>
-                <a class="text-[#4f6447] dark:text-[#c4c8be] hover:text-[#384c31] dark:hover:text-[#feae8c] transition-colors duration-300 font-serif text-lg tracking-tight Newsreader"
+                <a class="text-[#4f6447]  hover:text-[#384c31]  transition-colors duration-300 font-serif text-lg tracking-tight Newsreader"
                     href="histoire.html">Notre Histoire</a>
-                <a class="text-[#4f6447] dark:text-[#c4c8be] hover:text-[#384c31] dark:hover:text-[#feae8c] transition-colors duration-300 font-serif text-lg tracking-tight Newsreader"
+                <a class="text-[#4f6447]  hover:text-[#384c31]  transition-colors duration-300 font-serif text-lg tracking-tight Newsreader"
                     href="galerie.html">Galerie</a>
-                <a class="text-[#4f6447] dark:text-[#c4c8be] hover:text-[#384c31] dark:hover:text-[#feae8c] transition-colors duration-300 font-serif text-lg tracking-tight Newsreader"
+                <a class="text-[#4f6447]  hover:text-[#384c31]  transition-colors duration-300 font-serif text-lg tracking-tight Newsreader"
                     href="visiter.html">Nous Visiter</a>
             </div>
 
             <div class="flex items-center gap-4 z-50 relative">
+                <button id="theme-toggle"
+                    class="p-2 rounded-full hover:bg-surface-low transition-colors text-primary flex items-center justify-center mr-2"><span
+                        class="material-symbols-outlined text-xl">dark_mode</span></button>
                 <a href="#" onclick="showReservation(event)"
                     class="bg-[#384c31] text-white px-5 md:px-8 py-2 md:py-2.5 rounded-lg font-body text-sm font-medium tracking-wide hover:opacity-90 transition-opacity"
                     style="display:flex; justify-content:center; align-items:center;">
                     Réserver
                 </a>
                 <button id="mobileMenuBtn" onclick="toggleMobileMenu()"
-                    class="md:hidden text-[#384c31] dark:text-[#fcf9f3] p-1 focus:outline-none flex items-center justify-center"
+                    class="md:hidden text-[#384c31]  p-1 focus:outline-none flex items-center justify-center"
                     aria-label="Menu" style="width:40px; height:40px;">
                     <span class="material-symbols-outlined text-3xl menu-icon">menu</span>
                 </button>
@@ -471,7 +436,7 @@
                         pause hors du temps, une parenthèse privilégiée dans votre journée.</p>
                     <div class="space-y-8">
                         <div class="flex items-start gap-4">
-                            <span class="material-symbols-outlined text-secondary-container"
+                            <span class="material-symbols-outlined text-primary"
                                 data-icon="location_on">location_on</span>
                             <div>
                                 <a href="https://maps.app.goo.gl/DxdbmxsdsEMXXF6B8" target="_blank"
@@ -482,8 +447,7 @@
                             </div>
                         </div>
                         <div class="flex items-start gap-4">
-                            <span class="material-symbols-outlined text-secondary-container"
-                                data-icon="schedule">schedule</span>
+                            <span class="material-symbols-outlined text-primary" data-icon="schedule">schedule</span>
                             <div>
                                 <p class="text-xl font-semibold mb-2">Horaires d'ouverture</p>
                                 <table class="opacity-80 text-sm">
@@ -529,6 +493,20 @@
             </div>
         </section>
 
+        <!-- Wall of Fame Section -->
+        <section class="py-32 px-8 bg-surface">
+            <div class="max-w-7xl mx-auto text-center mb-20 text-on-surface">
+                <h2 class="text-5xl font-headline text-primary italic mb-4">La Famille Brume</h2>
+                <p class="text-xl font-body text-on-surface-variant max-w-2xl mx-auto pt-4">Nos habitués, ceux qui font
+                    vibrer ce lieu. Prenez le temps de cliquer ou toucher les portraits pour découvrir leurs petits mots
+                    doux.</p>
+            </div>
+            <div id="walloffame-container"
+                class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <!-- Data injected by api.js -->
+            </div>
+        </section>
+
         <!-- Avis Clients Section -->
         <section class="py-24 bg-surface-container-high overflow-hidden relative">
             <div class="max-w-7xl mx-auto px-8 mb-16 text-center">
@@ -570,7 +548,7 @@
                     flex: 0 0 auto;
                     width: 350px;
                     min-height: 220px;
-                    background: var(--surface, #fcf9f3);
+                    background: var(--surface-low);
                     border-radius: 1rem;
                     padding: 2rem;
                     margin-right: 1.5rem;
@@ -587,7 +565,7 @@
                 <div class="marquee-content">
                     <!-- Batch 1 -->
                     <div class="review-card">
-                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                        <div class="flex items-center gap-1 mb-4 text-primary">
                             ★★★★★
                         </div>
                         <p class="font-body text-on-surface-variant italic mb-6">"J’ai découvert le matcha chez Brume
@@ -597,7 +575,7 @@
                         <div class="font-bold text-primary">- Lilia Mahfoudi</div>
                     </div>
                     <div class="review-card">
-                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                        <div class="flex items-center gap-1 mb-4 text-primary">
                             ★★★★★
                         </div>
                         <p class="font-body text-on-surface-variant italic mb-6">"Very passionate and welcoming owner. I
@@ -606,7 +584,7 @@
                         <div class="font-bold text-primary">- Morgan Farley</div>
                     </div>
                     <div class="review-card">
-                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                        <div class="flex items-center gap-1 mb-4 text-primary">
                             ★★★★★
                         </div>
                         <p class="font-body text-on-surface-variant italic mb-6">"Polecam , pyszna kawa , smaczna matcha
@@ -614,7 +592,7 @@
                         <div class="font-bold text-primary">- Teresa Lorkiewicz</div>
                     </div>
                     <div class="review-card">
-                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                        <div class="flex items-center gap-1 mb-4 text-primary">
                             ★★★★★
                         </div>
                         <p class="font-body text-on-surface-variant italic mb-6">"Sehr schönes Café. Tolle Matcha Latte
@@ -622,7 +600,7 @@
                         <div class="font-bold text-primary">- Nuria Catalán</div>
                     </div>
                     <div class="review-card">
-                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                        <div class="flex items-center gap-1 mb-4 text-primary">
                             ★★★★★
                         </div>
                         <p class="font-body text-on-surface-variant italic mb-6">"Très bonne expérience chez Brume, le
@@ -631,7 +609,7 @@
                         <div class="font-bold text-primary">- Juliette Valor</div>
                     </div>
                     <div class="review-card">
-                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                        <div class="flex items-center gap-1 mb-4 text-primary">
                             ★★★★★
                         </div>
                         <p class="font-body text-on-surface-variant italic mb-6">"I love Japan culture. Matcha prepared
@@ -639,7 +617,7 @@
                         <div class="font-bold text-primary">- Milena</div>
                     </div>
                     <div class="review-card">
-                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                        <div class="flex items-center gap-1 mb-4 text-primary">
                             ★★★★★
                         </div>
                         <p class="font-body text-on-surface-variant italic mb-6">"Super kawa. To jest ten smak :) Fajne,
@@ -647,7 +625,7 @@
                         <div class="font-bold text-primary">- Grzegorz Dziechciarz</div>
                     </div>
                     <div class="review-card">
-                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                        <div class="flex items-center gap-1 mb-4 text-primary">
                             ★★★★★
                         </div>
                         <p class="font-body text-on-surface-variant italic mb-6">"Excellent service and peaceful
@@ -656,7 +634,7 @@
                         <div class="font-bold text-primary">- Guillaume Fournier</div>
                     </div>
                     <div class="review-card">
-                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                        <div class="flex items-center gap-1 mb-4 text-primary">
                             ★★★★★
                         </div>
                         <p class="font-body text-on-surface-variant italic mb-6">"Très bonne adresse, qui vient
@@ -664,7 +642,7 @@
                         <div class="font-bold text-primary">- Emi BECAERT</div>
                     </div>
                     <div class="review-card">
-                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                        <div class="flex items-center gap-1 mb-4 text-primary">
                             ★★★★★
                         </div>
                         <p class="font-body text-on-surface-variant italic mb-6">"Matcha najwyższej jakości. Miałam
@@ -673,7 +651,7 @@
                         <div class="font-bold text-primary">- Szczęście wPlecaku</div>
                     </div>
                     <div class="review-card">
-                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                        <div class="flex items-center gap-1 mb-4 text-primary">
                             ★★★★★
                         </div>
                         <p class="font-body text-on-surface-variant italic mb-6">"Étant amatrice de matcha, celui-là je
@@ -683,7 +661,7 @@
                         <div class="font-bold text-primary">- Sara dumitrean</div>
                     </div>
                     <div class="review-card">
-                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                        <div class="flex items-center gap-1 mb-4 text-primary">
                             ★★★★★
                         </div>
                         <p class="font-body text-on-surface-variant italic mb-6">"If you need a good matcha this is the
@@ -691,7 +669,7 @@
                         <div class="font-bold text-primary">- Joan Rwamba</div>
                     </div>
                     <div class="review-card">
-                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                        <div class="flex items-center gap-1 mb-4 text-primary">
                             ★★★★★
                         </div>
                         <p class="font-body text-on-surface-variant italic mb-6">"Ważny punkt na mapie - zdecydowanie
@@ -699,7 +677,7 @@
                         <div class="font-bold text-primary">- Adrian Kiełtyka</div>
                     </div>
                     <div class="review-card">
-                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                        <div class="flex items-center gap-1 mb-4 text-primary">
                             ★★★★★
                         </div>
                         <p class="font-body text-on-surface-variant italic mb-6">"Accueil très sympathique par cette
@@ -709,14 +687,14 @@
                         <div class="font-bold text-primary">- Paola MANZONI</div>
                     </div>
                     <div class="review-card">
-                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                        <div class="flex items-center gap-1 mb-4 text-primary">
                             ★★★★★
                         </div>
                         <p class="font-body text-on-surface-variant italic mb-6">"Super miejsce!! Polecam ♥️"</p>
                         <div class="font-bold text-primary">- Jull j</div>
                     </div>
                     <div class="review-card">
-                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                        <div class="flex items-center gap-1 mb-4 text-primary">
                             ★★★★★
                         </div>
                         <p class="font-body text-on-surface-variant italic mb-6">"Very passionate owner, kind, cheerful
@@ -724,7 +702,7 @@
                         <div class="font-bold text-primary">- Joshua Balata</div>
                     </div>
                     <div class="review-card">
-                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                        <div class="flex items-center gap-1 mb-4 text-primary">
                             ★★★★★
                         </div>
                         <p class="font-body text-on-surface-variant italic mb-6">"Personnel adorable et chaleureuse. Il
@@ -733,7 +711,7 @@
                         <div class="font-bold text-primary">- Eloidee Fernando</div>
                     </div>
                     <div class="review-card">
-                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                        <div class="flex items-center gap-1 mb-4 text-primary">
                             ★★★★★
                         </div>
                         <p class="font-body text-on-surface-variant italic mb-6">"Best Matcha in Paris."</p>
@@ -742,7 +720,7 @@
 
                     <!-- Batch 2 (Duplicate for continuous loop) -->
                     <div class="review-card">
-                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                        <div class="flex items-center gap-1 mb-4 text-primary">
                             ★★★★★
                         </div>
                         <p class="font-body text-on-surface-variant italic mb-6">"J’ai découvert le matcha chez Brume
@@ -752,7 +730,7 @@
                         <div class="font-bold text-primary">- Lilia Mahfoudi</div>
                     </div>
                     <div class="review-card">
-                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                        <div class="flex items-center gap-1 mb-4 text-primary">
                             ★★★★★
                         </div>
                         <p class="font-body text-on-surface-variant italic mb-6">"Very passionate and welcoming owner. I
@@ -761,7 +739,7 @@
                         <div class="font-bold text-primary">- Morgan Farley</div>
                     </div>
                     <div class="review-card">
-                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                        <div class="flex items-center gap-1 mb-4 text-primary">
                             ★★★★★
                         </div>
                         <p class="font-body text-on-surface-variant italic mb-6">"Polecam , pyszna kawa , smaczna matcha
@@ -769,7 +747,7 @@
                         <div class="font-bold text-primary">- Teresa Lorkiewicz</div>
                     </div>
                     <div class="review-card">
-                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                        <div class="flex items-center gap-1 mb-4 text-primary">
                             ★★★★★
                         </div>
                         <p class="font-body text-on-surface-variant italic mb-6">"Sehr schönes Café. Tolle Matcha Latte
@@ -777,7 +755,7 @@
                         <div class="font-bold text-primary">- Nuria Catalán</div>
                     </div>
                     <div class="review-card">
-                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                        <div class="flex items-center gap-1 mb-4 text-primary">
                             ★★★★★
                         </div>
                         <p class="font-body text-on-surface-variant italic mb-6">"Très bonne expérience chez Brume, le
@@ -786,7 +764,7 @@
                         <div class="font-bold text-primary">- Juliette Valor</div>
                     </div>
                     <div class="review-card">
-                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                        <div class="flex items-center gap-1 mb-4 text-primary">
                             ★★★★★
                         </div>
                         <p class="font-body text-on-surface-variant italic mb-6">"I love Japan culture. Matcha prepared
@@ -794,7 +772,7 @@
                         <div class="font-bold text-primary">- Milena</div>
                     </div>
                     <div class="review-card">
-                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                        <div class="flex items-center gap-1 mb-4 text-primary">
                             ★★★★★
                         </div>
                         <p class="font-body text-on-surface-variant italic mb-6">"Super kawa. To jest ten smak :) Fajne,
@@ -802,7 +780,7 @@
                         <div class="font-bold text-primary">- Grzegorz Dziechciarz</div>
                     </div>
                     <div class="review-card">
-                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                        <div class="flex items-center gap-1 mb-4 text-primary">
                             ★★★★★
                         </div>
                         <p class="font-body text-on-surface-variant italic mb-6">"Excellent service and peaceful
@@ -811,7 +789,7 @@
                         <div class="font-bold text-primary">- Guillaume Fournier</div>
                     </div>
                     <div class="review-card">
-                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                        <div class="flex items-center gap-1 mb-4 text-primary">
                             ★★★★★
                         </div>
                         <p class="font-body text-on-surface-variant italic mb-6">"Très bonne adresse, qui vient
@@ -819,7 +797,7 @@
                         <div class="font-bold text-primary">- Emi BECAERT</div>
                     </div>
                     <div class="review-card">
-                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                        <div class="flex items-center gap-1 mb-4 text-primary">
                             ★★★★★
                         </div>
                         <p class="font-body text-on-surface-variant italic mb-6">"Matcha najwyższej jakości. Miałam
@@ -828,7 +806,7 @@
                         <div class="font-bold text-primary">- Szczęście wPlecaku</div>
                     </div>
                     <div class="review-card">
-                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                        <div class="flex items-center gap-1 mb-4 text-primary">
                             ★★★★★
                         </div>
                         <p class="font-body text-on-surface-variant italic mb-6">"Étant amatrice de matcha, celui-là je
@@ -838,7 +816,7 @@
                         <div class="font-bold text-primary">- Sara dumitrean</div>
                     </div>
                     <div class="review-card">
-                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                        <div class="flex items-center gap-1 mb-4 text-primary">
                             ★★★★★
                         </div>
                         <p class="font-body text-on-surface-variant italic mb-6">"If you need a good matcha this is the
@@ -846,7 +824,7 @@
                         <div class="font-bold text-primary">- Joan Rwamba</div>
                     </div>
                     <div class="review-card">
-                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                        <div class="flex items-center gap-1 mb-4 text-primary">
                             ★★★★★
                         </div>
                         <p class="font-body text-on-surface-variant italic mb-6">"Ważny punkt na mapie - zdecydowanie
@@ -854,7 +832,7 @@
                         <div class="font-bold text-primary">- Adrian Kiełtyka</div>
                     </div>
                     <div class="review-card">
-                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                        <div class="flex items-center gap-1 mb-4 text-primary">
                             ★★★★★
                         </div>
                         <p class="font-body text-on-surface-variant italic mb-6">"Accueil très sympathique par cette
@@ -864,14 +842,14 @@
                         <div class="font-bold text-primary">- Paola MANZONI</div>
                     </div>
                     <div class="review-card">
-                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                        <div class="flex items-center gap-1 mb-4 text-primary">
                             ★★★★★
                         </div>
                         <p class="font-body text-on-surface-variant italic mb-6">"Super miejsce!! Polecam ♥️"</p>
                         <div class="font-bold text-primary">- Jull j</div>
                     </div>
                     <div class="review-card">
-                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                        <div class="flex items-center gap-1 mb-4 text-primary">
                             ★★★★★
                         </div>
                         <p class="font-body text-on-surface-variant italic mb-6">"Very passionate owner, kind, cheerful
@@ -879,7 +857,7 @@
                         <div class="font-bold text-primary">- Joshua Balata</div>
                     </div>
                     <div class="review-card">
-                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                        <div class="flex items-center gap-1 mb-4 text-primary">
                             ★★★★★
                         </div>
                         <p class="font-body text-on-surface-variant italic mb-6">"Personnel adorable et chaleureuse. Il
@@ -888,7 +866,7 @@
                         <div class="font-bold text-primary">- Eloidee Fernando</div>
                     </div>
                     <div class="review-card">
-                        <div class="flex items-center gap-1 mb-4 text-secondary-container">
+                        <div class="flex items-center gap-1 mb-4 text-primary">
                             ★★★★★
                         </div>
                         <p class="font-body text-on-surface-variant italic mb-6">"Best Matcha in Paris."</p>
@@ -908,7 +886,7 @@
                     dans notre cocon. Cliquez pour explorer.</p>
             </div>
             <div class="photo-stack-container" onclick="openGalleryLightbox()">
-                <span class="photo-stack-count">24</span>
+                <span class="photo-stack-count">32</span>
                 <div class="stack-card"><img src="assets/baristas.jpg" alt="Brume"></div>
                 <div class="stack-card"><img src="assets/brume_photo_1.jpg" loading="lazy" alt="Brume"></div>
                 <div class="stack-card"><img src="assets/brume_photo_10.jpg" loading="lazy" alt="Brume"></div>
@@ -927,16 +905,6 @@
                 <img src="assets/baristas.jpg" alt="Brume Coffee" onload="this.classList.add('loaded')">
                 <img src="assets/brume_photo_1.jpg" loading="lazy" alt="Brume Coffee"
                     onload="this.classList.add('loaded')">
-                <img src="assets/brume_photo_10.jpg" loading="lazy" alt="Brume Coffee"
-                    onload="this.classList.add('loaded')">
-                <img src="assets/brume_photo_11.jpg" loading="lazy" alt="Brume Coffee"
-                    onload="this.classList.add('loaded')">
-                <img src="assets/brume_photo_12.jpg" loading="lazy" alt="Brume Coffee"
-                    onload="this.classList.add('loaded')">
-                <img src="assets/brume_photo_13.jpg" loading="lazy" alt="Brume Coffee"
-                    onload="this.classList.add('loaded')">
-                <img src="assets/brume_photo_14.jpg" loading="lazy" alt="Brume Coffee"
-                    onload="this.classList.add('loaded')">
                 <img src="assets/brume_photo_2.jpg" loading="lazy" alt="Brume Coffee"
                     onload="this.classList.add('loaded')">
                 <img src="assets/brume_photo_3.jpg" loading="lazy" alt="Brume Coffee"
@@ -953,16 +921,46 @@
                     onload="this.classList.add('loaded')">
                 <img src="assets/brume_photo_9.jpg" loading="lazy" alt="Brume Coffee"
                     onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_10.jpg" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_12.jpg" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_13.jpg" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_20.jpg" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_21.jpg" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_22.jpg" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_23.jpg" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_24.jpg" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_25.jpg" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_26.jpg" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_30.jpg" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_31.jpg" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_32.jpg" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_33.jpg" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_40.jpg" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_41.jpg" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_42.jpg" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
+                <img src="assets/brume_photo_50.jpg" loading="lazy" alt="Brume Coffee"
+                    onload="this.classList.add('loaded')">
                 <img src="assets/galerie_img1.jpg" alt="Brume Coffee" onload="this.classList.add('loaded')">
                 <img src="assets/galerie_img2.jpg" alt="Brume Coffee" onload="this.classList.add('loaded')">
                 <img src="assets/histoire_bg1.jpg" alt="Brume Coffee" onload="this.classList.add('loaded')">
                 <img src="assets/histoire_bg2.jpg" alt="Brume Coffee" onload="this.classList.add('loaded')">
-                <img src="assets/latte_art.jpg" alt="Brume Coffee" onload="this.classList.add('loaded')">
-                <img src="assets/matcha_brewing.jpg" alt="Brume Coffee" onload="this.classList.add('loaded')">
-                <img src="assets/brume_photo_5.jpg" loading="lazy" alt="Brume Coffee"
-                    onload="this.classList.add('loaded')">
-                <img src="assets/two_cups.jpg" alt="Brume Coffee" onload="this.classList.add('loaded')">
-                <img src="assets/visiter_hero.jpg" alt="Brume Coffee" onload="this.classList.add('loaded')">
             </div>
         </div>
 
@@ -986,18 +984,49 @@
             });
         </script>
 
+        <!-- Wall of Fame Section (Marcel & Family) -->
+        <section class="py-24 px-8 bg-surface-container-low/30 brume-reveal">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-5xl font-headline text-primary italic mb-4">La Famille Brume</h2>
+                    <p class="text-xl font-body text-on-surface-variant max-w-2xl mx-auto">Ceux qui font vivre ce lieu chaque
+                        jour. Nos clients, nos amis, et bien sûr Marcel 🐾</p>
+                </div>
+                <!-- Dynamic Content Container -->
+                <div id="walloffame-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Loaded via api.js -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Petit Marché Section -->
+        <section class="py-24 px-8 brume-reveal">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-5xl font-headline text-primary italic mb-4">Le Petit Marché</h2>
+                    <p class="text-xl font-body text-on-surface-variant max-w-2xl mx-auto">Nos créations et trouvailles à
+                        emporter. Gourmandises et objets de cœur.</p>
+                </div>
+                <!-- Dynamic Content Container -->
+                <div id="merch-container" class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <!-- Loaded via api.js -->
+                </div>
+            </div>
+        </section>
+
     </main>
     <!-- Footer -->
-    <footer class="bg-[#f6f3ed] w-full pt-16 pb-8 px-8 border-t border-[#384c31]/10">
+    <footer class="bg-surface-container-low w-full pt-16 pb-8 px-8 border-t border-primary/10">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
                 <!-- Brand -->
                 <div class="md:col-span-1 space-y-4">
-                    <span class="font-serif text-2xl italic text-[#384c31] font-bold">Brume</span>
-                    <p class="text-sm text-[#384c31]/60 leading-relaxed">Un cocon de douceur et de slow living au coeur
+                    <span class="font-serif text-2xl italic text-primary font-bold">Brume</span>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">Un cocon de douceur et de slow living au
+                        coeur
                         de Levallois-Perret.</p>
                     <a href="https://www.instagram.com/brume.levallois/" target="_blank"
-                        class="inline-flex items-center gap-2 text-[#384c31]/70 hover:text-[#384c31] transition-colors text-sm font-medium">
+                        class="inline-flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors text-sm font-medium">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
                             <path
                                 d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
@@ -1007,24 +1036,24 @@
                 </div>
                 <!-- Navigation -->
                 <div class="space-y-4">
-                    <h4 class="font-serif text-[#384c31] font-semibold text-sm uppercase tracking-widest">Pages</h4>
+                    <h4 class="font-serif text-primary font-semibold text-sm uppercase tracking-widest">Pages</h4>
                     <nav class="flex flex-col space-y-2">
                         <a href="index.html"
-                            class="text-sm text-[#384c31]/60 hover:text-[#384c31] transition-colors">Accueil</a>
-                        <a href="menu.html" class="text-sm text-[#384c31]/60 hover:text-[#384c31] transition-colors">La
+                            class="text-sm text-on-surface-variant hover:text-primary transition-colors">Accueil</a>
+                        <a href="menu.html" class="text-sm text-on-surface-variant hover:text-primary transition-colors">La
                             Carte</a>
                         <a href="histoire.html"
-                            class="text-sm text-[#384c31]/60 hover:text-[#384c31] transition-colors">Notre Histoire</a>
+                            class="text-sm text-on-surface-variant hover:text-primary transition-colors">Notre Histoire</a>
                         <a href="galerie.html"
-                            class="text-sm text-[#384c31]/60 hover:text-[#384c31] transition-colors">Galerie</a>
+                            class="text-sm text-on-surface-variant hover:text-primary transition-colors">Galerie</a>
                         <a href="visiter.html"
-                            class="text-sm text-[#384c31]/60 hover:text-[#384c31] transition-colors">Nous Visiter</a>
+                            class="text-sm text-on-surface-variant hover:text-primary transition-colors">Nous Visiter</a>
                     </nav>
                 </div>
                 <!-- Hours -->
                 <div class="space-y-4">
-                    <h4 class="font-serif text-[#384c31] font-semibold text-sm uppercase tracking-widest">Horaires</h4>
-                    <table class="text-sm text-[#384c31]/60 w-full">
+                    <h4 class="font-serif text-primary font-semibold text-sm uppercase tracking-widest">Horaires</h4>
+                    <table class="text-sm text-on-surface-variant w-full">
                         <tr>
                             <td class="pr-4 py-0.5">Lundi</td>
                             <td class="text-right">09:30–12:00, 16:00–18:00</td>
@@ -1045,21 +1074,20 @@
                 </div>
                 <!-- Contact -->
                 <div class="space-y-4">
-                    <h4 class="font-serif text-[#384c31] font-semibold text-sm uppercase tracking-widest">Contact</h4>
-                    <div class="text-sm text-[#384c31]/60 space-y-2">
+                    <h4 class="font-serif text-primary font-semibold text-sm uppercase tracking-widest">Contact</h4>
+                    <div class="text-sm text-on-surface-variant space-y-2">
                         <a href="https://maps.app.goo.gl/DxdbmxsdsEMXXF6B8" target="_blank"
-                            class="flex items-center space-x-2 text-primary hover:text-secondary transition-colors font-medium">
+                            class="flex items-center space-x-2 text-primary hover:text-primary transition-colors font-medium">
                             <p>2 Rue Camille Pelletan<br />92300 Levallois-Perret</p>
                         </a>
-                        <p><a href="tel:+33775867647" class="hover:text-[#384c31] transition-colors">07 75 86 76 47</a>
+                        <p><a href="tel:+33775867647" class="hover:text-primary transition-colors">07 75 86 76 47</a>
                         </p>
                         <p><a href="mailto:essaievendredi123@gmail.com"
-                                class="hover:text-[#384c31] transition-colors">essaievendredi123@gmail.com</a></p>
+                                class="hover:text-primary transition-colors">essaievendredi123@gmail.com</a></p>
                     </div>
                 </div>
             </div>
             <!-- Bottom bar -->
-            <div class="border-t border-[#384c31]/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
                 <span class="text-xs text-[#384c31]/40">&copy; 2026 Brume Coffee — Levallois-Perret</span>
                 <a href="#" onclick="showMentionsLegales(event)"
                     class="text-xs text-[#384c31]/40 hover:text-[#384c31]/80 underline decoration-[#feae8c] transition-colors">Mentions
@@ -1138,27 +1166,27 @@
                 <div>
                     <label class="block font-body text-sm font-medium text-on-surface-variant mb-1">Nom complet</label>
                     <input type="text" id="resName" required
-                        class="w-full rounded-lg border border-outline-variant/50 focus:border-primary focus:ring-primary bg-surface-container-low px-4 py-2.5"
+                        class="w-full rounded-lg border-none focus:border-primary focus:ring-primary bg-surface-container-low px-4 py-2.5"
                         placeholder="Votre nom">
                 </div>
                 <div class="grid grid-cols-2 gap-4">
                     <div>
                         <label class="block font-body text-sm font-medium text-on-surface-variant mb-1">Date</label>
                         <input type="date" id="resDate" required onchange="validateReservationTime()"
-                            class="w-full rounded-lg border border-outline-variant/50 focus:border-primary focus:ring-primary bg-surface-container-low px-4 py-2.5">
+                            class="w-full rounded-lg border-none focus:border-primary focus:ring-primary bg-surface-container-low px-4 py-2.5">
                     </div>
                     <div>
                         <label class="block font-body text-sm font-medium text-on-surface-variant mb-1">Heure
                             exacte</label>
                         <input type="time" id="resTime" required onchange="validateReservationTime()"
-                            class="w-full rounded-lg border border-outline-variant/50 focus:border-primary focus:ring-primary bg-surface-container-low px-4 py-2.5">
+                            class="w-full rounded-lg border-none focus:border-primary focus:ring-primary bg-surface-container-low px-4 py-2.5">
                     </div>
                 </div>
                 <div>
                     <label class="block font-body text-sm font-medium text-on-surface-variant mb-1">Nombre de
                         personnes</label>
                     <select id="resGuests" required
-                        class="w-full rounded-lg border border-outline-variant/50 focus:border-primary focus:ring-primary bg-surface-container-low px-4 py-2.5">
+                        class="w-full rounded-lg border-none focus:border-primary focus:ring-primary bg-surface-container-low px-4 py-2.5">
                         <option value="1">1 personne</option>
                         <option value="2" selected>2 personnes</option>
                         <option value="3">3 personnes</option>
@@ -1170,7 +1198,7 @@
                     <label class="block font-body text-sm font-medium text-on-surface-variant mb-1">Téléphone /
                         E-mail</label>
                     <input type="text" id="resContact" required
-                        class="w-full rounded-lg border border-outline-variant/50 focus:border-primary focus:ring-primary bg-surface-container-low px-4 py-2.5"
+                        class="w-full rounded-lg border-none focus:border-primary focus:ring-primary bg-surface-container-low px-4 py-2.5"
                         placeholder="Pour vous contacter si besoin">
                 </div>
                 <div class="pt-4">
@@ -1241,23 +1269,23 @@
                     Contact: contact
                 })
             })
-            .then(function(res) { return res.json(); })
-            .then(function() {
-                closeReservation();
-                document.getElementById('reservationForm').reset();
-                var toast = document.createElement('div');
-                toast.textContent = '✅ Réservation envoyée ! Nous vous attendons le ' + date + ' à ' + time + '. À très vite chez Brume !';
-                toast.style.cssText = 'position:fixed;bottom:32px;left:50%;transform:translateX(-50%);background:#384c31;color:#fff;padding:16px 28px;border-radius:12px;font-size:15px;z-index:9999;box-shadow:0 8px 32px rgba(0,0,0,0.18);max-width:90vw;text-align:center;';
-                document.body.appendChild(toast);
-                setTimeout(function() { toast.remove(); }, 5000);
-            })
-            .catch(function() {
-                alert('Une erreur est survenue. Veuillez réessayer ou nous appeler au 07 75 86 76 47.');
-            })
-            .finally(function() {
-                btn.disabled = false;
-                btn.textContent = 'Confirmer la réservation';
-            });
+                .then(function (res) { return res.json(); })
+                .then(function () {
+                    closeReservation();
+                    document.getElementById('reservationForm').reset();
+                    var toast = document.createElement('div');
+                    toast.textContent = '✅ Réservation envoyée ! Nous vous attendons le ' + date + ' à ' + time + '. À très vite chez Brume !';
+                    toast.style.cssText = 'position:fixed;bottom:32px;left:50%;transform:translateX(-50%);background:#384c31;color:#fff;padding:16px 28px;border-radius:12px;font-size:15px;z-index:9999;box-shadow:0 8px 32px rgba(0,0,0,0.18);max-width:90vw;text-align:center;';
+                    document.body.appendChild(toast);
+                    setTimeout(function () { toast.remove(); }, 5000);
+                })
+                .catch(function () {
+                    alert('Une erreur est survenue. Veuillez réessayer ou nous appeler au 07 75 86 76 47.');
+                })
+                .finally(function () {
+                    btn.disabled = false;
+                    btn.textContent = 'Confirmer la réservation';
+                });
         }
         function showReservation(event) {
             if (event) event.preventDefault();
