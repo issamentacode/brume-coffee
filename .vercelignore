@@ -1,0 +1,7 @@
+history_backup/
+.git/
+node_modules/
+.vercel/
+scratch/
+brain/
+*.log
