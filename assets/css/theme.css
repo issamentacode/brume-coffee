@@ -23,8 +23,11 @@
 :root {
     /* Mode Jour (Matinée Matcha) - Par défaut */
     --bg-primary: #F8EDF3;
+    --bg-primary-rgb: 248, 237, 243;
     --text-main: #77846A;
+    --text-main-rgb: 119, 132, 106;
     --accent-color: #859675;
+    --accent-color-rgb: 133, 150, 117;
     --surface-low: #FFF5FA;
     --inverse-color: #1E241A;
 }
@@ -32,8 +35,11 @@
 html.dark {
     /* Mode Nuit (Torréfaction Nocturne) */
     --bg-primary: #1E241A;
+    --bg-primary-rgb: 30, 36, 26;
     --text-main: #F8EDF3;
+    --text-main-rgb: 248, 237, 243;
     --accent-color: #859675;
+    --accent-color-rgb: 133, 150, 117;
     --surface-low: #2A3224;
     --inverse-color: #F8EDF3;
 }
