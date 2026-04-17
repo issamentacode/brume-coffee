@@ -161,3 +161,39 @@ body {
     50% { left: 30%; width: 60%; }
     100% { left: 100%; width: 30%; }
 }
+
+/* Decorative Divider "Brume Charm" */
+.brume-charm-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5rem auto;
+    color: var(--accent-color);
+    opacity: 0.6;
+    width: 100%;
+    max-width: 600px;
+}
+
+.brume-charm-divider::before,
+.brume-charm-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, currentColor, transparent);
+}
+
+.brume-charm-divider::before {
+    background: linear-gradient(to right, transparent, currentColor);
+}
+
+.brume-charm-divider::after {
+    background: linear-gradient(to left, transparent, currentColor);
+}
+
+.brume-charm-divider svg {
+    margin: 0 1.25rem;
+    width: 28px;
+    height: 28px;
+    fill: currentColor;
+    filter: drop-shadow(0 0 8px rgba(var(--accent-color-rgb), 0.2));
+}
