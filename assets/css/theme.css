@@ -197,3 +197,21 @@ body {
     fill: currentColor;
     filter: drop-shadow(0 0 8px rgba(var(--accent-color-rgb), 0.2));
 }
+
+/* Interactive Location Card Decoration */
+.brume-location-card {
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid transparent;
+}
+
+.brume-location-card:hover {
+    background-color: var(--bg-primary) !important;
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    border-color: var(--accent-color);
+}
+
+.brume-location-card:hover .text-primary {
+    color: var(--accent-color);
+    letter-spacing: 0.02em;
+}

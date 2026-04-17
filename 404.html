@@ -9,6 +9,8 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="assets/android-chrome-192x192.png">
+    <link rel="shortcut icon" href="assets/android-chrome-192x192.png" type="image/png">
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -63,7 +65,9 @@
     <!-- Navigation (Same as main pages) -->
     <nav class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl transition-all duration-300 shadow-sm border-none">
         <div class="flex justify-between items-center max-w-7xl mx-auto px-6 md:px-8 py-4 md:py-6 relative">
-            <a class="font-serif text-2xl font-bold italic text-primary z-50 relative" href="index.html">Brume</a>
+            <a class="z-50 relative" href="index.html">
+                <img src="assets/logo_sans_fond.png" alt="Brume Coffee" class="h-10 md:h-12 w-auto object-contain">
+            </a>
             <div class="hidden md:flex items-center space-x-12">
                 <a class="text-on-surface hover:text-primary transition-colors duration-300 font-serif text-lg tracking-tight" href="index.html">Accueil</a>
                 <a class="text-on-surface hover:text-primary transition-colors duration-300 font-serif text-lg tracking-tight" href="menu.html">Menu</a>
